@@ -1,0 +1,16 @@
+.desc-nav-bottom{
+    box-shadow: 9px 3px 4px 1px;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+    
+}
+.desc-nav-bottom small{
+    font-size: 12px;
+}
+
+.desc-nav-bottom > div {
+    cursor: pointer;
+}

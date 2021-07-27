@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "vazir";
+    src: url(./assets/fonts/ttf/Vazir-Medium.ttf);
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    font-family: "vazir";
+    direction: rtl;
+    background-color: #fff;
+}
+
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .swiper-pagination-progressbar-fill{
+      background-color: black;
+  }
+
+  .swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after {
+    content: 'prev';
+    color: black;
+}
