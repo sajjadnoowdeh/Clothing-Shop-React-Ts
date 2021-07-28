@@ -1,9 +1,9 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import "./Menu.style.css"
+import "./Menu.style.scss"
 const Menu = () => {
   return (
-    <Container fluid>
+    <Container fluid className="d-none d-lg-flex">
       <ul className="d-flex menu justify-content-around mt-3 pb-2">
         <li className="list-unstyled newDress__link ">
           <a href="#"> جدیدترین ها</a>
