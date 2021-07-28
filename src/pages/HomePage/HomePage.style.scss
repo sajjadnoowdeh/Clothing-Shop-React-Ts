@@ -1,0 +1,45 @@
+$bg-green:#00bf6f;
+
+
+
+  // 
+
+  .section-show-all__amazing {
+    button{
+      color: $bg-green;
+      border:1px solid $bg-green;
+      background: none;
+      border-radius: 30px;
+      padding: 1rem 5rem;
+    }
+  }
+
+  .main__products-food__stuffs{
+    width: 97%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    img{
+      width: 100%;
+      height: 100%;
+      transition: all 0.5s ease;
+      // border-radius: 10px;
+    }
+    &:hover{
+      background: linear-gradient(to right,rgba(0,0,0,0.5)) ;
+      img{
+          transform: scale(1.1);
+          cursor: pointer;
+      }
+    
+  }
+  }
+
+  .main__products-game{
+     @extend .main__products-food__stuffs;
+  }
+
+
+  .section__category-product{
+    @extend .main__products-food__stuffs
+  }
