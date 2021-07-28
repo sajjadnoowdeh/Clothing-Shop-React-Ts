@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "vazir";
+    src: url(./assets/fonts/ttf/Vazir-Medium.ttf);
+}
+a{
+    text-decoration: none;
+    color: black;
+    &:hover{
+        color:#00bf6f
+    }
+}
+body{
+    font-family: "vazir";
+    direction: rtl;
+    background-color: #fff;
+}
+
+
