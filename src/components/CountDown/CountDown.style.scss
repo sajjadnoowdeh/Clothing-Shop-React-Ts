@@ -1,0 +1,12 @@
+.section__timer{
+    font-size: 30px;
+    @media (max-width:768px) {
+        font-size: 16px;
+    }
+    .timer{
+        background-color: #a8a8a812;
+        border-radius: 10px;
+        color: #ff7500;
+       
+    }
+}
