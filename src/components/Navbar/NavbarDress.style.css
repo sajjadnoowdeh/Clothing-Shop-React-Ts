@@ -76,3 +76,7 @@ position: relative;
     top: 11px;
 
 }
+.basket-btn:hover{
+        background: transparent;
+    
+}

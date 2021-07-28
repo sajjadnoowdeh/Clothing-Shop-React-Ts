@@ -8,7 +8,7 @@ export default function NavbarDress() {
         <div className="order-lg-1 brand d-flex justify-content-center justify-content-lg-end" ><img className="img-brand" src="https://www.banimode.com//themes/new/assets/images/banilogo.png" alt="" /> </div>
   
          <div className="d-none d-lg-flex ">
-         <Button style={{backgroundColor:"none"}}>
+         <Button className="basket-btn" style={{backgroundColor:"none"}}>
             <span className="visually-hidden">unread messages</span>
              <Badge className="count-shop">9</Badge>
             <BiShoppingBag color="black" size={35}/>
