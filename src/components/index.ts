@@ -6,7 +6,12 @@ import Category from "./Category/Category";
 import CountDown from "./CountDown/CountDown";
 import ProductItemCarousel from "./ProductItemsCarousel/ProductItemCarousel";
 import ProductItemSuggest from "./ProductItemsSuggest/ProductItemSuggest";
+import ProductItem from "./../components/ProductItem/ProductItem";
+import ProductStored from "./ProductSorted/ProductSorted";
 import Footer from "./Footer/Footer";
+import SidebarFilterProduct from "./Sidebar/SidebarFilterProdiuct/SidebarFilterProduct";
+import SidebarFilterSize from "./Sidebar/SidebarFilterSize/SidebarFilterSize";
+import SidebarChidren from "./Sidebar/SidebarChildern/SidebarChidren";
 export {
   NavbarBottom,
   NavbarDress,
@@ -16,5 +21,10 @@ export {
   CountDown,
   ProductItemCarousel,
   ProductItemSuggest,
-  Footer
+  Footer,
+  ProductItem,
+  ProductStored,
+  SidebarFilterSize,
+  SidebarFilterProduct,
+  SidebarChidren
 };
