@@ -17,7 +17,7 @@ function MyTimer({ expiryTimestamp }:any) {
         <div style={{textAlign: 'center'}}>
       
           <div className="section__timer">
-            <span className="px-3 timer" >{days}</span>:<span className="px-3 timer" >{hours}</span>:<span className="px-3 timer" >{minutes}</span>:<span className="px-3 timer">{seconds}</span>
+            <span className="p-3 py-2 timer m-0" >{days}</span>:<span className="p-3 py-2 timer" >{hours}</span>:<span className="p-3 py-2 timer" >{minutes}</span>:<span className="p-3 py-2 timer">{seconds}</span>
           </div>
           {/* <p>{isRunning ? 'Running' : 'Not running'}</p> */}
           {/* <button onClick={start}>Start</button>
