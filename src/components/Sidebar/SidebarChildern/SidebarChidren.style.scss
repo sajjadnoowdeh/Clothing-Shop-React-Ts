@@ -1,0 +1,37 @@
+.input-sidebar{
+    width: 100%;
+    line-height: 50px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 10px;
+    background-color: #f5f5f5 !important;
+    border: none;
+    padding-right: 50px;
+    position: relative;
+    ::placeholder{
+        font-size: 14px;
+    }
+}
+
+.search-product__sidebar{
+    position: relative;
+    .search-icon{
+        position: absolute;
+        
+    }
+  
+}
+
+.sidebar-section__title{
+    border-bottom: 1px solid #d7d7d7cc;
+}
+
+.sidebar__filterd {
+    form .input-group{
+        border-bottom: 1px solid  #d7d7d74d;
+        margin: 6px 0;
+        color: #6f6f6f;
+        width: 90%;
+    }
+    border-bottom: 1px solid #d7d7d7cc;
+}
