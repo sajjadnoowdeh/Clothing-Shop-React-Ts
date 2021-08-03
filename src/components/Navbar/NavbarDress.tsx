@@ -1,11 +1,12 @@
 import React from 'react'
 import {Container,Navbar,Badge,Nav,NavDropdown,Form,FormControl,Button} from "react-bootstrap"
 import { BiShoppingBag,BiSearch } from "react-icons/bi";
-import "./NavbarDress.style.css"
+import { Link } from 'react-router-dom';
+import "./NavbarDress.style.scss";
 export default function NavbarDress() {
     return (
       <Container className="navbar-dress py-4 d-flex align-items-center justify-content-between">
-        <div className="order-lg-1 brand d-flex justify-content-center justify-content-lg-end" ><img className="img-brand" src="https://www.banimode.com//themes/new/assets/images/banilogo.png" alt="" /> </div>
+        <div className="order-lg-1 brand " ><Link to="/" className="d-flex justify-content-center justify-content-lg-end"><img className="img-brand" src="https://www.banimode.com//themes/new/assets/images/banilogo.png" alt="" />  </Link></div>
   
          <div className="d-none d-lg-flex ">
          <Button className="basket-btn" style={{backgroundColor:"none"}}>

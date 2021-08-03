@@ -1,0 +1,138 @@
+:root{
+    --bg-success:#00bf6f;
+    --bt-white:#fff;
+}
+.navbar{
+    background-color: none !important;
+}
+@media (max-width:992px) {
+    .brand{
+        padding-top: 1rem;
+        width: 100%;
+    }
+    .img-brand{
+        width: 170px;
+    }
+}
+
+.img-brand{
+    max-width: 80%;
+}
+
+.navbar-dress form{
+position: relative;
+}
+
+.input-nav{
+    width: 33rem;
+    line-height: 50px;
+    height: 50px;
+    border-radius: 28px;
+    background-color: #f5f5f5 !important;
+    border: none;
+    padding-right: 50px;
+    position: relative;
+}
+/* login && Regester */
+.login{
+    border-radius: 28px;
+    padding: 10px;
+    background-color: var(--bg-success);
+}
+
+.login span{
+   color: var(--bt-white);
+}
+.login a{
+  color: var(--bt-white);
+  font-size: 14px;
+}
+
+.count-shop{
+    background-color: var(--bg-success);
+}
+.btn-primary {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.btn .badge {
+    position: relative;
+    top: -1px;
+    right: 17px;
+    border-radius: 62px;
+    padding: 5px;
+}
+
+.navbar form{
+    position: relative;
+}
+
+.search-icon{
+    
+    position: absolute;
+    right: 7px;
+    top: 11px;
+
+}
+.basket-btn{
+margin: 0px -34px 0 1rem;
+&:hover{
+        background: transparent;
+    
+}
+}
+.swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after{
+   color: white;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+    right: 5px;
+    left: auto;
+    width: 4rem;
+    height: 4rem;
+}
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+    right: 5px;
+    left: auto;
+    width: 4rem;
+    height: 4rem;
+    color: aliceblue;
+}
+@mixin mergeSlideAroow($arrow) {
+    top: 50%;
+    transform: translateY(-50%);
+
+    // right: $arrow;
+    background: #b695492b;
+    left: auto;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+
+}
+.swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after {
+    content: 'prev';
+    color: aliceblue;
+}
+.swiper-button-prev:after, .swiper-container-rtl .swiper-button-prev:after{
+  @include mergeSlideAroow(68px)
+}
+
+
+.swiper-button-next:after, .swiper-container-rtl .swiper-button-next:after{
+    @include mergeSlideAroow(-68px)
+  }
+
+  .swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after {
+    content: 'prev';
+    color: aliceblue;}
