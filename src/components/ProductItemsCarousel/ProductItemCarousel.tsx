@@ -1,6 +1,7 @@
 import React ,{useEffect}from 'react'
-import { BiHeart} from "react-icons/bi";
-import { amazing,IAmaZing } from '../../Data/Data';
+import ProductItem from '../ProductItem/ProductItem';
+import { amazing } from '../../Data/Data';
+import { IProduct } from '../../interface';
 
 
 // Import Swiper React components
@@ -23,14 +24,10 @@ import SwiperCore, {
 SwiperCore.use([Autoplay,Pagination,Navigation]);
 
 const ProductItemCarousel = ({}) => {
-    const [productItems,setProductItems] = React.useState<IAmaZing[]>(amazing)
-   
-    useEffect(()=>{
-        setProductItems(productItems.filter((item:IAmaZing)=>item.discount > 40))
-    },[])
+    const [productItems,setProductItems] = React.useState<IProduct[]>(amazing)
  
     const handleChangeImg =(id:number):void=>{
-        setProductItems(productItems.map((item:IAmaZing)=>item.id === id ?{...item,img:item.subImg} :item))
+        setProductItems(productItems.map((item:IProduct)=>item.id === id ?{...item,img:item.subImg} :item))
     }
       
      const handleChangeLiveImg =(id:number):void=>{
@@ -68,29 +65,13 @@ const ProductItemCarousel = ({}) => {
      
             pagination={false}  className="mySwiper">
           {
-            productItems.map((item:IAmaZing,index:number)=>(
+            productItems.map((item:IProduct,index:number)=>(
               <SwiperSlide key={item.id}>
-                 <div className="d-flex flex-column" onMouseLeave={()=>handleChangeLiveImg(item.id)} onMouseEnter={()=> handleChangeImg(item.id)}>
-                      <div className="product___card">
-                      <img src={item.img} alt={item.name} className={item.name} />
-                      <small className="descount">%{item.discount}</small>
-                      <div className="product___heart">
-                         <BiHeart  size={28} className="d-lg-none"/>
-                      </div>
-                    </div>
-                    <div className="d-flex justify-content-between py-3">
-                      <strong>{item.name}</strong>
-                      <small className="text-decoration-line-through text-muted"> {item.price}{" "}تومان</small>
-                    </div>
-
-                    <div className="d-flex justify-content-between pt-3 pb-1">
-                      <p className="m-0">{item.type}</p>
-                      <small className="product___card-price"> { item.price - (item.price * item.discount) / 100}{" "}تومان</small>
-                    </div>
-                    <div className="py-3 d-flex justify-content-start">
-                       <small className="product__card-size mb-2">{item.size}</small>
-                    </div>
-                 </div>
+                  <ProductItem 
+                    item={item}
+                    handleChangeImg={()=>handleChangeImg(item.id)}
+                    handleChangeLiveImg={()=>handleChangeLiveImg(item.id)}
+                   />
               </SwiperSlide>
             ))
           }
