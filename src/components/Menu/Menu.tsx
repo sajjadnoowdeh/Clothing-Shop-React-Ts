@@ -1,81 +1,53 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { Container } from "react-bootstrap";
+import {links,linksMale,linksFamale,linksBaby} from "../../routers/menu"
+import MenuList from "./MenuList/MenuList";
 import "./Menu.style.scss"
 const Menu = () => {
   return (
-    <Container fluid className="d-none d-lg-flex">
-      <ul className="d-flex menu justify-content-around mt-3 pb-2">
+    <Container fluid className="d-none d-lg-flex section-menu mb-4">
+      <ul className="d-flex menu justify-content-around mt-3 ">
         <li className="list-unstyled newDress__link ">
-          <a href="#"> جدیدترین ها</a>
+          <Link to="/newset">  جدیدترین ها</Link>
+  
           <div className="category__subnew">
             <ul>
               <strong>
-                <a href="#">جدبدترین ها</a>
-              </strong>
-              <li className="list-unstyled">
-                <a href="#">زنانه</a>{" "}
-              </li>
-              <li className="list-unstyled">
-                <a href="#">مردانه</a>{" "}
-              </li>
-              <li className="list-unstyled">
-                <a href="#">بچگانه</a>{" "}
-              </li>
+                   جدبدترین ها
+                </strong>
+                <MenuList data={links} />
             </ul>
           </div>
         </li>
         <li className="list-unstyled male__link ">
-          <a href="#">مردانه</a>
+         
+          <Link to="/maleAll">مردانه</Link>
+        
 
           <div className="menu-sub__male">
             <ul>
               <strong>لباس مردانه</strong>
-              <li className="list-unstyled">
-                <a href="#">تیشرت</a>{" "}
-              </li>
-              <li className="list-unstyled">
-                <a href="#">بیراهن</a>{" "}
-              </li>
-              <li className="list-unstyled">
-                <a href="#">کت و شلوار</a>{" "}
-              </li>
+              <MenuList data={linksMale} />
             </ul>
           </div>
         </li>
         <li className="list-unstyled famale__link">
-          <a href="#">زنانه</a>
+          <Link to="/famaleAll">زنانه</Link>
           <div className="menu-sub__female">
             <ul>
               <strong>لباس زنانه</strong>
-              <li className="list-unstyled">
-                <a href="#">مانتو</a>{" "}
-              </li>
-              <li className="list-unstyled">
-                <a href="#">شلوار</a>{" "}
-              </li>
-              <li className="list-unstyled">
-                {" "}
-                <a href="#">دامن</a>{" "}
-              </li>
+                 <MenuList data={linksFamale} />
             </ul>
           </div>
         </li>
         <li className="list-unstyled baby__link">
-          <a href="#">بچگانه</a>
+          <Link to="/baby" >بچگانه</Link>
 
           <div className="baby-sub__female ">
             <ul>
               <strong>لباس بچگانه</strong>
-              <li className="list-unstyled">
-                <a href="#">لباس نوزاد</a>{" "}
-              </li>
-              <li className="list-unstyled">
-                <a href="#">لوازم غذا خوری </a>{" "}
-              </li>
-              <li className="list-unstyled">
-                {" "}
-                <a href="#">شیشه شیر</a>{" "}
-              </li>
+              <MenuList data={linksBaby} />
             </ul>
           </div>
         </li>
