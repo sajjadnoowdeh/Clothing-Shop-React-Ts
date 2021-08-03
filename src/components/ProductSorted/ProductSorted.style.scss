@@ -1,0 +1,47 @@
+
+.sidebar-sorted{
+    height: 50px;
+    font-size: 14px;
+    border-radius: 10px;
+    background-color: #f5f5f5 !important;
+    span{
+        color:#8c8c8c;
+        width:10%;
+    }
+    li{
+        list-style: none;
+        cursor: pointer;
+        position: relative;
+       
+        
+    }
+    ul{
+        width: 90%;
+    }
+}
+
+
+// while active link sorted
+.active{
+    &::after{
+        content: "";
+        border-bottom: 2px solid #1ac977;
+        position: absolute;
+        bottom: -13px;
+        width: 104px;
+        right: -6px;
+    
+    }
+    color: #1ac977;
+}
+
+@keyframes animateBorderSorted {
+    0%{
+        width: 0;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        width: 104px;
+    }
+}
