@@ -1,7 +1,7 @@
 import React from 'react';
+import {Route,Link,Switch,BrowserRouter as Router} from "react-router-dom"
 import { NavbarDress ,NavbarBottom,Menu,Footer} from './components';
-import HomePage from './pages/HomePage/HomePage';
-// const HomePage = React.lazy(()=> import("./pages/HomePage/HomePage"))
+import { routers } from './routers/routers';
 import "./App.scss"
 
 
@@ -9,13 +9,24 @@ function App() {
 
   return (
     <>
+
+    <Router>
     <NavbarDress />
     <NavbarBottom />
     <Menu/>
-     
-     <HomePage />
-        
+       <Switch>
+            {routers.map(({path,exact,Component},index)=>(
+              <Route key={index} path={path} exact={exact} render={(props)=> <Component {...props}/>} />
+            ))}
+        </Switch>
+         
       <Footer/>
+    </Router>
+   
+      
+ 
+     
+
     </>
   );
 }
