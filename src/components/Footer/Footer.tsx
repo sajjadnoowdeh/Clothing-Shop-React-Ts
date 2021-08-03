@@ -1,24 +1,25 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import "./Footer.style.scss"
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer py-5">
       <Container>
-        <div className="d-flex ">
-        <div>
-            <strong>خرید</strong>
+        <div className="d-flex flex-column align-items-center flex-lg-row justify-content-lg-between">
+        <div className="section-footer">
+            <p>خرید</p>
             <ul>
               <li>لباس مردانه</li>
               <li> لباس زنانه</li>
               <li> لباس بچگانه</li>
             </ul>
           </div>
-          <div>
-            <strong>خدمات مشتریان</strong>
+          <div className="section-footer">
+            <p>خدمات مشتریان</p>
             <ul>
               <li>
                 {" "}
-                <p> برسش های متداول</p>
+                <li> برسش های متداول</li>
               </li>
               <li>
                 {" "}
@@ -26,30 +27,31 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
+
+          <div className="section-footer">
+            <p>اطلاعات فروشگاه</p>
             <ul>
-              <li>میزبان صدای گرمتان هستیم</li>
+              <li>
+                {" "}
+                <li>درباره ما</li>
+              </li>
+            </ul>
+          </div>
+          <div className="section-footer">
+            <ul>
+              <p>میزبان صدای گرمتان هستیم</p>
               <li>7 روز هفته - 24 ساعته</li>
               <li>ایمیل:sajjad.noowdeh91@gmail.com</li>
             </ul>
           </div>
 
-          <div>
-            <strong>اطلاعات فروشگاه</strong>
-            <ul>
-              <li>
-                {" "}
-                <p>درباره ما</p>
-              </li>
-            </ul>
-          </div>
 
           <div className="brand-footer">
             <img
               src="https://www.banimode.com//themes/new/assets/images/footer/footer-logo.png"
               alt=""
             />
-            <div className="brand-footer-social">
+            <div className="brand-footer-social py-4">
               <img
                 src="https://www.banimode.com//themes/new/assets/images/footer-twitter.svg"
                 alt="twiiter"

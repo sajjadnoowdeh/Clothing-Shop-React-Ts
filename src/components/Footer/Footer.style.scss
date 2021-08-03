@@ -1,0 +1,32 @@
+.footer{
+    border-top: 2px solid #f9f9f9;
+    .brand-footer > img{
+        font-size: 14px;
+        width: 157px;
+        
+    }
+   
+}
+
+.section-footer{
+    height: 8rem;
+    ul {
+      
+        height: 100%;
+    }
+    li{
+        padding: 0 0 10px 0;
+        font-size: 14px;
+    }
+    p:not(:last-child){
+        color:#808080
+    }
+}
+
+.brand-footer-social img{
+    border: 1px solid;
+    width: 37px;
+    padding: 6px;
+    border-radius: 50%;
+    margin: 0 2px;
+}
