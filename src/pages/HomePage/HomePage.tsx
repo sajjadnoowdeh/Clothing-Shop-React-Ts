@@ -4,11 +4,21 @@ import { Container,Row,Col } from 'react-bootstrap'
 import { Carousel ,Category,CountDown,ProductItemCarousel,ProductItemSuggest} from '../../components'
 import CategoryProduct from "../../components/CategoryProduct/CategoryProduct";
 import { RouteComponentProps } from "react-router";
+import { products } from "../../Data/Data";
+import {IProduct} from '../../interface'
 import "./HomePage.style.scss";
 
 interface IHomePage extends RouteComponentProps {}
 const HomePage:React.FC<IHomePage> = () => {
-  
+  const [stateAmazing,setStateAmazing] = React.useState<IProduct[]>() 
+  const [stateSuggest,setStateSuggest] = React.useState<IProduct[]>() 
+
+  useEffect(() => {
+    setStateAmazing(products.filter((item)=>item.category === "amazing"))
+    setStateSuggest(products.filter((item)=>item.category === "suggest"))
+
+  }, [])
+
     return (
         <>
           <Carousel />
@@ -59,7 +69,10 @@ const HomePage:React.FC<IHomePage> = () => {
                   {/* Carousel Product */}
                   <Row className="pt-5 pb-2">
                       <Col>
-                         <ProductItemCarousel/>
+                         <ProductItemCarousel
+                           stateAmazing={stateAmazing}
+                           setStateAmazing={setStateAmazing}
+                         />
                       </Col>
                   </Row>
                   <div className="section-show-all__amazing d-flex justify-content-center">
@@ -93,7 +106,10 @@ const HomePage:React.FC<IHomePage> = () => {
                       </Col>
                     
                      <Col>
-                        <ProductItemSuggest />
+                        <ProductItemSuggest 
+                          stateSuggest={stateSuggest}
+                          setStateSuggest={setStateSuggest} 
+                         />
                      </Col>
                   </Row>
               </section>
