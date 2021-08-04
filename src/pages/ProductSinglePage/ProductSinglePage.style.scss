@@ -1,0 +1,44 @@
+.discount-value{
+    color: #f16422;
+    font-size: 14px;
+}
+
+.discount-price{
+    background: #ffeae0;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 5px 20px;
+}
+.discount{
+    color: #949597;
+}
+.price{
+    color: #00bf6f;position: relative;
+    &::after{
+        position: absolute;
+        content: '';
+        width: 183px;
+        height: 1px;
+        background: #ebebeb;
+        bottom: -32px;
+        right: 0;
+    }
+}
+
+.single-select{
+    width: 215px;
+    border: 1px solid #ebebeb;
+    padding: 8px;
+    background: transparent;
+    border-radius: 8px;
+}
+.btn-size{
+    @extend .single-select;
+    color:#00bf6f;
+}
+.basket{
+    background-color: #00bf6f;
+    border: 1px solid #00bf6f;
+    padding: 1rem 136px;
+    color: white;
+}
