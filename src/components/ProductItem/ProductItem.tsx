@@ -6,11 +6,12 @@ interface IProductItem{
     item:IProduct
     handleChangeImg:Function
     handleChangeLiveImg:Function
+    onClick?:Function | undefined
 }
-const ProductItem:React.FC<IProductItem> = ({item,handleChangeLiveImg,handleChangeImg}) => {
+const ProductItem:React.FC<IProductItem> = ({item,handleChangeLiveImg,handleChangeImg,onClick}) => {
 
     return (
-        <div className="d-flex flex-column" onMouseLeave={()=>handleChangeLiveImg()} onMouseEnter={()=> handleChangeImg()}>
+        <div className="d-flex flex-column" onMouseLeave={()=>handleChangeLiveImg()} onMouseEnter={()=> handleChangeImg()} onClick={()=>(onClick)&&onClick()}>
         <div className="product___card">
         <img src={item.img} alt={item.name} className={item.name} />
         {item.discount ? <small className="descount"> %{item.discount}</small> : null}
