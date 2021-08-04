@@ -9,7 +9,7 @@ const Menu = () => {
     <Container fluid className="d-none d-lg-flex section-menu mb-4">
       <ul className="d-flex menu justify-content-around mt-3 ">
         <li className="list-unstyled newDress__link ">
-          <Link to="/newset">  جدیدترین ها</Link>
+          <Link to="/category/newset">  جدیدترین ها</Link>
   
           <div className="category__subnew">
             <ul>
@@ -22,7 +22,7 @@ const Menu = () => {
         </li>
         <li className="list-unstyled male__link ">
          
-          <Link to="/maleAll">مردانه</Link>
+          <Link to="/category/maleAll">مردانه</Link>
         
 
           <div className="menu-sub__male">
@@ -33,7 +33,7 @@ const Menu = () => {
           </div>
         </li>
         <li className="list-unstyled famale__link">
-          <Link to="/famaleAll">زنانه</Link>
+          <Link to="/category/famaleAll">زنانه</Link>
           <div className="menu-sub__female">
             <ul>
               <strong>لباس زنانه</strong>
@@ -42,7 +42,7 @@ const Menu = () => {
           </div>
         </li>
         <li className="list-unstyled baby__link">
-          <Link to="/baby" >بچگانه</Link>
+          <Link to="/category/babyAll" >بچگانه</Link>
 
           <div className="baby-sub__female ">
             <ul>
