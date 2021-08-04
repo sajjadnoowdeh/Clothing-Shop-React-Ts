@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { suggests } from "../../Data/Data";
+import { products } from "../../Data/Data";
 import ProductItem from "../ProductItem/ProductItem";
 import { IProduct } from "../../interface";
 
@@ -18,20 +18,22 @@ import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper/core";
 
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination, Navigation]);
-
-const ProductItemSuggest = () => {
-  const [productItems, setProductItems] = React.useState<IProduct[]>(suggests);
+interface IProductSuggest{
+  stateSuggest:IProduct[] | undefined
+  setStateSuggest:Function
+}
+const ProductItemSuggest:React.FC<IProductSuggest> = ({stateSuggest,setStateSuggest}) => {
 
   const handleChangeImg = (id: number): void => {
-    setProductItems(
-      productItems.map((item: IProduct) =>
+    (stateSuggest)&&   setStateSuggest(
+    stateSuggest.map((item: IProduct) =>
         item.id === id ? { ...item, img: item.subImg } : item
       )
     );
   };
 
   const handleChangeLiveImg = (id: number): void => {
-    setProductItems(suggests);
+    setStateSuggest(products.filter((item)=>item.category === "suggest"));
   };
   return (
     <Swiper
@@ -59,7 +61,7 @@ const ProductItemSuggest = () => {
       pagination={false}
       className="mySwiper"
     >
-      {productItems.map((item: IProduct, index: number) => (
+      { (stateSuggest)&& stateSuggest.map((item: IProduct, index: number) => (
         <SwiperSlide key={item.id}>
           <ProductItem
             item={item}
@@ -73,3 +75,5 @@ const ProductItemSuggest = () => {
 };
 
 export default ProductItemSuggest;
+
+

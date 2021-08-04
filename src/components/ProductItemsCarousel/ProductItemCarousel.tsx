@@ -1,6 +1,6 @@
 import React ,{useEffect}from 'react'
 import ProductItem from '../ProductItem/ProductItem';
-import { amazing } from '../../Data/Data';
+import { products } from '../../Data/Data';
 import { IProduct } from '../../interface';
 
 
@@ -19,66 +19,71 @@ import "./ProductItemCarousel.style.scss"
 import SwiperCore, {
   Pagination,Navigation,Autoplay
 } from 'swiper/core';
+import { stat } from 'fs';
 
 // install Swiper modules
 SwiperCore.use([Autoplay,Pagination,Navigation]);
-
-const ProductItemCarousel = ({}) => {
-    const [productItems,setProductItems] = React.useState<IProduct[]>(amazing)
- 
-    const handleChangeImg =(id:number):void=>{
-        setProductItems(productItems.map((item:IProduct)=>item.id === id ?{...item,img:item.subImg} :item))
-    }
-      
-     const handleChangeLiveImg =(id:number):void=>{
-     setProductItems(amazing)
+interface IProductCarousel{
+  stateAmazing:IProduct[] | undefined
+  setStateAmazing:Function
  }
-    return (
-        <Swiper 
-        autoplay={{"delay": 3000, "disableOnInteraction": false}}
-        //  slidesPerView={5} 
-          spaceBetween={15} 
-          slidesPerGroup={1} 
-          navigation={true}
-          loop={true}
-           loopFillGroupWithBlank={true}
-           breakpoints={{
-            "340": {
-              "slidesPerView": 1,
-              "spaceBetween": 20,
+  const ProductItemCarousel:React.FC<IProductCarousel> = ({stateAmazing,setStateAmazing}) => {
+ 
+      const handleChangeImg =(id:number):void=>{
+         (stateAmazing)&& setStateAmazing(stateAmazing.map((item:IProduct)=>item.id === id ?{...item,img:item.subImg} :item))
+      }
+      
+       const handleChangeLiveImg =(id:number):void=>{
+        setStateAmazing(products.filter((item)=>item.category === "amazing"))
+   }
+      return (
+          <Swiper 
+          autoplay={{"delay": 3000, "disableOnInteraction": false}}
+            slidesPerView={5} 
+            spaceBetween={15} 
+            slidesPerGroup={1} 
+            navigation={true}
+            loop={true}
+             loopFillGroupWithBlank={true}
+             breakpoints={{
+              "340": {
+                "slidesPerView": 1,
+                "spaceBetween": 20,
 
-            },
-            "640": {
-              "slidesPerView": 2,
-              // "spaceBetween": 20
-            },
-            "768": {
-              "slidesPerView": 4,
+              },
+              "640": {
+                "slidesPerView": 2,
+                 "spaceBetween": 20
+              },
+              "768": {
+                "slidesPerView": 4,
             
-              // "spaceBetween": 40
-            },
-            "1024": {
-              "slidesPerView": 4,
-              // "spaceBetween": 50
-            }
-          }}
+                 "spaceBetween": 40
+              },
+              "1024": {
+                "slidesPerView": 4,
+                 "spaceBetween": 50
+              }
+            }}
      
-            pagination={false}  className="mySwiper">
-          {
-            productItems.map((item:IProduct,index:number)=>(
-              <SwiperSlide key={item.id}>
-                  <ProductItem 
-                    item={item}
-                    handleChangeImg={()=>handleChangeImg(item.id)}
-                    handleChangeLiveImg={()=>handleChangeLiveImg(item.id)}
-                   />
-              </SwiperSlide>
-            ))
-          }
+              pagination={false}  className="mySwiper">
+            {
+           (stateAmazing)&&   stateAmazing.map((item:IProduct,index:number)=>(
+                <SwiperSlide key={item.id}>
+                    <ProductItem 
+                      item={item}
+                      handleChangeImg={()=>handleChangeImg(item.id)}
+                      handleChangeLiveImg={()=>handleChangeLiveImg(item.id)}
+                     />
+                </SwiperSlide>
+              ))
+            }
 
         
-      </Swiper>
-    )
-}
+        </Swiper>
+      )
+  }
 
-export default ProductItemCarousel
+  export default ProductItemCarousel
+
+
