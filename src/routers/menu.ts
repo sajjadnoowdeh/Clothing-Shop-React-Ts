@@ -1,25 +1,25 @@
 export const links =[
-      {link:"/newset/famale",title:"زنانه"},
-      {link:"/newset/male",title:"مردانه"},
-      {link:"/newset/baby",title:"بچگانه"}
+      {link:"/category/newsetFamale",title:"زنانه"},
+      {link:"/category/newsetMale",title:"مردانه"},
+      {link:"/category/newsetBaby",title:"بچگانه"}
 ]
 
 
 export const linksMale =[
-    {link:"/male/Tshirt",title:"تیشرت"},
-    {link:"/male/shirt",title:"بیراهن"},
-    {link:"/male/cout",title:"کت و شلوار"},
+    {link:"/category/Tshirt",title:"تیشرت"},
+    {link:"/category/shirt",title:"بیراهن"},
+    {link:"/category/cout",title:"کت و شلوار"},
 
 ]
 export const linksFamale=[
-    {link:"/famale/munto",title:"مانتو"},
-    {link:"/famale/pants",title:"شلوار"},
-    {link:"/famale/skirt",title:"دامن"},
+    {link:"/category/munto",title:"مانتو"},
+    {link:"/category/pants",title:"شلوار"},
+    {link:"/category/skirt",title:"دامن"},
 
 ]
 
 export const linksBaby=[
-    {link:"/baby/babyDress",title:"لباس نوزاد"},
-    {link:"/baby/jacket",title:" کاپشن"},
+    {link:"/category/baby",title:"لباس نوزاد"},
+    {link:"/category/jacket",title:" کاپشن"},
 
 ]
