@@ -6,7 +6,7 @@ export const products:IProduct[] = [
         category:"amazing",
         name:"Flirt",
         size:"X",
-        type:"ساعت مچی",
+        type:" بیراهن مردانه",
         price:49000,
         discount:30,
         img:"https://www.banimode.com/483588-large_default/42758.jpg",
@@ -18,7 +18,7 @@ export const products:IProduct[] = [
         category:"amazing",
         size:"XS",
         discount:47,
-        type:"ساعت مچی",
+        type:" بیراهن مردانه",
         name:"RNS",
         img:"https://www.banimode.com/531441-large_default/46519.jpg",
         subImg:"https://www.banimode.com/531439-large_default/46519.jpg"
@@ -53,7 +53,7 @@ export const products:IProduct[] = [
         category:"amazing",
         discount:49,
         size:"M",
-        type:"ساعت مچی",
+        type:" مانتو زنانه",
         name:"Just",
         img:"https://www.banimode.com/525653-large_default/45978.jpg",
         subImg:"https://www.banimode.com/525652-large_default/45978.jpg"
@@ -66,7 +66,7 @@ export const products:IProduct[] = [
         category:"amazing",
         discount:39,
         size:"XS",
-        type:"ساعت مچی",
+        type:" تیشرت زنانه",
         name:"Avant",
         img:"https://www.banimode.com/523423-large_default/45845.jpg",
         subImg:"https://www.banimode.com/523422-large_default/45845.jpg"
@@ -89,7 +89,7 @@ export const products:IProduct[] = [
         category:"amazing",
         discount:52,
         size:"M",
-        type:"ساعت مچی",
+        type:" تیشرت زنانه",
         name:"Anly",
         img:"https://www.banimode.com/536424-large_default/46808.jpg",
         subImg:"https://www.banimode.com/536425-large_default/46808.jpg"
