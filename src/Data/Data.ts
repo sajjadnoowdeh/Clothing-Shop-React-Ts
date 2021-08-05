@@ -42,7 +42,7 @@ export const products:IProduct[] = [
         category:"amazing",
         discount:57,
         size:"S",
-        type:"ساعت مچی",
+        type:" کت مردانه ارنیکا",
         name:"Arnika",
         img:"https://www.banimode.com/469082-large_default/41748.jpg",
         subImg:"https://www.banimode.com/469081-large_default/41748.jpg"
@@ -78,7 +78,7 @@ export const products:IProduct[] = [
         category:"amazing",
         discount:50,
         size:"L",
-        type:"ساعت مچی",
+        type:" تیشرت مردانه برندس",
         name:"Brands",
         img:"https://www.banimode.com/524668-large_default/45887.jpg",
         subImg:"https://www.banimode.com/524669-large_default/45887.jpg"
@@ -97,14 +97,14 @@ export const products:IProduct[] = [
 
     {
         id:9,
-        name:"Flirt",
+        name:"Baleno",
         category:"suggest",
         size:"X",
-        type:"ساعت مچی",
+        type:" تیشرت پسرانه بالنو",
         price:49000,
         discount:30,
-        img:"https://www.banimode.com/551065-large_default/47826.jpg",
-        subImg:"https://www.banimode.com/547932-large_default/47615.jpg"
+        img:"https://www.banimode.com/471411-large_default/41689.jpg",
+        subImg:"https://www.banimode.com/471412-large_default/41689.jpg"
     },
     {
         id:10,
@@ -112,7 +112,7 @@ export const products:IProduct[] = [
         price:70000,
         size:"XS",
         discount:47,
-        type:"ساعت مچی",
+        type:" شلوار مردانه از ان اس",
         name:"RNS",
         img:"https://www.banimode.com/548876-large_default/47684.jpg",
         subImg:"https://www.banimode.com/548875-large_default/47684.jpg"
@@ -124,7 +124,7 @@ export const products:IProduct[] = [
         price:80000,
         discount:27,
         size:"Xl",
-        type:"ساعت مچی",
+        type:" مانتو زنانه الوج",
         name:"Eloj",
         img:"https://www.banimode.com/548086-large_default/47546.jpg",
         subImg:"https://www.banimode.com/548085-large_default/47546.jpg"
@@ -136,7 +136,7 @@ export const products:IProduct[] = [
         category:"suggest",
         discount:57,
         size:"S",
-        type:"ساعت مچی",
+        type:" تیشرت مردانه ارنیکا",
         name:"Arnika",
         img:"https://www.banimode.com/551038-large_default/47887.jpg",
         subImg:"https://www.banimode.com/551037-large_default/47887.jpg"
@@ -148,7 +148,7 @@ export const products:IProduct[] = [
         category:"suggest",
         discount:49,
         size:"M",
-        type:"ساعت مچی",
+        type:" بیراهن مردانه جاست",
         name:"Just",
         img:"https://www.banimode.com/550840-large_default/47838.jpg",
         subImg:"https://www.banimode.com/550839-large_default/47838.jpg"
@@ -162,7 +162,7 @@ export const products:IProduct[] = [
         category:"suggest",
         discount:39,
         size:"XS",
-        type:"ساعت مچی",
+        type:"کت مردانه اواست",
         name:"Avant",
         img:"https://www.banimode.com/518722-large_default/45264.jpg",
         subImg:"https://www.banimode.com/522084-large_default/45264.jpg"
@@ -173,7 +173,7 @@ export const products:IProduct[] = [
         discount:50,
         category:"suggest",
         size:"L",
-        type:"ساعت مچی",
+        type:"   تیشرت زنانه برندس",
         name:"Brands",
         img:"https://www.banimode.com/550867-large_default/47822.jpg",
         subImg:"https://www.banimode.com/550866-large_default/47822.jpg"
@@ -1124,6 +1124,186 @@ export const products:IProduct[] = [
         subImg:"https://www.banimode.com/340494-large_default/32670.jpg"
     },
 
+    {
+        id:101,
+        price:90000,
+        category:"theWatch",
+        discount:57,
+        size:"تک سایز",
+        type:" ساعت مچی مردانه ال سی",
+        name:"LC",
+        img:"https://www.banimode.com/275903-large_default/26989.jpg",
+        subImg:"https://www.banimode.com/275906-large_default/26989.jpg"
+    },
+
+    {
+        id:102,
+        price:90000,
+        category:"theWatch",
+        discount:27,
+        size:"تک سایز",
+        type:" ساعت مچی مردانه  فیورلا",
+        name:"Fiorlla",
+        img:"https://www.banimode.com/245934-large_default/24709.jpg",
+        subImg:"https://www.banimode.com/245935-large_default/24709.jpg"
+    },
+    {
+        id:103,
+        price:90000,
+        category:"theWatch",
+        discount:17,
+        size:"تک سایز",
+        type:" ساعت مچی مردانه  بالنو",
+        name:"Baleno",
+        img:"https://www.banimode.com/280968-large_default/27075.jpg",
+        subImg:"https://www.banimode.com/275964-large_default/27075.jpg"
+    },
+    {
+        id:104,
+        price:20000,
+        category:"typesClothingMale",
+        discount:7,
+        size:"XL ",
+        type:"     پیراهن کتان مردانه بالنو",
+        name:"Baleno",
+        img:"https://www.banimode.com/518089-large_default/44470.jpg"        ,
+        subImg:"https://www.banimode.com/518083-large_default/44470.jpg"
+    },
+    {
+        id:105,
+        price:22000,
+        category:"typesClothingMale",
+        discount:8,
+        size:"L ",
+        type:"     شلوار کتان مردانه فیورلا",
+        name:"Fiorlla",
+        img:"https://www.banimode.com/541133-large_default/47136.jpg"        ,
+        subImg:"https://www.banimode.com/541134-large_default/47136.jpg"
+    },
+
+    {
+        id:106,
+        price:22000,
+        category:"typesClothingMale",
+        discount:18,
+        size:"S ",
+        type:"     شلوارک  مردانه ال سی",
+        name:"LC",
+        img:"https://www.banimode.com/548738-large_default/47698.jpg"        ,
+        subImg:"https://www.banimode.com/548740-large_default/47698.jpg"
+    },
+
+
+    {
+        id:107,
+        price:25000,
+        category:"typesClothingMale",
+        discount:28,
+        size:"M ",
+        type:"         تیشرت یقه گرد بالنو",
+        name:"Baleno",
+        img:"https://www.banimode.com/549827-large_default/47780.jpg"       ,
+        subImg:"https://www.banimode.com/549828-large_default/47780.jpg"
+    },
+
+    {
+        id:108,
+        price:35000,
+        category:"typesClothingSports",
+        discount:28,
+        size:"XS",
+        type:"      ست تیشرت و شلوارک ورزشی بالنو",
+        name:"Baleno",
+        img:    "https://www.banimode.com/529871-large_default/46118.jpg"        ,
+        subImg:"https://www.banimode.com/529872-large_default/46118.jpg"
+    },
+
+
+    {
+        id:109,
+        price:35000,
+        category:"typesClothingSports",
+        discount:68,
+        size:"Xl",
+        type:"        سوشیرت  ورزشی ال سی",
+        name:"LC",
+        img:    "https://www.banimode.com/530165-large_default/46608.jpg"        ,
+        subImg:"https://www.banimode.com/530166-large_default/46608.jpg"
+    },
+
+
+    {
+        id:110,
+        price:55000,
+        category:"typesClothingSports",
+        discount:68,
+        size:"M",
+        type:"        سوشیرت  ورزشی فیورلا ",
+        name:"Fiorlla",
+        img:    "https://www.banimode.com/529470-large_default/46269.jpg"      ,
+        subImg:"https://www.banimode.com/529471-large_default/46269.jpg"
+    },
+
+
+    {
+        id:111,
+        price:65000,
+        category:"typesClothingSports",
+        discount:68,
+        size:"XS",
+        type:"        ساک ورزشی  ورزشی فیورلا ",
+        name:"Fiorlla",
+        img:   "https://www.banimode.com/387446-large_default/33626.jpg"      ,
+        subImg:"https://www.banimode.com/387447-large_default/33626.jpg"
+    },
+    {
+        id:112,
+        price:75000,
+        category:"typesClothingBaby",
+        discount:68,
+        size:"L",
+        type:" کوله پشتی بچگانه ال سی",
+        name:"LC",
+        img:   "https://www.banimode.com/412625-large_default/36985.jpg"     ,
+        subImg:"https://www.banimode.com/412626-large_default/36985.jpg"
+    },
+    {
+        id:113,
+        price:85000,
+        category:"typesClothingBaby",
+        discount:28,
+        size:"XL",
+        type:" ست تیشرت و شلوارک راحتی پسرانه فیورلا",
+        name:"Fiorlla",
+        img:   "https://www.banimode.com/532176-large_default/46829.jpg"     ,
+        subImg:"https://www.banimode.com/532177-large_default/46829.jpg"
+    },
+    {
+        id:114,
+        price:55000,
+        category:"typesClothingBaby",
+        discount:48,
+        size:"L",
+        type:" ست تیشرت و سارافون دخترانه بالنو",
+        name:"Baleno",
+        img:   "https://www.banimode.com/531235-large_default/46451.jpg"    ,
+        subImg:"https://www.banimode.com/531236-large_default/46451.jpg"
+    },
+
+    {
+        id:115,
+        price:75000,
+        category:"typesClothingBaby",
+        discount:38,
+        size:"M",
+        type:"یراهن دخترانه برندس بالنو",
+        name:"Baleno",
+        img:   "https://www.banimode.com/520903-large_default/45608.jpg"   ,
+        subImg:"https://www.banimode.com/520904-large_default/45608.jpg"
+    },
+
+    
+    
 ]
 
 

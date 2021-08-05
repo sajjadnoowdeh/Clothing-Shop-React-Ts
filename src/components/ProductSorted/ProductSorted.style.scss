@@ -22,7 +22,7 @@
 
 
 // while active link sorted
-.active{
+.active-sorted{
     &::after{
         content: "";
         border-bottom: 2px solid #1ac977;
