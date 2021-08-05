@@ -6,13 +6,14 @@ import CategoryProduct from "../../components/CategoryProduct/CategoryProduct";
 import { RouteComponentProps } from "react-router";
 import { products } from "../../Data/Data";
 import {IProduct} from '../../interface'
+import { useHistory } from "react-router";
 import "./HomePage.style.scss";
 
 interface IHomePage extends RouteComponentProps {}
 const HomePage:React.FC<IHomePage> = () => {
   const [stateAmazing,setStateAmazing] = React.useState<IProduct[]>() 
   const [stateSuggest,setStateSuggest] = React.useState<IProduct[]>() 
-
+  const history = useHistory()
   useEffect(() => {
     setStateAmazing(products.filter((item)=>item.category === "amazing"))
     setStateSuggest(products.filter((item)=>item.category === "suggest"))
@@ -26,7 +27,8 @@ const HomePage:React.FC<IHomePage> = () => {
               <Row>
                       <Category                     
                         imgSrc= "https://www.banimode.com/img/cms/000504/1627307986.jpg"
-                        alt="ساعت"                      
+                        alt="ساعت" 
+                        href="/category/theWatch"                     
                       />
                      <Category                     
                         imgSrc= "https://www.banimode.com/img/cms/000502/1627103140.jpg"
@@ -55,6 +57,7 @@ const HomePage:React.FC<IHomePage> = () => {
 
               <section className="section__amazing py-5">
                   <Row className="pt-5 pb-0">
+                    
                       <Col lg={6}>
                           <h3 className="section__amazing-title d-flex justify-content-center justify-content-lg-start py-3 py-lg-0" >شگفت انگیزهای روز</h3>
                       </Col>
@@ -76,23 +79,26 @@ const HomePage:React.FC<IHomePage> = () => {
                       </Col>
                   </Row>
                   <div className="section-show-all__amazing d-flex justify-content-center">
-                      <button>مشاهده همه</button>
+                      <button onClick={()=>history.push("/category/suggest")}>مشاهده همه</button>
                   </div>
               </section>
                 
               <section className="main__products my-5">
                  <Row>
-                    <Col md={6} className="pb-2 pb-lg-0  ">
-                           <div className="main__products-food__stuffs">
-                              <img src="https://www.banimode.com/img/cms/000505/1627385729.jpg" alt="محصولات غذایی" />
-                           </div>
-                    </Col>
-
-                    <Col md={6}  className="pb-2 pb-lg-0">
-                    <div className="main__products-game">
-                              <img src="https://www.banimode.com/img/cms/000505/1627385720.jpg" alt="محصولات غذایی" />
-                           </div>
-                    </Col>
+                    <Col md={6} className="p-0 ps-0  ps-md-2  d-flex pb-3">
+                        <CategoryProduct 
+                            srcImg="https://www.banimode.com/img/cms/000502/1627103309.jpg" 
+                              alt={'انواع بوشاک مردانه'}
+                              href={"/category/typesClothingMale"}
+                          />
+                        </Col>
+                        <Col md={6} className="p-0 pe-0  pe-md-2  d-flex  pb-3">
+                        <CategoryProduct 
+                            srcImg="https://www.banimode.com/img/cms/000502/1627103406.jpg"
+                              alt={' ورزشی انواع بوشاک'}
+                              href={"/category/typesClothingSports"}
+                          />
+                        </Col>
                  </Row>
               </section> 
 
@@ -116,25 +122,17 @@ const HomePage:React.FC<IHomePage> = () => {
        
              <section className="section__category-products py-5">
                      <Row>
-                       <Col md={6} className="p-0 d-flex pb-3">
-                          <CategoryProduct 
-                            srcImg="https://www.banimode.com/img/cms/000502/1627103309.jpg" 
-                              alt={'انواع بوشاک'}
-                          />
-                        </Col>
-                        <Col md={6} className="p-0 d-flex  pb-3">
-                        <CategoryProduct 
-                            srcImg="https://www.banimode.com/img/cms/000502/1627103406.jpg"
-                              alt={'انواع بوشاک'}
-                          />
-                        </Col>
-                        <Col md={6} className="p-0 d-flex  pb-3">
+                       
+                         
+                        <Col md={6} className="p-0 ps-0  ps-md-2  d-flex  pb-3">
                         <CategoryProduct 
                             srcImg="https://www.banimode.com/img/cms/000502/1627103382.jpg"
-                              alt={'انواع بوشاک'}
+                              alt={' بچگانه  انواع بوشاک'}
+                              href={"/category/typesClothingBaby"}
+                            
                           />
                         </Col>
-                        <Col md={6} className="p-0 d-flex  pb-3">
+                        <Col md={6} className="p-0 pe-0  pe-md-2   d-flex  pb-3">
                         <CategoryProduct 
                             srcImg="https://www.banimode.com/img/cms/000502/1627103292.jpg"
                               alt={'انواع بوشاک'}

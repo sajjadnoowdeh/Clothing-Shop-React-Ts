@@ -8,13 +8,15 @@ import {
   SidebarChidren,
 } from "../../components";
 import { products } from "./../../Data/Data";
-import { useParams } from 'react-router';
+import { useParams ,useHistory,useRouteMatch} from 'react-router';
 import { IProduct } from "./../../interface";
 
 function CategoryProducts() {
+
     let {category_name }= useParams<{category_name:string}>();
     const [prouctItems,setProductItems] = React.useState<IProduct[]>()
-   
+    const history = useHistory()
+    const match = useRouteMatch()
     useEffect(() => {
      
      setProductItems(products.filter((item)=>item.category ===  category_name))
@@ -22,6 +24,8 @@ function CategoryProducts() {
     
     useEffect(() => {
          console.log(prouctItems)
+         console.log(match);
+         
     }, [prouctItems])
 
     
@@ -39,9 +43,9 @@ function CategoryProducts() {
     return (
         <>
         <Container>
-        <p className="py-2 title-category" style={{color:"#f16422",fontWeight:600}}>{" بچگانه>>   کاپشن"}</p>
+        {/* <p className="py-2 title-category" style={{color:"#f16422",fontWeight:600}}>{" بچگانه>>   کاپشن"}</p> */}
 
-          <Row className="d-flex justify-content-between">
+          <Row className="d-flex justify-content-between py-4">
             <Col lg={3}>
               <SidebarChidren>
                 <SidebarFilterProduct lable={"LC"} name={"LC"} />
@@ -49,7 +53,10 @@ function CategoryProducts() {
                 <SidebarFilterProduct lable={"Baleno"} name={"Baleno"} />
               </SidebarChidren>
   
+                {
+                  (category_name !== "theWatch") &&
               <SidebarFilterSize />
+                }
             </Col>
             <Col lg={8}>
               <ProductStored />
@@ -59,6 +66,7 @@ function CategoryProducts() {
                     <Col lg={6} key={item.id}>
                       <ProductItem
                         item={item}
+                        onClickHistory={()=>history.push(`${match.url}/${item.id}`)}
                         handleChangeImg={() => handleChangeImg(item.id)}
                         handleChangeLiveImg={() => handleChangeLiveImg(item.id)}
                       />
