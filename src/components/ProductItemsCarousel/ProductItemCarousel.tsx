@@ -2,7 +2,7 @@ import React ,{useEffect}from 'react'
 import ProductItem from '../ProductItem/ProductItem';
 import { products } from '../../Data/Data';
 import { IProduct } from '../../interface';
-
+import { History } from 'swiper/core';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,6 +20,7 @@ import SwiperCore, {
   Pagination,Navigation,Autoplay
 } from 'swiper/core';
 import { stat } from 'fs';
+import { useHistory } from 'react-router';
 
 // install Swiper modules
 SwiperCore.use([Autoplay,Pagination,Navigation]);
@@ -28,7 +29,7 @@ interface IProductCarousel{
   setStateAmazing:Function
  }
   const ProductItemCarousel:React.FC<IProductCarousel> = ({stateAmazing,setStateAmazing}) => {
- 
+      const history = useHistory()
       const handleChangeImg =(id:number):void=>{
          (stateAmazing)&& setStateAmazing(stateAmazing.map((item:IProduct)=>item.id === id ?{...item,img:item.subImg} :item))
       }
@@ -66,11 +67,12 @@ interface IProductCarousel{
               }
             }}
      
-              pagination={false}  className="mySwiper">
+              pagination={false}  className="mySwiper swiper-amazing">
             {
            (stateAmazing)&&   stateAmazing.map((item:IProduct,index:number)=>(
                 <SwiperSlide key={item.id}>
                     <ProductItem 
+                     onClick={()=>history.push(`/category/amazing/${item.id}`)}
                       item={item}
                       handleChangeImg={()=>handleChangeImg(item.id)}
                       handleChangeLiveImg={()=>handleChangeLiveImg(item.id)}

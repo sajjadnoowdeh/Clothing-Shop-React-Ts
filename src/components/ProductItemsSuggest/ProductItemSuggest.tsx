@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { products } from "../../Data/Data";
 import ProductItem from "../ProductItem/ProductItem";
 import { IProduct } from "../../interface";
-
+import { useHistory } from "react-router";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -16,6 +16,7 @@ import "./ProductItemSuggest.style.scss";
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper/core";
 
+
 // install Swiper modules
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 interface IProductSuggest{
@@ -23,7 +24,7 @@ interface IProductSuggest{
   setStateSuggest:Function
 }
 const ProductItemSuggest:React.FC<IProductSuggest> = ({stateSuggest,setStateSuggest}) => {
-
+  const history = useHistory()
   const handleChangeImg = (id: number): void => {
     (stateSuggest)&&   setStateSuggest(
     stateSuggest.map((item: IProduct) =>
@@ -65,6 +66,7 @@ const ProductItemSuggest:React.FC<IProductSuggest> = ({stateSuggest,setStateSugg
         <SwiperSlide key={item.id}>
           <ProductItem
             item={item}
+            onClick={()=>history.push(`/category/suggest/${item.id}`)}
             handleChangeImg={() => handleChangeImg(item.id)}
             handleChangeLiveImg={() => handleChangeLiveImg(item.id)}
           />
