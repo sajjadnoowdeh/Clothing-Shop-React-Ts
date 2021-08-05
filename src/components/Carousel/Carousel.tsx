@@ -18,19 +18,20 @@ const Carousel = () => {
   return (
     <>
       <Swiper
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
         navigation={true}
-        breakpoints={{
+        // breakpoints={{
   
-          "768": {
-            "navigation":true
-          },
+        //   "768": {
+        //     "navigation":true
+        //   },
           
-        }}
-        pagination={{
-          type: "progressbar",
-        }}
+        // }}
+        // pagination={{
+        //   type: "progressbar",
+        // }}
         className="mySwiper"
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
+
       >
         <SwiperSlide>
           <img
