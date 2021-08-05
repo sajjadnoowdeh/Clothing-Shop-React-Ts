@@ -12,7 +12,7 @@ export const linksMale =[
 
 ]
 export const linksFamale=[
-    {link:"/category/munto",title:"مانتو"},
+    {link:"/category/manto",title:"مانتو"},
     {link:"/category/pants",title:"شلوار"},
     {link:"/category/skirt",title:"دامن"},
 

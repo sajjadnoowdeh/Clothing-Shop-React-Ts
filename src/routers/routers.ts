@@ -4,9 +4,8 @@ const ProductSinglePage= React.lazy(()=> import("../pages/ProductSinglePage/Prod
 const CategoryProducts = React.lazy(()=>import("../pages/CategoryProducts/CategoryProducts"))
 export let routers = [
         {path:"/", exact:true, Component:HomePage},
-        {path:"/category/:category_name", exact:true, Component:CategoryProducts},
-        {path:"/suggest/:id", exact:true, Component:ProductSinglePage},
-        {path:"/category/:category_name", exact:true, Component:CategoryProducts},
+        {path:"/category/:category_name/", exact:true, Component:CategoryProducts},
+        {path:"/category/:category_name/:id", exact:true, Component:ProductSinglePage},
 
 
 
