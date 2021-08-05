@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Footer.style.scss"
 const Footer = () => {
   return (
@@ -8,10 +9,10 @@ const Footer = () => {
         <div className="d-flex flex-column align-items-center flex-lg-row justify-content-lg-between">
         <div className="section-footer">
             <p>خرید</p>
-            <ul>
-              <li>لباس مردانه</li>
-              <li> لباس زنانه</li>
-              <li> لباس بچگانه</li>
+            <ul className="d-flex flex-column">
+             <li> <Link to="/category/maleAll">لباس مردانه</Link></li>
+             <li> <Link to="/category/famaleAll"> لباس زنانه</Link></li>
+          <li>    <Link to="/category/babyAll"> لباس بچگانه</Link></li>
             </ul>
           </div>
           <div className="section-footer">
