@@ -12,6 +12,7 @@ import Footer from "./Footer/Footer";
 import SidebarFilterProduct from "./Sidebar/SidebarFilterProdiuct/SidebarFilterProduct";
 import SidebarFilterSize from "./Sidebar/SidebarFilterSize/SidebarFilterSize";
 import SidebarChidren from "./Sidebar/SidebarChildern/SidebarChidren";
+import ProductSingleTabs from "../pages/ProductSinglePage/ProductSingleTabs";
 export {
   NavbarBottom,
   NavbarDress,
@@ -26,5 +27,6 @@ export {
   ProductStored,
   SidebarFilterSize,
   SidebarFilterProduct,
-  SidebarChidren
+  SidebarChidren,
+  ProductSingleTabs
 };
