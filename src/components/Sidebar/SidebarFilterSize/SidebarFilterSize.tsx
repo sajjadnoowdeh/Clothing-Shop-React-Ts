@@ -6,7 +6,7 @@ const SidebarFilterSize = () => {
         <p > انداره</p>
 
     <select name="filter-size">
-        <option value="">All</option>
+        <option value="">همه</option>
          <option value="X"  >X</option>
          <option  value="XL" >XL</option>
          <option  value="M" >M</option>

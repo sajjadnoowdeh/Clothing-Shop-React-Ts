@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Footer.style.scss"
 const Footer = () => {
   return (
-    <footer className="footer py-5">
+    <footer className="footer py-5 d-none d-md-block">
       <Container>
         <div className="d-flex flex-column align-items-center flex-lg-row justify-content-lg-between">
         <div className="section-footer">
