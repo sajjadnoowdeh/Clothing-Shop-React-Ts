@@ -14,11 +14,12 @@ const ProductItem:React.FC<IProductItem> = ({item,handleChangeLiveImg,handleChan
     return (
         <div className="d-flex flex-column" onMouseLeave={()=>handleChangeLiveImg()} onMouseEnter={()=> handleChangeImg()} onClick={()=>(onClick)&&onClick()}>
         <div className="product___card" onClick={()=>(onClickHistory)&&onClickHistory()}>
-        <img src={item.img} alt={item.name} className={item.name} />
+        <img src={item.img} alt={item.name} className={`${item.name} img-product`} />
         {item.discount ? <small className="descount d-flex justify-content-center align-items-center"> %{item.discount}</small> : null}
         <div className="product___heart">
            <BiHeart  size={28} />
         </div>
+        <div className="product___card-bg"></div>
       </div>
       <div className="d-flex justify-content-between py-3">
         <strong>{item.name}</strong>
