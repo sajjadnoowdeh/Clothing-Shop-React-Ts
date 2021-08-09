@@ -57,6 +57,7 @@ const ProductItemSuggest:React.FC<IProductSuggest> = ({stateSuggest,setStateSugg
         },
         "1024": {
           slidesPerView: 4,
+          "spaceBetween": 30
         },
       }}
       pagination={false}
