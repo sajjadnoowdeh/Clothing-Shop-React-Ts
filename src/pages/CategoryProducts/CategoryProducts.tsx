@@ -7,38 +7,34 @@ import {
   ProductStored,
   SidebarChidren,
 } from "../../components";
+import { useDispatch,useSelector } from 'react-redux';
 import { products } from "./../../Data/Data";
 import { useParams ,useHistory,useRouteMatch} from 'react-router';
 import { IProduct } from "./../../interface";
-
+import { RootState } from '../../Store/reducers/store';
+import { productsCategoryFilter,productChangeImg,productChangeSubImg } from '../../Store/reducers/product.reducer/product.reducer';
+import "./CategoryProducts.style.scss"
 function CategoryProducts() {
 
     let {category_name }= useParams<{category_name:string}>();
-    const [prouctItems,setProductItems] = React.useState<IProduct[]>()
+    // const [prouctItems,setProductItems] = React.useState<IProduct[]>()
+    const prouctItems = useSelector((state:RootState)=>state.productsItems);
+    const dispatch = useDispatch()
     const history = useHistory()
     const match = useRouteMatch()
     useEffect(() => {
-     
-     setProductItems(products.filter((item)=>item.category ===  category_name))
+     dispatch(productsCategoryFilter(category_name))
     }, [category_name])
-    
-    useEffect(() => {
-         console.log(prouctItems)
-         console.log(match);
-         
-    }, [prouctItems])
+    React.useEffect(()=>{
+      window.scrollTo(0,0)
+    },[])
 
-    
       const handleChangeImg = (id: number): void => {
-        (prouctItems) &&  setProductItems(
-            prouctItems.map((item: IProduct) =>
-            item.id === id ? { ...item, img: item.subImg } : item
-          )
-        );
+        dispatch(productChangeImg(id))
       };
     
-      const handleChangeLiveImg = (id: number): void => {
-        setProductItems(products.filter((item)=>item.category ===  category_name))
+      const handleChangeLiveImg = (): void => {
+        dispatch(productChangeSubImg(category_name))
       };
     return (
         <>
@@ -55,20 +51,34 @@ function CategoryProducts() {
   
                 {
                   (category_name !== "theWatch") &&
-              <SidebarFilterSize />
+              // <SidebarFilterSize />
+
+           
+                  
+                  <select name="filter-size" className="select-filter my-2 my-lg-0">
+                  <option value="">همه</option>
+                    {
+                     prouctItems.productsData.map((item,index)=>(
+                      <option key={item.id} value={item.size}  >{item.size}</option>
+
+                    ))
+                    }
+                  </select>
                 }
             </Col>
             <Col lg={8}>
               <ProductStored />
+             
+
               <Row>
                 {
-               (prouctItems)&&   prouctItems.map((item: IProduct, index: number) => (
+                   prouctItems.productsData.map((item: IProduct, index: number) => (
                     <Col lg={6} key={item.id}>
                       <ProductItem
                         item={item}
                         onClickHistory={()=>history.push(`${match.url}/${item.id}`)}
                         handleChangeImg={() => handleChangeImg(item.id)}
-                        handleChangeLiveImg={() => handleChangeLiveImg(item.id)}
+                        handleChangeLiveImg={() => handleChangeLiveImg()}
                       />
                     </Col>
                   ))}
