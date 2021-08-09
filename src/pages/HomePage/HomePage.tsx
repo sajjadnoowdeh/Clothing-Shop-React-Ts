@@ -4,6 +4,7 @@ import { Container,Row,Col } from 'react-bootstrap'
 import { Carousel ,Category,CountDown,ProductItemCarousel,ProductItemSuggest} from '../../components'
 import CategoryProduct from "../../components/CategoryProduct/CategoryProduct";
 import { RouteComponentProps } from "react-router";
+import { FaArrowLeft ,FaPhoneVolume,FaEnvelopeOpenText,FaEnvelope} from "react-icons/fa";
 import { products } from "../../Data/Data";
 import {IProduct} from '../../interface'
 import { useHistory } from "react-router";
@@ -32,24 +33,30 @@ const HomePage:React.FC<IHomePage> = () => {
                       />
                      <Category                     
                         imgSrc= "https://www.banimode.com/img/cms/000502/1627103140.jpg"
-                        alt="کیف و کفش"                    
+                        alt="کیف و کفش"  
+                        href={"/category/typesBages"}                  
                       />
                   
                   <Category                     
                         imgSrc= "https://www.banimode.com/img/cms/000502/1627103147.jpg"
-                        alt="تیشرت"                   
+                        alt="تیشرت"      
+                        href={"/category/typesTshirt"}                 
                       />    
                   <Category                     
                         imgSrc= "https://www.banimode.com/img/cms/000504/1627307997.jpg"
-                        alt="عطر"                   
+                        alt="عطر"  
+                        href={"/category/typesPerfume"}                 
                       />
                   <Category                     
                         imgSrc= "https://www.banimode.com/img/cms/000504/1627308010.jpg"
-                        alt="بازی وسرگرمی"                   
+                        alt="بازی وسرگرمی"  
+                        href={"/category/typesGame"}                 
                       />
+                      
                   <Category                     
-                        imgSrc= "https://www.banimode.com/img/cms/000504/1627308010.jpg"
-                        alt="بازی وسرگرمی"                   
+                        imgSrc= "https://www.banimode.com/img/cms/000502/1627103215.jpg"
+                        alt=" کلرت هدیه"  
+                        href="/category/typesCard"                 
                       />
 
                  
@@ -136,6 +143,7 @@ const HomePage:React.FC<IHomePage> = () => {
                         <CategoryProduct 
                             srcImg="https://www.banimode.com/img/cms/000502/1627103292.jpg"
                               alt={'انواع بوشاک'}
+                              href={"/category/typesFamale"}
                           />
                         </Col>
                           
@@ -145,7 +153,7 @@ const HomePage:React.FC<IHomePage> = () => {
 
              <section className="section__guarantee py-5">
                  <Row>
-                 <Col md={3} >
+                 <Col md={3}  className="my-5 my-lg-3">
                       <div className="d-flex servises justify-content-center flex-column align-items-center">
                         <img src="https://www.banimode.com/themes/new/assets/images/icon/delivery.svg" alt="" />
                        
@@ -156,7 +164,7 @@ const HomePage:React.FC<IHomePage> = () => {
 
                       </div>
                     </Col>
-                    <Col md={3} >
+                    <Col md={3} className="my-5 my-lg-3" >
                       <div className="d-flex servises  justify-content-center flex-column align-items-center">
                         <img src="https://www.banimode.com/themes/new/assets/images/icon/originality.svg" alt="" />
                       
@@ -167,7 +175,7 @@ const HomePage:React.FC<IHomePage> = () => {
                         </small>
                       </div>
                     </Col>
-                    <Col md={3} >
+                    <Col md={3} className="my-5 my-lg-3" >
                       <div className="d-flex servises justify-content-center flex-column align-items-center">
                         <img src="https://www.banimode.com/themes/new/assets/images/icon/warranty.svg?ver=2" alt="" />
                         <p className="pt-4">ضمانت بازگشت کالا</p>
@@ -177,7 +185,7 @@ const HomePage:React.FC<IHomePage> = () => {
                       </div>
                     </Col>
                    
-                    <Col md={3} >
+                    <Col md={3}  className="my-5 my-lg-3">
                       <div className="d-flex servises justify-content-center flex-column align-items-center">
                         <img src="https://www.banimode.com/themes/new/assets/images/icon/support.svg" alt="" />
                         <p className="pt-3">خدمات پس از فروش</p>
@@ -194,7 +202,43 @@ const HomePage:React.FC<IHomePage> = () => {
              </section>
 
              
+           <section className="newslleter d-none d-lg-flex my-5 justify-content-center flex-column align-items-center ">
+                 <h3 className="mb-3">ثبت نام در خبرنامه </h3>
+                 <p className="text-muted">اولین نفری باشید که از جدیدترین محصولات، جشنواره ها و فروش‌های ویژه ما مطلع می شوید</p>
+                 <div className="newslleter__register">
+                 <form className="d-flex flex-column flex-lg-row" >
+                  <input type="text" className="input-register" placeholder="  ادرس ایمیل شما   " />
+                  <button className="newslleter__btn d-flex align-items-center me-2">
+                    <span>ارسال</span>
+                    <FaArrowLeft className="me-4" size={25}/>
+                  </button>
+                </form>
+                 </div>
+           </section>
 
+
+           <div className="footer-mobile d-md-none ">
+             <div className="d-flex pt-4 justify-content-center flex-column align-items-center">
+                <p >میزبان صدای گرمتان هستیم</p>
+                <small>۷ روز هفته - ۲۴  ساعته</small>
+             </div>
+
+             <div className="social">
+               <div>
+                  <FaPhoneVolume className="social-icon mx-2 my-2" size={37}   fill={"#00bf6f"}/>
+                  <small>09365679101</small>
+               </div>
+               <div>
+                  <FaEnvelopeOpenText  className="social-icon mx-2 my-2" size={37} fill={"#00bf6f"} />
+                  <small>100023</small>
+               </div>
+               <div>
+                  <FaEnvelope  className="social-icon mx-2 my-2" size={37}  fill={"#00bf6f"}/>
+                  <small>sajjad.noowdeh91@gmail.com</small>
+               </div>
+               
+             </div>
+           </div>
               
           </Container>
         </>
