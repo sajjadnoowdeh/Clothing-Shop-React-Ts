@@ -49,7 +49,7 @@ interface IProductCarousel{
              breakpoints={{
               "340": {
                 "slidesPerView": 1,
-                "spaceBetween": 20,
+                "spaceBetween": 10,
 
               },
               "640": {
@@ -63,7 +63,7 @@ interface IProductCarousel{
               },
               "1024": {
                 "slidesPerView": 4,
-                 "spaceBetween": 50
+                 "spaceBetween": 30
               }
             }}
      
