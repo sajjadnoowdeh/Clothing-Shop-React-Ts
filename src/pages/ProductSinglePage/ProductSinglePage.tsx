@@ -1,14 +1,18 @@
 import React from "react";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container, Col, Row,Button,Table } from "react-bootstrap";
 import { BiShoppingBag } from "react-icons/bi";
 import { useParams } from "react-router";
 import { products } from "../../Data/Data";
 import { IProduct } from "../../interface";
 import { FaRuler } from "react-icons/fa";
+import { BiHeart} from "react-icons/bi";
 import {ProductSingleTabs} from "../../components";
+import ProductModalSizes from "./ProductModalSizes";
+
 import "./ProductSinglePage.style.scss";
 const ProductSinglePage = () => {
   let { id } = useParams<{ id: string }>();
+  const [modalShow, setModalShow] = React.useState(false);
   const [product, setProduct] = React.useState<IProduct>();
   const [productImg, setProductImg] = React.useState<IProduct>();
   React.useEffect(() => {
@@ -16,6 +20,9 @@ const ProductSinglePage = () => {
     setProductImg(products.find((item) => item.id === +id));
   }, [id]);
 
+  React.useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
   React.useEffect(() => {
     console.log(product);
   }, [product]);
@@ -30,17 +37,24 @@ const ProductSinglePage = () => {
   }
 
   return (
-    <Container>
+
+    <>
+   
+      <Container>
       <Row className="py-4">
         <Col lg={6} className={"product"}>
           <div className="d-flex justify-content-center align-items-center">
             <img loading="lazy" src={product?.img} alt={product?.name} />
           </div>
           <div className={"discount-product"}>{product?.discount}%</div>
+          <div className="product-bg"></div>
         </Col>
         <Col lg={6} className="pt-4 px-3">
           <div>
+            <div className="d-flex justify-content-between">
             <h4>{product?.name}</h4>
+            <BiHeart color="black" size={40}/>
+            </div>
             <p className="my-3">{product?.type}</p>
             <span className="d-flex align-items-center my-4">
               <small
@@ -84,8 +98,8 @@ const ProductSinglePage = () => {
             <select
               name="selectSize"
               className="single-select"
-              placeholder="انتخاب سایز"
             >
+               <option defaultValue="" selected disabled hidden>انتخاب سایز </option>
               <option value="30">30</option>
               <option value="31">31</option>
               <option value="32">32</option>
@@ -96,7 +110,7 @@ const ProductSinglePage = () => {
               <option value="37">37</option>
             </select>
 
-            <button className="btn-size me-2 ">
+            <button className="btn-size me-2 "  onClick={() => setModalShow(true)}>
               <FaRuler size={20} />
               <span className="me-2">سایز من چنده؟</span>
             </button>
@@ -128,8 +142,21 @@ const ProductSinglePage = () => {
           <ProductSingleTabs />
         </Col>
       </Row>
+
+      <ProductModalSizes
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        product={product}
+      />
+
+
+
     </Container>
+      
+    
+    </>
   );
 };
+
 
 export default ProductSinglePage;
