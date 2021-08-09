@@ -26,9 +26,9 @@ const Carousel = () => {
         //   },
           
         // }}
-        // pagination={{
-        //   type: "progressbar",
-        // }}
+        pagination={{
+          type: "progressbar",
+        }}
         className="mySwiper"
         autoplay={{ delay: 2500, disableOnInteraction: false }}
 
@@ -57,6 +57,13 @@ const Carousel = () => {
             alt="pic4"
           />
         </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="https://www.banimode.com/img/cms/000516/1628310033.jpg"
+            alt="pic5"
+          />
+        </SwiperSlide>
+        
       </Swiper>
     </>
   );

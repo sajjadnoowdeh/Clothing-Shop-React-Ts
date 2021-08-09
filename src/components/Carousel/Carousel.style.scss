@@ -34,7 +34,12 @@
       background-color: black !important;
   }
 
-//   .swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after {
-//     content: 'prev';
-//     color: black;
-// }
+// config arrow carousel dispay
+
+.swiper-button-prev:after, .swiper-container-rtl .swiper-button-next:after {
+  content: 'prev';
+  display: none;
+  @media (min-width:768px) {
+    display: block;
+  }
+}
