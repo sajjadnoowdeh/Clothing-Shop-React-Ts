@@ -10,9 +10,13 @@
 
 }
 .desc-nav-bottom small{
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .desc-nav-bottom > div {
     cursor: pointer;
+}
+
+.selected{
+ color: #00bf6f !important;
 }

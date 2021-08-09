@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import {
   BiSearchAlt,
   BiHomeAlt,
@@ -14,24 +15,34 @@ const NavbarBottom = () => {
       <div className="desc-nav-bottom  d-flex d-lg-none px-4">
       <div className="d-flex flex-column align-items-center">
         <BiHomeAlt  size={28}/>
-        <small>خانه</small>
+        <NavLink exact activeClassName="selected" to="/" >
+       <small>خانه</small>
+  </NavLink>
+     
       </div>
-      <div className="d-flex flex-column align-items-center">
+      <div className="d-flex flex-column align-items-center justify-content-center">
         <BiSearchAlt  size={28}/>
-        <small>جستجو و دسته بندی</small>
+        <NavLink activeClassName="selected" to="/categoryMobile" > <small>جستجو و دسته بندی</small></NavLink>
+       
       </div>
 
-      <div className="d-flex flex-column align-items-center">
-        <BiShoppingBag  size={28}/>
-        <small>سبد خرید</small>
+      <div className="d-flex flex-column align-items-center justify-content-center">
+        <BiShoppingBag size={28}/>
+        <NavLink activeClassName="selected" to="/category/typesBages" >
+          <small>سبد خرید</small>
+        </NavLink>
+        
       </div>
-      <div className="d-flex flex-column align-items-center">
+      <div className="d-flex flex-column align-items-center justify-content-center">
         <BiHeart  size={28}/>
-        <small>علاقه مندی ها</small>
+        <NavLink activeClassName="selected" to="/newset" >      <small>علاقه مندی ها</small></NavLink>
+   
       </div>
-      <div className="d-flex flex-column align-items-center">
+      <div className="d-flex flex-column align-items-center justify-content-center">
         <BiUser  size={28}/>
-        <small>بروفایل</small>
+        <NavLink activeClassName="selected" to="/newset" >   <small>بروفایل</small></NavLink>
+
+      
       </div>
     </div>
 
