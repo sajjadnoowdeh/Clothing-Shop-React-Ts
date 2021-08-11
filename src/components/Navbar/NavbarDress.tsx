@@ -1,10 +1,13 @@
 import React from 'react'
 import {Container,Navbar,Badge,Nav,NavDropdown,Form,FormControl,Button} from "react-bootstrap"
 import { BiShoppingBag,BiSearch } from "react-icons/bi";
+import { useSelector } from 'react-redux';
+import { RootState } from '../../Store/reducers/store';
 import { BiHeart} from "react-icons/bi";
 import { Link } from 'react-router-dom';
 import "./NavbarDress.style.scss";
 export default function NavbarDress() {
+  const cart = useSelector((state:RootState)=>state.productsItems.cart)
     return (
       <Container className="navbar-dress py-4 d-flex align-items-center justify-content-between">
         <div className="order-lg-1 brand " ><Link to="/" className="d-flex justify-content-center justify-content-lg-end"><img className="img-brand" src="https://www.banimode.com//themes/new/assets/images/banilogo.png" alt="" />  </Link></div>
@@ -13,7 +16,7 @@ export default function NavbarDress() {
           
          <Button className="basket-btn" style={{backgroundColor:"none"}}>
             <span className="visually-hidden">unread messages</span>
-             <Badge className="count-shop">9</Badge>
+             <Badge className="count-shop">{cart.length}</Badge>
             <BiShoppingBag color="black" size={35}/>
           </Button>
           <BiHeart size={35} className="ms-3"/>
