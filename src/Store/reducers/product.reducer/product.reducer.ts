@@ -33,7 +33,10 @@ let init:IState = {
     updateCountCard:(state,action: PayloadAction<number>)=>{
         state.cart = state.cart.map((item)=>item.id === action.payload ? {...item,count: item.count + 1} :item)
     },
-    updateCountMinusCard:(state,action: PayloadAction<number>)=>{
+    updateTotalCart:(state,action: PayloadAction<number>)=>{
+       state.cart = state.cart.map((item)=>item.id === action.payload ? {...item,totalPrice:(item.discount) ?(item.price - (item.price * item.discount) / 100 ) * item.count : item.price * item.count} : item)
+   } , 
+  updateCountMinusCard:(state,action: PayloadAction<number>)=>{
         state.cart = state.cart.map((item)=>item.id === action.payload ? {...item,count: item.count - 1} :item)
     },
     removeProductCard:(state,action: PayloadAction<number>)=>{
@@ -41,9 +44,10 @@ let init:IState = {
     },
     checkCountCart:(state,action: PayloadAction<number>)=>{
        state.cart =  state.cart.map((item)=>item.id === action.payload ? {...item,count: 1} :item)
-    }
+    },
+  
 
  }
 })
-export const {productsCategoryFilter,productChangeImg,productChangeSubImg,addToCart,updateCart,updateCountCard,updateCountMinusCard,checkCountCart,removeProductCard} = productReducer.actions;
+export const {productsCategoryFilter,productChangeImg,productChangeSubImg,addToCart,updateCart,updateCountCard,updateCountMinusCard,checkCountCart,removeProductCard,updateTotalCart} = productReducer.actions;
 export default productReducer.reducer;

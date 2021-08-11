@@ -2,6 +2,7 @@ import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import {IProduct} from "../../interface"
+import "./ProductSinglePage.style.scss"
 interface IProductModalCart {
   show: boolean;
   handleShow: Function;
