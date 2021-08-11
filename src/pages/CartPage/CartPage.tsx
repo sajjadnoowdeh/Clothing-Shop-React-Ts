@@ -2,7 +2,8 @@ import React from 'react'
 import { Container,Col,Row } from 'react-bootstrap';
 import { useDispatch,useSelector } from 'react-redux';
 import { RootState } from '../../Store/reducers/store';
-import {updateCountCard,updateCountMinusCard,checkCountCart,removeProductCard} from "../../Store/reducers/product.reducer/product.reducer"
+
+import {updateCountCard,updateCountMinusCard,checkCountCart,removeProductCard,updateTotalCart} from "../../Store/reducers/product.reducer/product.reducer"
 import CartPageModalRemove from './CartPageModalRemove';
 import { IProduct } from '../../interface';
 import { BsXCircle } from "react-icons/bs";
@@ -12,11 +13,16 @@ import "./CartPage.style.scss"
      const cart = useSelector((state:RootState)=>state.productsItems.cart)
      const [modalShow, setModalShow] = React.useState(false);
      const [productID,setProductID] = React.useState<number>(0)
+     const [totalPriceCart,setTotalCartPrice] = React.useState<any>();
      const cartIncrement = (id:number)=>{
-         dispatch(updateCountCard(id))
+         dispatch(updateCountCard(id));
+         dispatch(updateTotalCart(id));
      }
+   
      const cartDeceremnt = (id:number)=>{
-           dispatch(updateCountMinusCard(id))
+           dispatch(updateCountMinusCard(id));
+           dispatch(updateTotalCart(id));
+
      }
      const checkCountZero = (id:number)=>{
         const product = cart.find((item)=>item.id === id);
@@ -27,8 +33,25 @@ import "./CartPage.style.scss"
         }
      }
      const handleRemoveProduct =()=>{
-         dispatch(removeProductCard(productID))
+         dispatch(removeProductCard(productID));
+
          setModalShow(false)
+     }
+     const handleShowModalIcon = (id:number)=>{
+        setModalShow(true)
+        setProductID(id)
+     }
+
+     React.useEffect(()=>{
+          setTotalCartPrice(cart.reduce((prev,current:any)=> prev + current.totalPrice ,0))  
+     },[cart])
+     if(cart.length === 0){
+         return (
+             <div style={{margin:"100px 0"}} className="d-flex  flex-column justify-content-center align-items-center">
+                 <img src="https://www.banimode.com/themes/new/assets/images/thank-unsucess.svg" alt="" />
+                 <p className="my-4">سبد خرید شما خالی است</p>
+             </div>
+         )
      }
     return (
         <>
@@ -53,7 +76,7 @@ import "./CartPage.style.scss"
                         <Col lg={5}>
                             <div className="d-flex">
                                 <div className="card__product__img">
-                                    <BsXCircle  size={23} className="card__product__btn__remove"/>
+                                    <BsXCircle onClick={()=>handleShowModalIcon(item.id)}  size={23} className="card__product__btn__remove"/>
                                     <img src={item.img} alt={item.type} />
                                 </div>
                                 <div className="card__product__desc d-flex flex-column justify-content-evenly pe-4">
@@ -96,10 +119,10 @@ import "./CartPage.style.scss"
                                 <Col lg={4} className="d-flex align-items-center justify-content-center">
                                     {
                                         (item.discount) ?
-                                          <div className="d-flex justify-content-center justify-content-lg-start  align-items-center card__product__price ms-0 ms-lg-5">{(item.discount) && (item.price - (item.price * item.discount) / 100 ) * item.count}<small>تومان</small></div>
+                                          <div className="d-flex justify-content-center justify-content-lg-start  align-items-center card__product__price ms-0 ms-lg-5">{(item.totalPrice == 0) ? item.price - (item.price * item.discount) /100:item.totalPrice}<small>تومان</small></div>
 
                                         :
-                                        <div className="d-flex justify-content-center justify-content-lg-start  align-items-center card__product__price ms-0 ms-lg-5">{item.price * item.count} تومان</div>
+                                        <div className="d-flex justify-content-center justify-content-lg-start  align-items-center card__product__price ms-0 ms-lg-5">{(item.totalPrice === 0)? item.price : item.totalPrice } تومان</div>
                                     }
                                 </Col>
                             </Row>
@@ -120,7 +143,7 @@ import "./CartPage.style.scss"
                         <span> 449,100 تومان </span>
                     </Col>
                     <Col lg={4}>
-                        <div className="d-flex justify-content-between card__total__priceAll">
+                        {/* <div className="d-flex justify-content-between card__total__priceAll">
                             <span> قیمت کل سفارش:</span>
                             <span>1,497,000 <small>تومان</small></span>
                         </div>
@@ -128,10 +151,10 @@ import "./CartPage.style.scss"
                         <div className="d-flex justify-content-between my-4 card__total__descount">
                             <span> تخفیف :</span>
                             <span>4999000 <small>تومان</small></span>
-                        </div>
+                        </div> */}
                         <div className="d-flex justify-content-between card__total__pay">
                             <span> قیمت قابل پرداخت: </span>
-                            <span>4999000 <small>تومان</small></span>
+                            <span>{totalPriceCart} <small>تومان</small></span>
                         </div>
                     </Col>
                    

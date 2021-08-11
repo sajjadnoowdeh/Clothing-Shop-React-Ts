@@ -58,6 +58,8 @@
     background-color: #6f7377;
     border-radius: 23px;
     color: cornsilk;
+    z-index: 3;
+    cursor: pointer;
 }
 
 .card__product__price{
@@ -164,7 +166,9 @@
     }
 }
 
-
+.card__product__btn__remove{
+    cursor: pointer;
+}
 .regist__buy__btn{
 
     width: 336px;
