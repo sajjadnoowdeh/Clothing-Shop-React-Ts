@@ -9,7 +9,7 @@ import { BiHeart} from "react-icons/bi";
 import {ProductSingleTabs} from "../../components";
 import { useDispatch ,useSelector} from "react-redux";
 import { RootState } from "../../Store/reducers/store";
-import { addToCart ,updateCart} from "../../Store/reducers/product.reducer/product.reducer";
+import { addToCart ,updateCart,updateTotalCart} from "../../Store/reducers/product.reducer/product.reducer";
 import ProductModalCart from "./ProductModalCart";
 import ProductModalSizes from "./ProductModalSizes";
 
@@ -31,10 +31,8 @@ const ProductSinglePage = () => {
  const handleAddToCart =()=>{
   if(product) {
     if(!cart.some((item)=>item.id === product.id) || !cart.some((item)=>item.size === product.size)  ){
-      console.log("Add");
-      
-      dispatch(addToCart({...product,count:1}))
- 
+      dispatch(addToCart({...product,count:1,totalPrice:(product.discount) ? product.price - (product.price * product.discount) / 100 : product.price}))
+    //  cart.reduce( ( sum , cur ) =>   sum + (cur.totalPrice )? cur.totalPrice: 0 , 0)        
     }
   }
   
@@ -45,7 +43,7 @@ const ProductSinglePage = () => {
         if(cart.some((item)=>item.id === product.id) && cart.some((item)=>item.size === product.size)){
           console.log("update");
           dispatch(updateCart(product.id))
-
+          dispatch(updateTotalCart(product.id))
        }
        } 
        
@@ -138,7 +136,7 @@ const ProductSinglePage = () => {
           </div>
 
           <div className="d-flex">
-            <select
+            {/* <select
               name="selectSize"
               className="single-select"
               onChange={(e)=>handleSelectSize(e)}
@@ -149,7 +147,7 @@ const ProductSinglePage = () => {
               <option value="XL">XL</option>
               <option value="XS">XS</option>
               <option value="XXL">XXL</option>
-            </select>
+            </select> */}
 
             <button className="btn-size me-2 "  onClick={() => setModalShow(true)}>
               <FaRuler size={20} />
