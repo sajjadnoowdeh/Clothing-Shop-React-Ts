@@ -10,6 +10,7 @@ export interface IProduct{
     discount?:number
     aroundChest?:number
     height?:number
+    count?:any
     roundShip?:number
     soleFoot?:number
     noSize?:boolean
