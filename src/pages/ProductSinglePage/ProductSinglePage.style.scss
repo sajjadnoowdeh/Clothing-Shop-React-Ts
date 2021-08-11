@@ -149,3 +149,47 @@ thead{
 svg *{
     cursor: pointer;
 }
+
+
+.cart__modal__btn__visibale{
+    width: 170px;
+    height: 50px;
+    border: 1px solid #00bf6f;
+    background-color: #00bf6f;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    -webkit-transition: 0.2s all;
+    -o-transition: 0.2s all;
+    transition: 0.2s all;
+    &:hover{
+        background-color: #05995b;
+    }
+}
+
+.cart__modal__btn__cancel{
+    width: 170px;
+    height: 50px;
+    border: 1px solid #c5c7cb;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+    background-color: transparent;
+    color: black;
+    &:hover{
+        background-color: transparent;
+        color: black;
+        border: 1px solid #00bf6f;
+    }
+}
+
+.cart__modal__btn__img{
+    display: flex;
+    justify-content: center;
+}
+
+.cart__modal__text {
+  
+    color:#00bf6f
+}

@@ -7,6 +7,10 @@ import { IProduct } from "../../interface";
 import { FaRuler } from "react-icons/fa";
 import { BiHeart} from "react-icons/bi";
 import {ProductSingleTabs} from "../../components";
+import { useDispatch ,useSelector} from "react-redux";
+import { RootState } from "../../Store/reducers/store";
+import { addToCart ,updateCart} from "../../Store/reducers/product.reducer/product.reducer";
+import ProductModalCart from "./ProductModalCart";
 import ProductModalSizes from "./ProductModalSizes";
 
 import "./ProductSinglePage.style.scss";
@@ -15,6 +19,38 @@ const ProductSinglePage = () => {
   const [modalShow, setModalShow] = React.useState(false);
   const [product, setProduct] = React.useState<IProduct>();
   const [productImg, setProductImg] = React.useState<IProduct>();
+  // modal cart state
+  const [show, setShow] = React.useState<boolean>(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+// add To cart
+  const cart = useSelector((state:RootState)=>state.productsItems.cart)
+  const dispatch = useDispatch()
+
+
+ const handleAddToCart =()=>{
+  if(product) {
+    if(!cart.some((item)=>item.id === product.id) || !cart.some((item)=>item.size === product.size)  ){
+      console.log("Add");
+      
+      dispatch(addToCart({...product,count:1}))
+ 
+    }
+  }
+  
+  }
+  const handleUpdateAddToCart =()=>{
+    if(product) {
+         console.log(cart.some((item)=>item.id === product.id));
+        if(cart.some((item)=>item.id === product.id) && cart.some((item)=>item.size === product.size)){
+          console.log("update");
+          dispatch(updateCart(product.id))
+
+       }
+       } 
+       
+  }
+
   React.useEffect(() => {
     setProduct(products.find((item) => item.id === +id));
     setProductImg(products.find((item) => item.id === +id));
@@ -23,9 +59,7 @@ const ProductSinglePage = () => {
   React.useEffect(()=>{
     window.scrollTo(0,0)
   },[])
-  React.useEffect(() => {
-    console.log(product);
-  }, [product]);
+
 
   const handleChangeImg = (src:string)=>{
       if(src === "img") {
@@ -35,6 +69,15 @@ const ProductSinglePage = () => {
           (productImg) &&  setProduct({...productImg,img:productImg?.subImg})
       }
   }
+
+  const handleSelectSize = (e:React.ChangeEvent)=>{
+    let inputEl = e.target as HTMLInputElement;
+    console.log(inputEl.value === "");
+  
+    (product)&&  setProduct({...product,size:inputEl.value})
+  }
+
+
 
   return (
 
@@ -98,16 +141,14 @@ const ProductSinglePage = () => {
             <select
               name="selectSize"
               className="single-select"
+              onChange={(e)=>handleSelectSize(e)}
             >
-               <option defaultValue="" selected disabled hidden>انتخاب سایز </option>
-              <option value="30">30</option>
-              <option value="31">31</option>
-              <option value="32">32</option>
-              <option value="33">33</option>
-              <option value="34">34</option>
-              <option value="35">35</option>
-              <option value="36">36</option>
-              <option value="37">37</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="XS">XS</option>
+              <option value="XXL">XXL</option>
             </select>
 
             <button className="btn-size me-2 "  onClick={() => setModalShow(true)}>
@@ -115,7 +156,7 @@ const ProductSinglePage = () => {
               <span className="me-2">سایز من چنده؟</span>
             </button>
           </div>
-          <button className="basket my-4">
+          <button className="basket my-4"   onClick={()=>{handleShow();handleAddToCart();handleUpdateAddToCart()}}>
             <BiShoppingBag size={25} />
             <span className="me-2"> افزودن به سبد خرید</span>
           </button>
@@ -149,7 +190,11 @@ const ProductSinglePage = () => {
         product={product}
       />
 
-
+        <ProductModalCart 
+            show={show}
+            handleShow={handleShow}
+            handleClose={handleClose}
+         />
 
     </Container>
       
