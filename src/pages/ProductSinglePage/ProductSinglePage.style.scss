@@ -35,6 +35,11 @@
 .btn-size{
     @extend .single-select;
     color:#00bf6f;
+    width: 239px;
+    border: 1px solid #ebebeb;
+    padding: 16px;
+    background: transparent;
+    border-radius: 8px;
 }
 .basket{
     background-color: #00bf6f;
