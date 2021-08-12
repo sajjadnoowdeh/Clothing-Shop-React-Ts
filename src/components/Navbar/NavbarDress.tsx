@@ -113,7 +113,7 @@ React.useEffect(()=>{
             </div>
          </div>
           <BiHeart size={35} className="ms-3"/>
-          <div className="login d-flex align-items-center ms-2">
+          <div className="login d-flex align-items-center ms-2" >
               <a className="text-decoration-none"  href="#"> ورود</a>
               <span className="px-1">/</span>
               <a  className="text-decoration-none" href="#">ثبت نام</a>
