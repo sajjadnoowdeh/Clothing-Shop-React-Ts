@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,eAAe,CAAA;EACX,SAAS,EAAE,IAAI;CAWlB;;AAVG,MAAM,EAAE,SAAS,EAAE,KAAK;EAF5B,AAAA,eAAe,CAAA;IAGP,SAAS,EAAE,IAAI;GAStB;;;AAZD,AAKI,eALW,CAKX,MAAM,CAAA;EACF,gBAAgB,EAAE,SAAS;EAC3B,aAAa,EAAE,IAAI;EACnB,MAAM,EAAC,GAAG;EACV,KAAK,EAAE,OAAO;CAEjB",
-    "sources": [
-        "../src/components/CountDown/CountDown.style.scss"
-    ],
-    "names": [],
-    "file": "CountDown.style.css"
-}
