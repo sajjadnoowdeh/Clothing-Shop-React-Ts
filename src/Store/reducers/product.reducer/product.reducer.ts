@@ -1,24 +1,44 @@
-import {createSlice,PayloadAction} from "@reduxjs/toolkit"
+import {createAsyncThunk, createSlice,PayloadAction} from "@reduxjs/toolkit"
 import {products} from "../../../Data/Data";
+import { getCategoryProduct } from "./product.api";
 import {IProduct} from "../../../interface"
 interface IState{
     cart:IProduct[]
+    productsCategory:any
     productsData:IProduct[]
+    loading:boolean
+    error:string | undefined
 }
 let init:IState = {
     cart:[],
-    productsData: products
+    productsCategory:[],
+    productsData: products,
+    loading:false,
+    error:""
 }
+
+export const getCategoryProductThunk = createAsyncThunk(
+    "productReducer",
+    async(category:string)=>{
+        try {
+            let data = await getCategoryProduct(category);
+            return data;
+        } catch (error) {
+             throw error.response.data
+        }
+        
+
+    }
+)
+
+
  const productReducer = createSlice({
  name:"productReducer",
  initialState:init,
  reducers:{
  
-     productsCategoryFilter:(state,action: PayloadAction<string>)=>{
-          state.productsData = init.productsData.filter((item)=>item.category ===  action.payload)
-     },
      productChangeImg:(state,action: PayloadAction<number>)=>{
-         state.productsData = state.productsData.map((item,index)=> item.id === action.payload ? {...item,img:item.subImg} : item)
+         state.productsData = state.productsCategory.map((item:IProduct,index:number)=> item.id === action.payload ? {...item,img:item.subImg} : item)
      },
      productChangeSubImg:(state,action: PayloadAction<string>)=>{
         state.productsData = init.productsData.filter((item)=>item.category ===action.payload)
@@ -47,7 +67,21 @@ let init:IState = {
     },
   
 
+ },
+
+ extraReducers:(builder)=>{
+    builder.addCase(getCategoryProductThunk.pending,(state,action)=>{
+        state.loading = true
+    })
+    builder.addCase(getCategoryProductThunk.fulfilled,(state,action)=>{
+        state.loading= false;
+        state.productsCategory = action.payload
+    })
+    builder.addCase(getCategoryProductThunk.rejected,(state,action)=>{
+        state.loading= false;
+       state.error =  action.error.message;
+    })
  }
 })
-export const {productsCategoryFilter,productChangeImg,productChangeSubImg,addToCart,updateCart,updateCountCard,updateCountMinusCard,checkCountCart,removeProductCard,updateTotalCart} = productReducer.actions;
+export const {productChangeImg,productChangeSubImg,addToCart,updateCart,updateCountCard,updateCountMinusCard,checkCountCart,removeProductCard,updateTotalCart} = productReducer.actions;
 export default productReducer.reducer;
