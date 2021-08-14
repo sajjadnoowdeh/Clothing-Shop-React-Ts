@@ -1,0 +1,47 @@
+.input-category__mobile{
+    width: 33rem;
+    line-height: 50px;
+    height: 50px;
+    border-radius: 28px;
+    background-color: #f5f5f5 !important;
+    border: none;
+    padding-right: 50px;
+    position: relative;
+}
+
+.category__mobile{
+    position: relative;
+    &__link{
+        position: relative;
+        width: 100%;
+        border-radius: 10px;
+        img{
+            border-radius: 10px;
+            width: 100%;
+        }
+        small{
+            position: absolute;
+            bottom: 12px;
+            right: 10px;
+            font-weight: 600;
+            color: white;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(
+                360deg
+                , rgb(40, 41, 44) 0%, rgba(40, 41, 44, 0) 100%);
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+        }
+    }
+    
+}
+.linear{
+    
+}

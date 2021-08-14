@@ -1,0 +1,174 @@
+$bg-green:#00bf6f;
+
+
+
+  // 
+
+  .section-show-all__amazing {
+    button{
+      color: $bg-green;
+      border:1px solid $bg-green;
+      background: none;
+      border-radius: 30px;
+      padding: 1rem 5rem;
+    }
+  }
+
+  .main__products-food__stuffs{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #121212;
+
+    img{
+     
+      width: 100%;
+      height: 100%;
+      transition: all 0.5s ease;
+      // border-radius: 10px;
+   
+    }
+    &:hover{
+      background: linear-gradient(to right,rgba(0,0,0,0.5)) ;
+      img{
+          transform: scale(1.1);
+          cursor: pointer;
+          opacity: 0.8;
+      }
+    
+  }
+  }
+
+  .main__products-game{
+     @extend .main__products-food__stuffs;
+  }
+
+
+  .section__category-product{
+    @extend .main__products-food__stuffs;
+    
+  }
+
+
+  .section__amazing{
+    &-title{
+      @media (max-width:768px) {
+         font-size: 17px;
+      }
+    }
+    &-timer{
+      font-size: 17px;
+      @media (max-width:768px) {
+        font-size: 16px;
+     }
+    }
+  }
+
+  .servises{
+    position: relative;
+    &::after{
+      position: absolute;
+      content: "";
+      top: 87px;
+      border: 21px solid;
+      width: 218px;
+      height: 218px;
+      border: double 14px transparent;
+      border-radius: 50%;
+      background-image: linear-gradient(white, white), radial-gradient(circle at top , #ffffff00, #b6b6b614);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      z-index: 1;
+      transition: all 0.8s ease;
+    }
+    &:hover{
+      &::after{
+        background-image: linear-gradient(white, white), radial-gradient(circle at top , #ffffff00, #b6b6b621);
+
+      }
+      
+    }
+  }
+
+  .section__guarantee{
+    img{
+        position: relative;
+        z-index: 200;
+    }
+    small{
+        @extend img;
+        max-width: 222px;
+      
+    }
+    p{
+        @extend img;
+    }
+  }
+
+  .newslleter{
+       background-color: #f8f8f8;
+       position: relative;
+       background-image: url("https://www.banimode.com/themes/new/assets/images/newsletter.svg");
+       min-height: 17rem;     
+       background-repeat: no-repeat;  
+       background-position: top left;
+       &__register{
+        background-color: white;
+        width: 39rem;
+        position: absolute;
+        bottom: -29px;
+        padding: 1rem 2rem;
+        border-radius: 48px;
+        left: 22%;
+        
+       }
+       &__btn{
+        background-color: #00bf6f;
+        border: none;
+        color: white;
+        padding: 0 2rem;
+        height: 50px;
+        border-radius: 28px;
+      
+       }
+  }
+
+  .input-register{
+    width: 33rem;
+    line-height: 50px;
+    height: 50px;
+    border-radius: 28px;
+    background-color: #f5f5f5 !important;
+    border: none;
+    padding-right: 50px;
+    position: relative;
+    &::placeholder{
+
+      color:#b3b3b3;
+    }
+
+  }
+
+
+  .footer-mobile{
+    background-color: #f0f0f0;
+    min-height: 15rem;
+    border-radius: 10px;
+    small{
+      color:#898989;
+      font-size: 12px;
+    }
+  }
+
+  .social-footer{
+    height: 9rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .social-icon{
+    background-color: white;
+    padding: 11px;
+    border-radius: 50%;
+  }

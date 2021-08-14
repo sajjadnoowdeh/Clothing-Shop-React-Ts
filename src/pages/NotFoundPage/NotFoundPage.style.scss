@@ -1,0 +1,26 @@
+.not-found{
+    background-color: #f9f9f9;
+}
+.notFound__text{
+
+    color: #494c52;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+}
+.notFound__homeLink{
+    background-color: #00bf6f;
+    color: #fff;
+    padding: 0px 42px;
+    line-height: 48px;
+    border: 1px solid #00bf6f;
+    border-radius: 12px;
+    font-size: 16px;
+    display: inline-block;
+    -webkit-transition: 0.2s all;
+    -o-transition: 0.2s all;
+    transition: 0.4s all;
+    &:hover{
+        background-color: #05995b;
+    }
+}

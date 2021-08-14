@@ -1,0 +1,32 @@
+.section-show-all__amazing button {
+  color: #00bf6f;
+  border: 1px solid #00bf6f;
+  background: none;
+  border-radius: 30px;
+  padding: 1rem 5rem;
+}
+
+.main__products-food__stuffs, .main__products-game, .section__category-product {
+  width: 97%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #121212;
+}
+
+.main__products-food__stuffs img, .main__products-game img, .section__category-product img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+.main__products-food__stuffs:hover, .main__products-game:hover, .section__category-product:hover {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5));
+}
+
+.main__products-food__stuffs:hover img, .main__products-game:hover img, .section__category-product:hover img {
+  transform: scale(1.1);
+  cursor: pointer;
+  opacity: 0.8;
+}
+/*# sourceMappingURL=HomePage.style.css.map */

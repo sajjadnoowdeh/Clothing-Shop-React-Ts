@@ -1,0 +1,222 @@
+.card__product{
+    position: relative;
+    &::after{
+        content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid #62626236;
+    width: 81%;
+    }
+}
+.cart__thead{
+    background-color: #fafafa;
+
+    padding: 19px;
+    border-radius: 8px;
+
+    &__left{
+        width: 37rem;
+    }
+    span{
+        color: #656565;
+    }
+}
+.card__product__desc{
+    strong{
+
+        font-size: 18px;
+    }
+    &__size{
+        color: #626262;
+    }
+}
+
+
+.card__product__img{
+    position: relative;
+    width: 12rem;
+    img{
+        width: 100%;
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        background-color: #6f7377;
+        border-radius: 8px;
+        opacity: 0.07;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+.card__product__btn__remove{
+    position: absolute;
+    top: -6px;
+    right: -5px;
+    background-color: #6f7377;
+    border-radius: 23px;
+    color: cornsilk;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.card__product__price{
+    height: 13rem;
+    &__discount{
+    
+        padding: 2px 9px;
+        border-radius: 13px;
+        background-color: #f37a23;
+        color: white
+    }
+    &__text{
+        color: #f37a23;
+    }
+}
+.card__product__increment{
+    img{
+        width: 15px;
+    }
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    border: solid 1px #d6d5d5;
+    line-height: normal;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: transparent;
+
+}
+
+.card__product__deceremnt{
+    img{
+        width: 15px;
+    }
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    border: solid 1px #d6d5d5;
+    line-height: normal;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: transparent;
+}
+
+.card__product__count{
+    font-size: 18px;
+    width: 44px;
+    border: 0;
+}
+
+.card__product__price{
+    color: #1fcc77;
+}
+
+.card__total{
+    background-color: #fafafa;
+  position: relative;
+    padding: 35px 19px;
+
+    border-radius: 8px;
+    &__priceAll{
+        font-size: 14px;
+
+        color: #656565;
+    }
+    &__descount{
+        color: #f37a23;
+        font-size: 14px;
+
+    }
+    &__pay{
+        font-weight: 500;
+    }
+    &::after{
+        position: absolute;
+        content: "";
+        height: 134px;
+        width: 1px;
+        top: 26px;
+        right: 59%;
+        background-color: #e6e6e6;
+        display: none;
+        @media (min-width:959px) {
+             display: block;
+        }
+    }
+    &__up{
+        color: #656565;
+        font-size: 14px;
+    }
+}
+
+.card__product__btn__remove{
+    cursor: pointer;
+}
+.regist__buy__btn{
+
+    width: 336px;
+
+    border-radius: 10px;
+    background-color: #00bf6f;
+    border: solid 1px #00bf6f;
+    color: #fff;
+    -webkit-transition: 0.2s all;
+    -o-transition: 0.2s all;
+    transition: 0.2s all;
+    &:hover{
+        background-color: #05995b;
+    }
+}
+
+.regist__text{
+    font-size: 15px;
+    span{
+        color: #f37a23;
+    }
+}
+
+.btn__remove{
+    color: #fd4d54;
+    width: 166px;
+    border-radius: 10px;
+    border: solid 1px #d6d5d5;
+    font-weight: 500;
+    padding: 14px 0;
+    &:hover{
+        background-color: #fd4d54;
+        border: #fd4d54;
+    }
+}
+.btn__cancel{
+    width: 166px;
+    border-radius: 10px;
+    border: solid 1px #d6d5d5;
+    font-weight: 500;
+    color: black;
+    padding: 14px 0;
+    &:hover{
+        background-color: transparent;
+        border: solid 1px #d6d5d5;
+        color: black;
+    }
+}
+.text__remove{
+    color:#898989;
+}

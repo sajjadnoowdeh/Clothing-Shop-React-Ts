@@ -1,0 +1,126 @@
+
+
+.menu{
+    width: 30rem;
+    justify-content: space-around;
+}
+.section-menu{
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        border-bottom: 1px solid #00000012;
+        right: 0;
+        top: 77px;
+        width: 100%;
+    }
+}
+.category__subnew,.menu-sub__male,.menu-sub__female,.baby-sub__female {
+    border-top: 1px solid #00000012;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 5px 11px -4px #00000030;
+    padding: 2.5rem 4rem;
+    opacity: 0;
+    transition: all .4s ease;
+    visibility: hidden;
+    z-index: 10;
+
+}
+
+
+%smoothLink{
+
+          color:#00bf6f;
+          transition: all 0.5s ease;
+        
+    
+}
+.menu .newDress__link:hover > a{
+    @extend %smoothLink;
+ }
+ 
+ .menu .male__link:hover>  a{
+     @extend %smoothLink;
+ }
+ 
+ .famale__link:hover > a{
+     @extend %smoothLink; 
+ }
+ .baby__link:hover > a{
+    @extend %smoothLink; 
+}
+
+.menu .newDress__link:hover .category__subnew{
+    animation: animateNewDress forwards 0.2s ease;
+}
+
+.menu .male__link:hover .menu-sub__male{
+     animation: animateNewDress forwards 0.2s ease;
+}
+
+.famale__link:hover .menu-sub__female{
+     animation: animateNewDress forwards 0.2s ease; 
+}
+
+.baby__link:hover .baby-sub__female {
+     animation: animateNewDress forwards 0.2s ease;
+}
+.category__subnew li a:hover,.menu-sub__male li a:hover,.menu-sub__female li a:hover,.baby-sub__female  li a:hover{
+//    border-right: 2px solid;
+   padding-right: 1rem;
+   &::after{
+       content: "";
+       position: absolute;
+       right: 0;
+       width: 2px;
+       height: 0;
+       background: #00bf6f;
+       animation: animateMenuLink forwards 0.5s ease;
+   }
+   
+}
+.category__subnew li,.menu-sub__male li,.menu-sub__female li,.baby-sub__female  li{
+    padding: 5px 0;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    position: relative;
+}
+.category__subnew strong,.menu-sub__male strong,.menu-sub__female strong,.baby-sub__female  strong{
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+
+.category__subnew li a,.menu-sub__male li a,.menu-sub__female li a,.baby-sub__female  li a{
+    color: rgb(148, 148, 150);
+    transition: all 0.5s ease;
+}
+
+@keyframes animateNewDress {
+    0%{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-183px);
+    }
+    100%{
+          opacity: 1;
+          display: block;
+          transform: translateY(0);
+          visibility: visible;
+    }
+}
+
+
+@keyframes animateMenuLink {
+    0%{
+        opacity: 0;
+        width: 2px;
+    }
+    100%{
+         opacity: 1;
+         height: 22px;
+    }
+}

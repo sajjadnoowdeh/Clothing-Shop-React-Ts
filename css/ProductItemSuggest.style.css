@@ -1,0 +1,52 @@
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  font-family: swiper-icons;
+  font-size: var(--swiper-navigation-size);
+  text-transform: none !important;
+  letter-spacing: 0;
+  text-transform: none;
+  font-variant: initial;
+  line-height: 1;
+  /* font-size: 36px; */
+  position: relative;
+  /* left: 1rem; */
+  top: -79px;
+}
+
+@media (max-width: 768px) {
+  .section__amazing-title {
+    font-size: 20px;
+  }
+}
+
+.section__amazing-timer {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .section__amazing-timer {
+    font-size: 16px;
+  }
+}
+/*# sourceMappingURL=ProductItemSuggest.style.css.map */
