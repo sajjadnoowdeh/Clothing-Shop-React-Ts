@@ -15,7 +15,7 @@ const CustomHookProductSuggest = (url:string) => {
         try {
             setPending(true)
             let {data} = await axios.get(url)
-            setStateSuggest(data.products)
+            setStateSuggest(data)
         } catch (error) {
             setErorr(error.message)
         }finally{

@@ -38,7 +38,6 @@ const ProductItemSuggest:React.FC<IProductSuggest> = ({stateSuggest,setStateSugg
     );
   };
 
-  console.log(pending);
   
 
   const handleChangeLiveImg = (id: number): void => {

@@ -22,6 +22,8 @@ export const getCategoryProductThunk = createAsyncThunk(
     async(category:string)=>{
         try {
             let data = await getCategoryProduct(category);
+            console.log(data);
+            
             return data;
         } catch (error) {
              throw error.response.data
@@ -38,10 +40,10 @@ export const getCategoryProductThunk = createAsyncThunk(
  reducers:{
  
      productChangeImg:(state,action: PayloadAction<number>)=>{
-         state.productsData = state.productsCategory.map((item:IProduct,index:number)=> item.id === action.payload ? {...item,img:item.subImg} : item)
+         state.productsCategory = state.productsCategory.map((item:IProduct,index:number)=> item.id === action.payload ? {...item,img:item.subImg} : item)
      },
      productChangeSubImg:(state,action: PayloadAction<string>)=>{
-        state.productsData = init.productsData.filter((item)=>item.category ===action.payload)
+        state.productsCategory = init.productsData.filter((item)=>item.category ===action.payload)
      },
     //  add To Cart
     addToCart:(state,action)=>{

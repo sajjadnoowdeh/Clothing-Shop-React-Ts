@@ -15,7 +15,9 @@ const CustomHookProductAmazing = (url:string) => {
         try {
             setLoading(true)
             let {data} = await axios.get(url)
-            setStateAmazing(data.products)
+            console.log(data);
+            
+            setStateAmazing(data)
         } catch (error) {
             setErorr(error.message)
         }finally{

@@ -10,12 +10,19 @@ import { useHistory } from "react-router";
 import CustomHookProductSuggest from "../../components/CustomHookProduct/CustomHookProductSuggest";
 import CustomHookProductAmazing from "../../components/CustomHookProduct/CustomHookProductAmazing";
 import "./HomePage.style.scss";
+import axios from "axios";
 
 interface IHomePage extends RouteComponentProps {}
 const HomePage:React.FC<IHomePage> = () => {
   const [stateAmazing,setStateAmazing,loading,error] = CustomHookProductAmazing("api/products?category=amazing")
   const [stateSuggest,setStateSuggest,pending,err] = CustomHookProductSuggest("api/products?category=suggest")
   const history = useHistory()
+
+  React.useEffect(()=>{
+    axios.get("/api/products/items")
+    .then((res)=>console.log(res))
+    .catch((e)=>console.log(e))
+},[])
 
     return (
         <>
