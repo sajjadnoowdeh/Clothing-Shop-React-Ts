@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import productReducer from "./reducers/product.reducer/product.reducer";
+import productSingleReducer from "./reducers/produtSingle.reducer/productSingle.reducer";
 import thunk from "redux-thunk";
 import logger from "redux-logger"
 let store = configureStore({
     reducer:{
-        productsItems:productReducer
+        productsItems:productReducer,
+        // productItem:productSingleReducer
     },
     middleware:[thunk,logger]
 

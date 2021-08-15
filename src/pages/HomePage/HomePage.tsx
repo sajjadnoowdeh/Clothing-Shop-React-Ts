@@ -14,7 +14,7 @@ import "./HomePage.style.scss";
 interface IHomePage extends RouteComponentProps {}
 const HomePage:React.FC<IHomePage> = () => {
   const [stateAmazing,setStateAmazing,loading,error] = CustomHookProductAmazing("api/products?category=amazing")
-  const [stateSuggest,setStateSuggest] = CustomHookProductSuggest("api/products?category=suggest")
+  const [stateSuggest,setStateSuggest,pending,err] = CustomHookProductSuggest("api/products?category=suggest")
   const history = useHistory()
 
     return (
@@ -118,8 +118,10 @@ const HomePage:React.FC<IHomePage> = () => {
                     
                      <Col>
                         <ProductItemSuggest 
-                          stateSuggest={stateSuggest}
-                          setStateSuggest={setStateSuggest} 
+                           stateSuggest={stateSuggest}
+                           setStateSuggest={setStateSuggest} 
+                           pending={pending}
+                           err={err}
                          />
                      </Col>
                   </Row>

@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { products } from "../../Data/Data";
+
+import Skeleton from '@material-ui/lab/Skeleton';
 import ProductItem from "../ProductItem/ProductItem";
 import { IProduct } from "../../interface";
 import { useHistory } from "react-router";
@@ -15,6 +17,7 @@ import "./ProductItemSuggest.style.scss";
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination, Navigation, Autoplay } from "swiper/core";
+import { Row ,Col} from "react-bootstrap";
 
 
 // install Swiper modules
@@ -22,8 +25,10 @@ SwiperCore.use([Autoplay, Pagination, Navigation]);
 interface IProductSuggest{
   stateSuggest:IProduct[] | undefined
   setStateSuggest:Function
+  pending:boolean
+  err:string
 }
-const ProductItemSuggest:React.FC<IProductSuggest> = ({stateSuggest,setStateSuggest}) => {
+const ProductItemSuggest:React.FC<IProductSuggest> = ({stateSuggest,setStateSuggest,pending,err}) => {
   const history = useHistory()
   const handleChangeImg = (id: number): void => {
     (stateSuggest)&&   setStateSuggest(
@@ -32,6 +37,9 @@ const ProductItemSuggest:React.FC<IProductSuggest> = ({stateSuggest,setStateSugg
       )
     );
   };
+
+  console.log(pending);
+  
 
   const handleChangeLiveImg = (id: number): void => {
     setStateSuggest(products.filter((item)=>item.category === "suggest"));
@@ -63,7 +71,34 @@ const ProductItemSuggest:React.FC<IProductSuggest> = ({stateSuggest,setStateSugg
       pagination={false}
       className="mySwiper"
     >
-      { (stateSuggest)&& stateSuggest.map((item: IProduct, index: number) => (
+      { 
+      (pending)?
+       <Row>
+               <Col lg={6}>
+                  <Skeleton variant="text" />
+                  <Skeleton variant="circle" width={40} height={40} />
+                  <Skeleton variant="rect" width={210} height={118} />
+                </Col>
+                <Col lg={6}>
+                  <Skeleton variant="text" />
+                  <Skeleton variant="circle" width={40} height={40} />
+                  <Skeleton variant="rect" width={210} height={118} />
+                </Col>
+                <Col lg={6}>
+                  <Skeleton variant="text" />
+                  <Skeleton variant="circle" width={40} height={40} />
+                  <Skeleton variant="rect" width={210} height={118} />
+                </Col>
+                <Col lg={6}>
+                <Skeleton variant="text" />
+                  <Skeleton variant="circle" width={40} height={40} />
+                  <Skeleton variant="rect" width={210} height={118} />
+                </Col>
+       </Row>
+      :
+      
+      
+      (stateSuggest)&& stateSuggest.map((item: IProduct, index: number) => (
         <SwiperSlide key={item.id}>
           <ProductItem
             item={item}

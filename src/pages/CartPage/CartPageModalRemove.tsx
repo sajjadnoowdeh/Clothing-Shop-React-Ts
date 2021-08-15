@@ -13,6 +13,7 @@ const CartPageModalRemove:React.FC<ICartPageModaleRemove> = ({show,onHide,onClic
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      className=" dialog-container"
     //   style={{width:"40rem",marginRight: "6rem"}}
     >
       <Modal.Header className="m-0" closeButton>

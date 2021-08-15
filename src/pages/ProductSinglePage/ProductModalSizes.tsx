@@ -16,6 +16,7 @@ const ProductModalSizes:React.FC<IProductModal> = ({show,onHide,product}):JSX.El
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
+        className="dialog-container" 
       >
         <Modal.Header closeButton>
         </Modal.Header>

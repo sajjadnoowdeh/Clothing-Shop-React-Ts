@@ -3,8 +3,8 @@ import { IProduct } from '../../interface'
 import axios from 'axios'
 const CustomHookProductSuggest = (url:string) => {
     const [stateSuggest,setStateSuggest] = React.useState<any>([])
-    const [loading,setLoading] = React.useState<boolean>(false)
-    const [error,setErorr] = React.useState<string>();
+    const [pending,setPending] = React.useState<boolean>(false)
+    const [err,setErorr] = React.useState<string>();
     
     useEffect(()=>{
         getCategoryProduct();
@@ -13,19 +13,19 @@ const CustomHookProductSuggest = (url:string) => {
 
     const getCategoryProduct = async ()=>{
         try {
-            setLoading(true)
+            setPending(true)
             let {data} = await axios.get(url)
             setStateSuggest(data.products)
         } catch (error) {
             setErorr(error.message)
         }finally{
-            setLoading(false)
+            setPending(false)
         }
         
     }
 
  
-    return [stateSuggest,setStateSuggest,loading,error]
+    return [stateSuggest,setStateSuggest,pending,err]
 }
 
 export default CustomHookProductSuggest

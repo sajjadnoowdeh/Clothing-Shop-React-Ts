@@ -18,7 +18,7 @@ const ProductModalCart: React.FC<IProductModalCart> = ({
     
   return (
     <>
-      <Modal show={show} onHide={() => handleClose()}>
+      <Modal className="dialog-container" show={show} onHide={() => handleClose()}>
         <Modal.Body className="d-flex justify-content-center flex-column align-items-center">
           <div className="cart__modal__img mt-3">
             <img

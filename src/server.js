@@ -1886,14 +1886,7 @@ export function makeServer({ environment = "test" } = {}) {
     routes() {
       this.namespace = "api";
 
-      this.get("/products/:category", (schema, req) => {
-        let { category } = req.params.category;
-        if (category) {
-          return schema.products.where({ category: category });
-        }
-        return new Response(500, {}, { errors: ["Server did not respond"] });
-      });
-
+      
       this.get("/products", (schema, req) => {
         let { category } = req.queryParams;
         if (category) {
@@ -1901,6 +1894,13 @@ export function makeServer({ environment = "test" } = {}) {
         }
         return new Response(500, {}, { errors: ["Server did not respond"] });
       });
+
+
+      // this.get("/productSingle", (schema, req) => {
+      //     console.log(req.queryParams)
+      //     return {name:"Sdf"}
+      //  });
+
 
 
 

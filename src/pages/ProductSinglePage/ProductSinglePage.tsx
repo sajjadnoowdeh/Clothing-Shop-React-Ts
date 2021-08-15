@@ -9,13 +9,14 @@ import { BiHeart} from "react-icons/bi";
 import {ProductSingleTabs} from "../../components";
 import { useDispatch ,useSelector} from "react-redux";
 import { RootState } from "../../Store/store";
+import { getProductSingleThunk } from "../../Store/reducers/produtSingle.reducer/productSingle.reducer";
 import { addToCart ,updateCart,updateTotalCart} from "../../Store/reducers/product.reducer/product.reducer";
 import ProductModalCart from "./ProductModalCart";
 import ProductModalSizes from "./ProductModalSizes";
 
 import "./ProductSinglePage.style.scss";
 const ProductSinglePage = () => {
-  let { id } = useParams<{ id: string }>();
+  let { id ,category_name} = useParams<{ id: string,category_name:string }>();
   const [modalShow, setModalShow] = React.useState(false);
   const [product, setProduct] = React.useState<IProduct>();
   const [productImg, setProductImg] = React.useState<IProduct>();
@@ -26,7 +27,7 @@ const ProductSinglePage = () => {
 // add To cart
   const cart = useSelector((state:RootState)=>state.productsItems.cart)
   const dispatch = useDispatch()
-
+ 
 
  const handleAddToCart =()=>{
   if(product) {
@@ -52,6 +53,7 @@ const ProductSinglePage = () => {
   React.useEffect(() => {
     setProduct(products.find((item) => item.id === +id));
     setProductImg(products.find((item) => item.id === +id));
+    // dispatch(getProductSingleThunk({id:id,category_name:category_name}))
   }, [id]);
 
   React.useEffect(()=>{
