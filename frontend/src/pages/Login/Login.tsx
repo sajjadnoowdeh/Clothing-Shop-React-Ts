@@ -1,7 +1,10 @@
 import React from 'react'
 import {Container} from "react-bootstrap"
+import {useRouteMatch} from "react-router"
 import "./Login.style.scss"
 const Login = ()=>{
+    let {path} = useRouteMatch<{patch:string}>();
+  
 return (
     <>
     <div className="login__page">

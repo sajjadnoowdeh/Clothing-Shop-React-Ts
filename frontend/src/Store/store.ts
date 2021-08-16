@@ -6,7 +6,7 @@ import logger from "redux-logger"
 let store = configureStore({
     reducer:{
         productsItems:productReducer,
-        // productItem:productSingleReducer
+        productItem:productSingleReducer
     },
     middleware:[thunk,logger]
 

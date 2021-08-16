@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Col, Row,Button,Table } from "react-bootstrap";
+import Skeleton from '@material-ui/lab/Skeleton';
 import { BiShoppingBag } from "react-icons/bi";
 import { useParams } from "react-router";
 import { products } from "../../Data/Data";
@@ -8,17 +9,19 @@ import { FaRuler } from "react-icons/fa";
 import { BiHeart} from "react-icons/bi";
 import {ProductSingleTabs} from "../../components";
 import { useDispatch ,useSelector} from "react-redux";
+import { changeImgProduct ,changeSubImgProduct} from "../../Store/reducers/produtSingle.reducer/productSingle.reducer";
 import { RootState } from "../../Store/store";
 import { getProductSingleThunk } from "../../Store/reducers/produtSingle.reducer/productSingle.reducer";
 import { addToCart ,updateCart,updateTotalCart} from "../../Store/reducers/product.reducer/product.reducer";
 import ProductModalCart from "./ProductModalCart";
 import ProductModalSizes from "./ProductModalSizes";
+ 
+
 
 import "./ProductSinglePage.style.scss";
 const ProductSinglePage = () => {
   let { id ,category_name} = useParams<{ id: string,category_name:string }>();
   const [modalShow, setModalShow] = React.useState(false);
-  const [product, setProduct] = React.useState<IProduct>();
   const [productImg, setProductImg] = React.useState<IProduct>();
   // modal cart state
   const [show, setShow] = React.useState<boolean>(false);
@@ -26,6 +29,7 @@ const ProductSinglePage = () => {
   const handleShow = () => setShow(true);
 // add To cart
   const cart = useSelector((state:RootState)=>state.productsItems.cart)
+  const {product,loading,error} = useSelector((state:RootState)=>state.productItem);
   const dispatch = useDispatch()
  
 
@@ -33,7 +37,6 @@ const ProductSinglePage = () => {
   if(product) {
     if(!cart.some((item)=>item.id === product.id) || !cart.some((item)=>item.size === product.size)  ){
       dispatch(addToCart({...product,count:1,totalPrice:(product.discount) ? product.price - (product.price * product.discount) / 100 : product.price}))
-    //  cart.reduce( ( sum , cur ) =>   sum + (cur.totalPrice )? cur.totalPrice: 0 , 0)        
     }
   }
   
@@ -42,7 +45,6 @@ const ProductSinglePage = () => {
     if(product) {
          console.log(cart.some((item)=>item.id === product.id));
         if(cart.some((item)=>item.id === product.id) && cart.some((item)=>item.size === product.size)){
-          console.log("update");
           dispatch(updateCart(product.id))
           dispatch(updateTotalCart(product.id))
        }
@@ -51,9 +53,8 @@ const ProductSinglePage = () => {
   }
 
   React.useEffect(() => {
-    setProduct(products.find((item) => item.id === +id));
     setProductImg(products.find((item) => item.id === +id));
-    // dispatch(getProductSingleThunk({id:id,category_name:category_name}))
+    dispatch(getProductSingleThunk({id:id,category_name:category_name}))
   }, [id]);
 
   React.useEffect(()=>{
@@ -63,19 +64,18 @@ const ProductSinglePage = () => {
 
   const handleChangeImg = (src:string)=>{
       if(src === "img") {
-          (productImg) &&  setProduct({...productImg,img:productImg?.img})
+        (productImg) &&  dispatch(changeImgProduct(productImg.img))
       }else{
-
-          (productImg) &&  setProduct({...productImg,img:productImg?.subImg})
+        (productImg) &&  dispatch(changeSubImgProduct(productImg.subImg))
       }
   }
 
-  const handleSelectSize = (e:React.ChangeEvent)=>{
-    let inputEl = e.target as HTMLInputElement;
-    console.log(inputEl.value === "");
+  // const handleSelectSize = (e:React.ChangeEvent)=>{
+  //   let inputEl = e.target as HTMLInputElement;
+  //   console.log(inputEl.value === "");
   
-    (product)&&  setProduct({...product,size:inputEl.value})
-  }
+  //   (product)&&  setProduct({...product,size:inputEl.value})
+  // }
 
 
   
@@ -85,7 +85,31 @@ const ProductSinglePage = () => {
     <>
    
       <Container>
-      <Row className="py-4">
+        {
+          (loading)?
+            <div className="my-5">
+              <Row>
+                <Col lg={6}>
+                <Skeleton animation="wave" variant="circle" width={40} height={40} />
+               <Skeleton animation="wave" height={10} width="80%" style={{ marginBottom: 6 }} />
+               <Skeleton animation="wave" height={10} style={{ marginBottom: 6 }} />
+                <Skeleton animation="wave" height={10} width="80%" />
+               <Skeleton animation="wave" variant="rect" style={{height:"480px"}}/>
+                </Col>
+                <Col lg={6}>
+                <Skeleton animation="wave" variant="circle" width={40} height={40} />
+               <Skeleton animation="wave" height={10} width="80%" style={{ marginBottom: 6 }} />
+               <Skeleton animation="wave" height={10} style={{ marginBottom: 6 }} />
+                <Skeleton animation="wave" height={10} width="80%" />
+               <Skeleton animation="wave" variant="rect" style={{height:"480px"}}/>
+                </Col>
+              </Row>
+               
+
+         
+            </div>
+            :
+            <Row className="py-4">
         <Col lg={6} className={"product"}>
           <div className="d-flex justify-content-center align-items-center">
             <img loading="lazy" src={product?.img} alt={product?.name} />
@@ -184,6 +208,8 @@ const ProductSinglePage = () => {
           <ProductSingleTabs />
         </Col>
       </Row>
+        }
+      
 
       <ProductModalSizes
         show={modalShow}
