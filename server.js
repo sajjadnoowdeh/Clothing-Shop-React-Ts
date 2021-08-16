@@ -1757,6 +1757,11 @@ app.get('/api/items',(req, res) => {
     res.json(products.items.filter((item)=>item.category === categoryItem));
 });
 
+app.get('/api/productFind',(req,res)=>{
+    var id = req.query.name;
+    res.json(products.items.find((item)=>item.id === +id))
+})
+
   const port = 5000;
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
