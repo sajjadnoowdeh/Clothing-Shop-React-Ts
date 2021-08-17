@@ -11,6 +11,8 @@
     width: 100%;
 }
 
+
+
 .section__form{
     height: 30rem;
    border-top-right-radius: 35px;
@@ -39,6 +41,11 @@
         color: #fff;
         transition: 0.2s all;
     }
+    small{
+        color: #ff4e4e;
+        transition: all 0.5s ease;
+        height: 6px;
+    }
 }
 #username{
     width: 100%;
@@ -57,7 +64,24 @@
     border: 1px solid #6f7377;
         width: 34rem;
 }
-.input__group__pass,.input__group__username{
+#email{
+    width: 100%;
+    padding: 13px;
+    border-radius: 8px;
+    transition: 0.2s all;
+    border: 1px solid #6f7377;
+        width: 34rem;
+}
+.border-input{
+    border: 1px solid #6f7377;
+}
+.border-success{
+    border: 1px solid #37c508 !important;
+}
+.border-error{
+    border: 1px solid #ff0b0b !important;
+}
+.input__group__pass,.input__group__username,.input__group__email{
     position: relative;
 }
 .label__username{
@@ -71,6 +95,16 @@
     background: white; 
     position: absolute;
     color: #969797;
+    bottom: 41px;
+    right: 15px;
+}
+.label__email{
+    background: white; 
+    position: absolute;
+    color: #969797;
     bottom: 91px;
     right: 15px;
+}
+.stop{
+    cursor: no-drop !important;
 }
