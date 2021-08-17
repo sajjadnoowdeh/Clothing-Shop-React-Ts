@@ -10,7 +10,7 @@ import { BsXCircle } from "react-icons/bs";
 import "./CartPage.style.scss"
  const CartPage = () => {
      const dispatch = useDispatch()
-     const cart = useSelector((state:RootState)=>state.productsItems.cart)
+     const cart = useSelector((state:RootState)=>state.reducer.productsItems.cart)
      const [modalShow, setModalShow] = React.useState(false);
      const [productID,setProductID] = React.useState<number>(0)
      const [totalPriceCart,setTotalCartPrice] = React.useState<any>();

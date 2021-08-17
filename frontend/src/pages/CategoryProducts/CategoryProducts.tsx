@@ -21,7 +21,7 @@ import "./CategoryProducts.style.scss";
 function CategoryProducts() {
   let { category_name } = useParams<{ category_name: string }>();
   const { productsCategory, loading, error } = useSelector(
-    (state: RootState) => state.productsItems
+    (state: RootState) => state.reducer.productsItems
   );
   const dispatch = useDispatch();
   const history = useHistory();
