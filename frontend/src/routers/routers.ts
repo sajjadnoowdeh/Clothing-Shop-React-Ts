@@ -5,11 +5,12 @@ const CategoryProducts = React.lazy(()=>import("../pages/CategoryProducts/Catego
 const CategoryProductsMobile = React.lazy(()=>import("../pages/CategoryProductsMobile/CategoryProductMobile"))
 const NotFoundPage = React.lazy(()=>import("../pages/NotFoundPage/NotFoundPage"))
 const CartPage = React.lazy(()=>import("../pages/CartPage/CartPage"))
-const Login = React.lazy(()=>import("../pages/Login/Login"))
-
+const Register = React.lazy(()=>import("../pages/Register/Register"))
+const Login =  React.lazy(()=>import("../pages/Login/Login"))
 export let routers = [
         
         {path:"/", exact:true, Component:HomePage},
+        {path:"/register", exact:true, Component:Register},
         {path:"/login", exact:true, Component:Login},
         {path:"/cart", exact:true, Component:CartPage},
         {path:"/categoryMobile", exact:true, Component:CategoryProductsMobile},

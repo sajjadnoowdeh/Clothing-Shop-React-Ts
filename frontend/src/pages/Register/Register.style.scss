@@ -1,0 +1,113 @@
+.top__login{
+    width: 100%;
+    height: 14rem;
+    background-color: #00bf6f;
+}
+
+.top__login form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-register{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section__form{
+    height: 30rem;
+   border-top-right-radius: 35px;
+   border-top-left-radius: 35px;
+   padding-bottom: 4rem;
+   position: relative;
+   bottom: 120px;
+   border: -41px;
+   background: white;
+   width: 100%;
+}
+.container__login{
+    width: 40rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+        margin-top: 10px;
+        background: #00bf6f;
+        width: 100%;
+        padding: 13px;
+        border-radius: 8px;
+        border: 1px solid #00bf6f;
+        flex: 0.58 1;
+        color: #fff;
+        transition: 0.2s all;
+    }
+    small{
+        color: #ff4e4e;
+        transition: all 0.5s ease;
+        height: 6px;
+    }
+}
+#username{
+    width: 100%;
+    padding: 13px;
+    border-radius: 8px;
+    transition: 0.2s all;
+    border: 1px solid #6f7377;
+    
+    width: 34rem;
+}
+#password{
+    width: 100%;
+    padding: 13px;
+    border-radius: 8px;
+    transition: 0.2s all;
+    border: 1px solid #6f7377;
+        width: 34rem;
+}
+.border-input{
+    border: 1px solid #6f7377;
+}
+.border-success{
+    border: 1px solid #37c508 !important;
+}
+.border-error{
+    border: 1px solid #ff0b0b !important;
+}
+#email{
+    width: 100%;
+    padding: 13px;
+    border-radius: 8px;
+    transition: 0.2s all;
+    border: 1px solid #6f7377;
+        width: 34rem;
+}
+.input__group__pass,.input__group__username,.input__group__email{
+    position: relative;
+}
+.label__username{
+    background: white;
+    position: absolute;
+    right: 15px;
+    top: -11px;
+    color: #969797;
+}
+.label__pass{
+    background: white; 
+    position: absolute;
+    color: #969797;
+    bottom: 62px;
+
+    right: 15px;
+}
+.label__email{
+    background: white; 
+    position: absolute;
+    color: #969797;
+    bottom: 65px;
+    right: 15px;
+}
