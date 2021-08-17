@@ -7,8 +7,13 @@ import { RouteComponentProps } from "react-router";
 import { FaArrowLeft ,FaPhoneVolume,FaEnvelopeOpenText,FaEnvelope} from "react-icons/fa";
 import {IProduct} from '../../interface'
 import { useHistory } from "react-router";
+import { useSelector } from "react-redux";
+import { RootState } from "../../Store/store";
 import CustomHookProductSuggest from "../../components/CustomHookProduct/CustomHookProductSuggest";
 import CustomHookProductAmazing from "../../components/CustomHookProduct/CustomHookProductAmazing";
+import { ToastContainer, toast } from "react-toastify";
+import { Spinner } from "react-bootstrap";
+import "react-toastify/dist/ReactToastify.css";
 import "./HomePage.style.scss";
 import axios from "axios";
 
@@ -16,6 +21,7 @@ interface IHomePage extends RouteComponentProps {}
 const HomePage:React.FC<IHomePage> = () => {
   const [stateAmazing,setStateAmazing,loading,error] = CustomHookProductAmazing("api/products?category=amazing")
   const [stateSuggest,setStateSuggest,pending,err] = CustomHookProductSuggest("api/products?category=suggest")
+  const {isLogin,username} = useSelector((state:RootState)=>state.reducer.auth)
   const history = useHistory()
 
   React.useEffect(()=>{
@@ -24,8 +30,11 @@ const HomePage:React.FC<IHomePage> = () => {
     .catch((e)=>console.log(e))
 },[])
 
+
+
     return (
         <>
+        <ToastContainer/>
           <Carousel />
           <Container className="py-5">
               <Row>
