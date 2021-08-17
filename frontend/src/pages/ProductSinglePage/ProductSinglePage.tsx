@@ -28,8 +28,8 @@ const ProductSinglePage = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 // add To cart
-  const cart = useSelector((state:RootState)=>state.productsItems.cart)
-  const {product,loading,error} = useSelector((state:RootState)=>state.productItem);
+  const cart = useSelector((state:RootState)=>state.reducer.productsItems.cart)
+  const {product,loading,error} = useSelector((state:RootState)=>state.reducer.productItem);
   const dispatch = useDispatch()
  
 
