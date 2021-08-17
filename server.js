@@ -1,7 +1,7 @@
 
 const express = require('express')
 const app = express();
-
+const users = [];
 let products =  {
 
 items:[
@@ -1759,10 +1759,31 @@ app.get('/api/items',(req, res) => {
 
 app.get('/api/productFind',(req,res)=>{
     var id = req.query.name;
-    res.json(products.items.find((item)=>item.id === +id))
+    res.json(products.items.find((item)=>item.id === +id));
 })
 
-  const port = 5000;
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.get('/api/register',(req,res)=>{
+    var data = {
+        username:req.query.username,
+        email:req.query.email,
+        password:req.query.password,
+
+    }
+    users.push(data)
+    res.json(data);
+})
+
+app.get('/api/login',(req,res)=>{
+     var user = users.find((item)=>item.email === req.query.email);
+     if(user){
+        res.json(user);
+     }else{
+         res.status(401).send({message:"!!شما ثبت نام  نکرده اید"})
+     }
+     
+  
+})
+
+   app.listen(4000, () => {
+  console.log(`Example app listening at http://localhost:${4000}`)
 })
