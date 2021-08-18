@@ -10,8 +10,9 @@
     }
     li{
         list-style: none;
+        transition: all 0.5s ease;
         cursor: pointer;
-        position: relative;
+        // position: relative;
        
         
     }
@@ -23,16 +24,32 @@
 
 // while active link sorted
 .active-sorted{
-    &::after{
-        content: "";
-        border-bottom: 2px solid #1ac977;
-        position: absolute;
-        bottom: -13px;
-        width: 104px;
-        right: -6px;
-    
+    transition: all 0.5s ease;
+    position: relative;
+    &:hover{
+        &::after{
+            content: "";
+            border-bottom: 2px solid #1ac977;
+            position: absolute;
+            bottom: -13px;
+            width: 104px;
+            right: -6px;
+
+            transition: all 0.5s ease;
+        }
+        color: #1ac977;
+        
     }
-    color: #1ac977;
+    // &::after{
+    //     content: "";
+    //     border-bottom: 2px solid #1ac977;
+    //     position: absolute;
+    //     bottom: -13px;
+    //     width: 104px;
+    //     right: -6px;
+    
+    // }
+  
 }
 
 @keyframes animateBorderSorted {
