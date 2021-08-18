@@ -10,8 +10,10 @@ import {
 } from "../../components";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory, useRouteMatch } from "react-router";
+import { removeProductWish } from "../../Store/reducers/wishList.reducer/wishList.reducer";
 import { IProduct } from "./../../interface";
 import { RootState } from "../../Store/store";
+import { getWishListThunk } from "../../Store/reducers/wishList.reducer/wishList.reducer";
 import { getCategoryProductThunk } from "../../Store/reducers/product.reducer/product.reducer";
 import {
   productChangeImg,
@@ -26,6 +28,8 @@ function CategoryProducts() {
   const dispatch = useDispatch();
   const history = useHistory();
   const match = useRouteMatch();
+  const {wishList} = useSelector((state:RootState)=>state.reducer.wishList)
+
   useEffect(() => {
     dispatch(getCategoryProductThunk(category_name));
   }, [category_name]);
@@ -40,6 +44,15 @@ function CategoryProducts() {
   const handleChangeLiveImg = (): void => {
     dispatch(productChangeSubImg(category_name));
   };
+
+    const handleWishListAdd = (id:number)=>{
+      if(wishList.find((item:IProduct)=>item.id === id) === undefined){
+        dispatch(getWishListThunk({id:id}))
+        
+      }else{
+        dispatch(removeProductWish(id))
+      }   
+}
   return (
     <>
       <Container>
@@ -103,6 +116,7 @@ function CategoryProducts() {
                       }
                       handleChangeImg={() => handleChangeImg(item.id)}
                       handleChangeLiveImg={() => handleChangeLiveImg()}
+                      handleWishListAdd={()=>handleWishListAdd(item.id)}
                     />
                   </Col>
                 ))}

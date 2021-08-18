@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 import { products } from "../../Data/Data";
-
+import { useDispatch ,useSelector} from "react-redux";
+import { getWishListThunk } from "../../Store/reducers/wishList.reducer/wishList.reducer";
 import Skeleton from '@material-ui/lab/Skeleton';
+import { removeProductWish } from '../../Store/reducers/wishList.reducer/wishList.reducer';
 import ProductItem from "../ProductItem/ProductItem";
+import { RootState } from "../../Store/store";
 import { IProduct } from "../../interface";
 import { useHistory } from "react-router";
 // Import Swiper React components
@@ -30,6 +33,8 @@ interface IProductSuggest{
 }
 const ProductItemSuggest:React.FC<IProductSuggest> = ({stateSuggest,setStateSuggest,pending,err}) => {
   const history = useHistory()
+  const dispatch = useDispatch()
+  const {wishList} = useSelector((state:RootState)=>state.reducer.wishList)
   const handleChangeImg = (id: number): void => {
     (stateSuggest)&&   setStateSuggest(
     stateSuggest.map((item: IProduct) =>
@@ -43,6 +48,16 @@ const ProductItemSuggest:React.FC<IProductSuggest> = ({stateSuggest,setStateSugg
   const handleChangeLiveImg = (id: number): void => {
     setStateSuggest(products.filter((item)=>item.category === "suggest"));
   };
+
+  const handleWishListAdd = (id:number)=>{
+    if(wishList.find((item:IProduct)=>item.id === id) === undefined){
+      dispatch(getWishListThunk({id:id}))
+      
+    }else{
+      dispatch(removeProductWish(id))
+    }
+  
+}
   return (
     <Swiper
       autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -104,6 +119,8 @@ const ProductItemSuggest:React.FC<IProductSuggest> = ({stateSuggest,setStateSugg
             onClick={()=>history.push(`/category/suggest/${item.id}`)}
             handleChangeImg={() => handleChangeImg(item.id)}
             handleChangeLiveImg={() => handleChangeLiveImg(item.id)}
+            handleWishListAdd={()=>handleWishListAdd(item.id)}
+
           />
         </SwiperSlide>
       ))}

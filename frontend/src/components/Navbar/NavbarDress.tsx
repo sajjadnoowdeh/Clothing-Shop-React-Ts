@@ -15,6 +15,7 @@ import {FaRegUserCircle,FaRegUser} from "react-icons/fa";
 import { MdExitToApp ,MdExpandMore} from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Store/store";
+import { useHistory } from "react-router";
 import { logoaut } from "../../Store/reducers/auth.reducer/auth.reducer";
 import { removeProductCard } from "../../Store/reducers/product.reducer/product.reducer";
 import { BiHeart } from "react-icons/bi";
@@ -24,7 +25,9 @@ import "./NavbarDress.style.scss";
 export default function NavbarDress() {
   const {isLogin,username} = useSelector((state:RootState)=> state.reducer.auth)
   const cart = useSelector((state: RootState) => state.reducer.productsItems.cart );
+  const {wishList} = useSelector((state:RootState)=>state.reducer.wishList)
   const dispatch = useDispatch();
+  const history = useHistory();
   const [totalPriceCart, setTotalPriceCart] = React.useState<any>();
   let modalCart = document.querySelector(".cart__modal");
   const handleDisplayModalCart = () => {
@@ -165,7 +168,16 @@ export default function NavbarDress() {
             </Container>
           </div>
         </div>
-        <BiHeart size={35} className="ms-3" />
+        <Button
+            onClick={()=>history.push("/wishlist")}
+            className="wish-btn"
+            style={{ backgroundColor: "none" }}
+          >
+        
+            <Badge className="count-shop">{wishList.length}</Badge>
+            <BiHeart fill={"black"} size={35}  />
+          </Button>
+     
         {
           (isLogin)
           ?

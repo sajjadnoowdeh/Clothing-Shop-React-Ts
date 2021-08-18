@@ -87,6 +87,17 @@ border:0;
     background: transparent !important;
 }
 }
+.wish-btn{
+    margin: 0px -34px 0 0.5rem;
+    border:0;
+    &:hover{
+            background: transparent;
+        
+    }
+    &:active{
+        background: transparent !important;
+    }
+    }
 .cart__item{
     border-bottom: 1px solid #dddada;
 }
@@ -231,8 +242,25 @@ animation:arrow 0.6s forwards ease ;
 }
 
 
-btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent 
+    !important;
+}
+
+.btn-check:focus+.btn-primary, .btn-primary:focus {
     color: #fff;
     background-color: transparent;
     border-color: transparent;
+    box-shadow: transparent;
+}
+
+.btn-primary{
+    border: 0 !important;
+}
+
+btn-check:focus+.btn, .btn:focus {
+    outline: 0;
+    box-shadow: transparent; 
 }

@@ -1,5 +1,9 @@
 import React ,{useEffect}from 'react'
 import ProductItem from '../ProductItem/ProductItem';
+import { getWishListThunk } from '../../Store/reducers/wishList.reducer/wishList.reducer';
+import { useDispatch,useSelector } from 'react-redux';
+import { RootState } from '../../Store/store';
+import { removeProductWish } from '../../Store/reducers/wishList.reducer/wishList.reducer';
 import { products } from '../../Data/Data';
 import { IProduct } from '../../interface';
 import { History } from 'swiper/core';
@@ -20,6 +24,7 @@ import SwiperCore, {
   Pagination,Navigation,Autoplay
 } from 'swiper/core';
 import { useHistory } from 'react-router';
+import axios from 'axios';
 
 // install Swiper modules
 SwiperCore.use([Autoplay,Pagination,Navigation]);
@@ -31,6 +36,8 @@ interface IProductCarousel{
  }
   const ProductItemCarousel:React.FC<IProductCarousel> = ({stateAmazing,setStateAmazing,loading,error}) => {
       const history = useHistory()
+      const dispatch = useDispatch()
+      const {wishList} = useSelector((state:RootState)=>state.reducer.wishList)
       const handleChangeImg =(id:number):void=>{
          (stateAmazing)&& setStateAmazing(stateAmazing.map((item:IProduct)=>item.id === id ?{...item,img:item.subImg} :item))
       }
@@ -38,6 +45,27 @@ interface IProductCarousel{
        const handleChangeLiveImg =(id:number):void=>{
         setStateAmazing(products.filter((item)=>item.category === "amazing"))
    }
+
+      const handleWishListAdd = (id:number)=>{
+            if(wishList.find((item:IProduct)=>item.id === id) === undefined){
+              dispatch(getWishListThunk({id:id}))
+              
+            }else{
+              dispatch(removeProductWish(id))
+            }
+          
+           
+      }
+
+
+      // React.useEffect(()=>{
+      //   console.log({wishState});
+        
+      //   console.log(wishList.find((item:IProduct)=>item.id === wishID));
+
+      // },[])
+  
+  
       return (
           <Swiper 
           autoplay={{"delay": 3000, "disableOnInteraction": false}}
@@ -77,6 +105,8 @@ interface IProductCarousel{
                       item={item}
                       handleChangeImg={()=>handleChangeImg(item.id)}
                       handleChangeLiveImg={()=>handleChangeLiveImg(item.id)}
+                      handleWishListAdd={()=>handleWishListAdd(item.id)}
+                    
                      />
                 </SwiperSlide>
               ))

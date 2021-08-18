@@ -7,9 +7,11 @@ const NotFoundPage = React.lazy(()=>import("../pages/NotFoundPage/NotFoundPage")
 const CartPage = React.lazy(()=>import("../pages/CartPage/CartPage"))
 const Register = React.lazy(()=>import("../pages/Register/Register"))
 const Login =  React.lazy(()=>import("../pages/Login/Login"))
+const WishList =  React.lazy(()=>import("../pages/wishListPage/wishListPage"))
 export let routers = [
         
         {path:"/", exact:true, Component:HomePage},
+        {path:"/wishlist", exact:true, Component:WishList},
         {path:"/register", exact:true, Component:Register},
         {path:"/login", exact:true, Component:Login},
         {path:"/cart", exact:true, Component:CartPage},

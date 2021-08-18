@@ -24,12 +24,6 @@ const HomePage:React.FC<IHomePage> = () => {
   const {isLogin,username} = useSelector((state:RootState)=>state.reducer.auth)
   const history = useHistory()
 
-  React.useEffect(()=>{
-    axios.get("/api/products/items")
-    .then((res)=>console.log(res))
-    .catch((e)=>console.log(e))
-},[])
-
 
 
     return (
