@@ -15,9 +15,11 @@
 
 .search-product__sidebar{
     position: relative;
-    .search-icon{
+    .btn-search{
         position: absolute;
-        
+        right: 0;
+        background: none;
+    border: none;
     }
   
 }
