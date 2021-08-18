@@ -14,33 +14,38 @@ const NavbarBottom = () => {
 
       <div className="desc-nav-bottom  d-flex d-lg-none px-4">
       <div className="d-flex flex-column align-items-center">
-        <BiHomeAlt  size={28}/>
-        <NavLink exact activeClassName="selected" to="/" >
+        <NavLink className="d-flex flex-column align-items-center" exact activeClassName="selected" to="/" >
+        <BiHomeAlt  className="mb-1" size={28}/>
        <small>خانه</small>
   </NavLink>
      
       </div>
       <div className="d-flex flex-column align-items-center justify-content-center">
-        <BiSearchAlt  size={28}/>
-        <NavLink activeClassName="selected" to="/categoryMobile" > <small>جستجو و دسته بندی</small></NavLink>
+      <NavLink className="d-flex flex-column align-items-center justify-content-center"  activeClassName="selected" to="/categoryMobile" >
+        <BiSearchAlt  className="mb-1" size={28}/>
+       <small>جستجو و دسته بندی</small></NavLink>
        
       </div>
 
       <div className="d-flex flex-column align-items-center justify-content-center">
-        <BiShoppingBag size={28}/>
-        <NavLink activeClassName="selected" to="/category/typesBages" >
+        <NavLink className="d-flex flex-column align-items-center justify-content-center"  activeClassName="selected" to="/cart" >
+        <BiShoppingBag  className="mb-1"size={28}/>
           <small>سبد خرید</small>
         </NavLink>
         
       </div>
       <div className="d-flex flex-column align-items-center justify-content-center">
-        <BiHeart  size={28}/>
-        <NavLink activeClassName="selected" to="/newset" >      <small>علاقه مندی ها</small></NavLink>
+         <NavLink className="d-flex flex-column align-items-center" activeClassName="selected" to="/wishList" >    
+        <BiHeart  className="mb-1"  size={28}/>
+          <small>علاقه مندی ها</small>
+          </NavLink>
    
       </div>
       <div className="d-flex flex-column align-items-center justify-content-center">
-        <BiUser  size={28}/>
-        <NavLink activeClassName="selected" to="/newset" >   <small>بروفایل</small></NavLink>
+        <NavLink className="d-flex flex-column align-items-center" activeClassName="selected" to="/newset" > 
+        <BiUser className="mb-1"  size={28}/>
+          <small>بروفایل</small>
+          </NavLink>
 
       
       </div>
