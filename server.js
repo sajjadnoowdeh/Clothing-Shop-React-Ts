@@ -1780,8 +1780,59 @@ app.get('/api/login',(req,res)=>{
      }else{
          res.status(401).send({message:"!!شما ثبت نام  نکرده اید"})
      }
-     
+    
+})
+
+app.get("/api/wishItems",(req,res)=>{
+      var listFind = products.items.find(item=>item.id === +req.query.id)
+      if(listFind){
+
+          res.json(listFind) 
+      }else{
+        res.status(401).send({message:"product not found!"})
+      }
+})
+
+app.get("/api/lowestProducts",(req,res)=>{
+    var listSorted = [...products.items.filter((item)=>item.category === req.query.categorySort)].
+    sort((a,b)=> b.price < a.price ? 1 : -1)
+    res.json(listSorted) 
+    
+})
+app.get("/api/highestProducts",(req,res)=>{
+    var listSortedHighest = [...products.items.filter((item)=>item.category === req.query.categorySortHighest)].
+    sort((a,b)=> b.price < a.price ? -1 : 1)
+    res.json(listSortedHighest) 
+    
+})
+
+app.get("/api/highestDescountProducts",(req,res)=>{
+    var listSortedHighestDiscount = [...products.items.filter((item)=>item.category === req.query.categorySortDiscount)].
+    sort((a,b)=> b.discount < a.discount ? -1 : 1)
+    res.json(listSortedHighestDiscount) 
+    
+})
+
+app.get("/api/defaultSort",(req,res)=>{
+    var listSortedHighestDiscount = [...products.items.filter((item)=>item.category === req.query.categoryDefaultsort)]
+    res.json(listSortedHighestDiscount) 
+    
+})
+
+app.get("/api/searchCategory",(req,res)=>{
+
+  var reg  = new RegExp(`${req.query.value}`,"g")
+  var listCategory = [...products.items.filter((item)=>item.category === req.query.categorySearch)].
+          filter((item)=>item.type.match(reg))
+          if(listCategory){
+            res.json(listCategory) 
+             
+          }else{
+            res.status(404).send({message:"آیتم موردنظر شما موجود نیست."})
+          
+          }
   
+    
 })
 
    app.listen(4000, () => {
