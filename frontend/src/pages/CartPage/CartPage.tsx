@@ -29,6 +29,7 @@ import "./CartPage.style.scss"
         if(product?.count === 1){
             setModalShow(true)
             dispatch(checkCountCart(id))
+            dispatch(updateTotalCart(id));
             setProductID(id)
         }
      }
@@ -170,7 +171,7 @@ import "./CartPage.style.scss"
                         با توجه به محدودیت موجودی سبد خود را ثبت و خرید را تکمیل کنید .
                         </p>
                     </Col>
-                    <Col lg={6} className="d-flex justify-content-end">
+                    <Col lg={6} className="d-flex justify-content-center justify-content-lg-end pb-5 pb-lg-0">
                         <button className="regist__buy__btn">
                             ثبت خرید
                         </button>

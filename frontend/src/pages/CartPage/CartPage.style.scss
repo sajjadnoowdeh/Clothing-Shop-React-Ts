@@ -151,9 +151,9 @@
     &::after{
         position: absolute;
         content: "";
-        height: 134px;
+        height: 80%;
         width: 1px;
-        top: 26px;
+        top: 12px;
         right: 59%;
         background-color: #e6e6e6;
         display: none;
@@ -184,6 +184,9 @@
     &:hover{
         background-color: #05995b;
     }
+    @media (max-width:999px) {
+        padding: 1rem;
+    }
 }
 
 .regist__text{
@@ -197,21 +200,25 @@
     color: #fd4d54;
     width: 166px;
     border-radius: 10px;
-    border: solid 1px #d6d5d5;
+    border:  1px solid #d6d5d5;
+    background: transparent;
     font-weight: 500;
     padding: 14px 0;
+    transition: all 0.4s ease;
     &:hover{
         background-color: #fd4d54;
+        color: white;
         border: #fd4d54;
     }
 }
 .btn__cancel{
     width: 166px;
     border-radius: 10px;
-    border: solid 1px #d6d5d5;
+    border:  1px solid #d6d5d5;
     font-weight: 500;
     color: black;
     padding: 14px 0;
+    background: transparent;
     &:hover{
         background-color: transparent;
         border: solid 1px #d6d5d5;
