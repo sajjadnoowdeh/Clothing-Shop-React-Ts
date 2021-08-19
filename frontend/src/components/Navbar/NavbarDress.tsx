@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import {
   Container,
   Navbar,
@@ -9,6 +10,7 @@ import {
   Row,
   Col,
   Button,
+  Modal
 } from "react-bootstrap";
 import { BiShoppingBag, BiSearch } from "react-icons/bi";
 import {FaRegUserCircle,FaRegUser} from "react-icons/fa";
@@ -17,19 +19,36 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Store/store";
 import { useHistory } from "react-router";
 import { logoaut } from "../../Store/reducers/auth.reducer/auth.reducer";
-import { removeProductCard } from "../../Store/reducers/product.reducer/product.reducer";
+import { getCategoryProductThunk, removeProductCard } from "../../Store/reducers/product.reducer/product.reducer";
 import { BiHeart } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { BsXCircle } from "react-icons/bs";
+import CustomHookSearch from "./CustomHookSearch";
+import Dialog from '@material-ui/core/Dialog';
+import CloseIcon from '@material-ui/icons/Close';
+import IconButton from '@material-ui/core/IconButton';
+import { IProduct } from "../../interface";
 import "./NavbarDress.style.scss";
 export default function NavbarDress() {
   const {isLogin,username} = useSelector((state:RootState)=> state.reducer.auth)
   const cart = useSelector((state: RootState) => state.reducer.productsItems.cart );
   const {wishList} = useSelector((state:RootState)=>state.reducer.wishList)
+  const [itemsSearch,setItemsSearch] = React.useState<IProduct[]>([])
+  const [loading,setLoading] = React.useState<boolean>(false)
+  const [error,setErorr] = React.useState<string>("");
+  const [open, setOpen] = React.useState(false); 
+  const [searchNav,setSeatchNav] = React.useState<string>("")
   const dispatch = useDispatch();
   const history = useHistory();
   const [totalPriceCart, setTotalPriceCart] = React.useState<any>();
   let modalCart = document.querySelector(".cart__modal");
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   const handleDisplayModalCart = () => {
     modalCart?.classList.toggle("show-sub-nav");
   };
@@ -54,7 +73,37 @@ export default function NavbarDress() {
     document.querySelector(".arrow-top-username")?.classList.toggle("rotate_usrename")
 
   }
+  const handleSearchNav =(e:React.ChangeEvent)=>{
+    let inputEl = e.target as  HTMLInputElement;
+    setSeatchNav(inputEl.value)
+  }
+
+  React.useEffect(()=>{
+    const getSearchProducts= async ()=>{
+      try {
+          setLoading(true)
+          let {data} = await axios.get(`/api/searchProduct?value=${searchNav}`)
+          console.log(data);
+          
+          setItemsSearch(data)
+      } catch (error) {
+          setErorr(error.message)
+      }finally{
+          setLoading(false)
+      }
+      
+  }
+  if(searchNav !== ""){
+    getSearchProducts();
+    
+  }
+  if(searchNav === ""){
+    setItemsSearch([])
+  }
+  },[searchNav])
+ 
   return (
+    <>
     <Container className="navbar-dress py-4 d-flex align-items-center justify-content-between">
       <div className="order-lg-1 brand ">
         <Link
@@ -220,7 +269,7 @@ export default function NavbarDress() {
         </div>
        
 
-      <form className="d-none d-lg-flex">
+      <form className="d-none d-lg-flex" onClick={handleClickOpen}>
         <input
           type="text"
           className="input-nav"
@@ -229,5 +278,42 @@ export default function NavbarDress() {
         <BiSearch size={30} className="search-icon" />
       </form>
     </Container>
+ 
+    <Dialog fullScreen open={open} onClose={handleClose} >
+      <Container>
+        <div className="d-flex sectoin-modal-nav">
+            <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
+                <CloseIcon />
+              </IconButton>
+
+              <form className="d-none d-lg-flex form-modal" >
+              <input
+                onChange={(e)=>handleSearchNav(e)}
+                type="text"
+                className="input-nav-modal"
+                placeholder="جستجو در میان بیش از ۴۰۰ برند معتبر"
+              />
+              <BiSearch  size={30} className="search-icon-modal" />
+            </form>
+        </div>
+
+
+        <p>نتایج جستجو:</p>
+        <Row className="p-3">
+          {
+            itemsSearch.map((item:IProduct)=>(
+              <Col key={item.id} lg={3} className="d-flex flex-column mb-2">
+                 <small className="mb-2"> <small className="search-text">  {searchNav} در</small> {item.type}</small>
+              </Col>
+            ))
+          }
+         
+        </Row>
+           
+      </Container>
+         
+    </Dialog>
+
+    </>
   );
 }

@@ -8,9 +8,9 @@ items:[
  {
     id:1,
     category:"amazing",
-    name:"Flirt",
+    name:"Fiorlla",
     size:"X",
-    type:" بیراهن مردانه",
+    type:" پیراهن مردانه",
     height:59,
     aroundChest:50,
     price:49000,
@@ -26,8 +26,8 @@ items:[
     discount:47,
     aroundChest:20,
     height:20,
-    type:" بیراهن مردانه",
-    name:"RNS",
+    type:" پیراهن مردانه",
+    name:"Baleno",
     img:"https://www.banimode.com/531441-large_default/46519.jpg",
     subImg:"https://www.banimode.com/531439-large_default/46519.jpg"
 },
@@ -37,7 +37,7 @@ items:[
     price:80000,
     category:"amazing",
     discount:27,
-    size:"Xl",
+    size:"XL",
     aroundChest:20,
     height:20,
     type:" مانتو زنانه",
@@ -54,7 +54,7 @@ items:[
     size:"S",
     height:74,
     type:" کت مردانه ارنیکا",
-    name:"Arnika",
+    name:"LC",
     img:"https://www.banimode.com/469082-large_default/41748.jpg",
     subImg:"https://www.banimode.com/469081-large_default/41748.jpg"
 },
@@ -67,7 +67,7 @@ items:[
     height:67,
     aroundChest:12,
     type:" مانتو زنانه",
-    name:"Just",
+    name:"Fiorlla",
     img:"https://www.banimode.com/525653-large_default/45978.jpg",
     subImg:"https://www.banimode.com/525652-large_default/45978.jpg"
 },
@@ -82,7 +82,7 @@ items:[
     height:67,
     aroundChest:20,
     type:" تیشرت زنانه",
-    name:"Avant",
+    name:"Baleno",
     img:"https://www.banimode.com/523423-large_default/45845.jpg",
     subImg:"https://www.banimode.com/523422-large_default/45845.jpg"
 },
@@ -95,8 +95,8 @@ items:[
     size:"L",
     height:17,
     aroundChest:22,
-    type:" تیشرت مردانه برندس",
-    name:"Brands",
+    type:" تیشرت مردانه الوج",
+    name:"Eloj",
     img:"https://www.banimode.com/524668-large_default/45887.jpg",
     subImg:"https://www.banimode.com/524669-large_default/45887.jpg"
 },
@@ -109,7 +109,7 @@ items:[
     height:87,
     aroundChest:19,
     type:" تیشرت زنانه",
-    name:"Anly",
+    name:"LC",
     img:"https://www.banimode.com/536424-large_default/46808.jpg",
     subImg:"https://www.banimode.com/536425-large_default/46808.jpg"
 },
@@ -136,8 +136,8 @@ items:[
     roundShip:34,
     height:66,
     waist:77,
-    type:" شلوار مردانه از ان اس",
-    name:"RNS",
+    type:" شلوار مردانه فیورلا",
+    name:"Fiorlla",
     img:"https://www.banimode.com/548876-large_default/47684.jpg",
     subImg:"https://www.banimode.com/548875-large_default/47684.jpg"
 },
@@ -149,7 +149,7 @@ items:[
     discount:27,
     aroundChest:70,
     height:10,
-    size:"Xl",
+    size:"XL",
     type:" مانتو زنانه الوج",
     name:"Eloj",
     img:"https://www.banimode.com/548086-large_default/47546.jpg",
@@ -164,8 +164,8 @@ items:[
     aroundChest:10,
     height:23,
     size:"S",
-    type:" تیشرت مردانه ارنیکا",
-    name:"Arnika",
+    type:" تیشرت مردانه ال سی",
+    name:"LC",
     img:"https://www.banimode.com/551038-large_default/47887.jpg",
     subImg:"https://www.banimode.com/551037-large_default/47887.jpg"
 },
@@ -178,8 +178,8 @@ items:[
     aroundChest:22,
     height:56,
     size:"M",
-    type:" بیراهن مردانه جاست",
-    name:"Just",
+    type:" پیراهن مردانه جاست",
+    name:"Baleno",
     img:"https://www.banimode.com/550840-large_default/47838.jpg",
     subImg:"https://www.banimode.com/550839-large_default/47838.jpg"
 },
@@ -193,8 +193,8 @@ items:[
     discount:39,
     size:"XS",
     height:74,
-    type:"کت مردانه اواست",
-    name:"Avant",
+    type:"کت مردانه ال سی",
+    name:"LC",
     img:"https://www.banimode.com/518722-large_default/45264.jpg",
     subImg:"https://www.banimode.com/522084-large_default/45264.jpg"
 },
@@ -207,18 +207,18 @@ items:[
     aroundChest:40,
     height:60,
     type:"   تیشرت زنانه برندس",
-    name:"Brands",
+    name:"Eloj",
     img:"https://www.banimode.com/550867-large_default/47822.jpg",
     subImg:"https://www.banimode.com/550866-large_default/47822.jpg"
 },
 {
     id:16,
-    name:"Hegro",
+    name:"LC",
     category:"newset",
     size:"X",
     aroundChest:70,
     height:60,
-    type:" بیرانه مردانه هوگرو",
+    type:" بیرانه مردانه ال سی",
     price:49000,
     img:"https://www.banimode.com/551398-large_default/47957.jpg",
     subImg:"https://www.banimode.com/551399-large_default/47957.jpg"
@@ -230,7 +230,7 @@ items:[
     size:"XS",
     height:74,
     type:" کت تک مردانه",
-    name:"Brands",
+    name:"Fiorlla",
     img:"https://www.banimode.com/551325-large_default/47949.jpg",
     subImg:"https://www.banimode.com/551326-large_default/47949.jpg"
 },
@@ -240,12 +240,12 @@ items:[
     price:80000,
     category:"newset",
     discount:27,
-    size:"Xl",
+    size:"XL",
     roundShip:14,
     height:96,
     waist:17,
     type:" شلوارک مردانه بی فور",
-    name:"B4",
+    name:"Baleno",
     img:"https://www.banimode.com/552258-large_default/47944.jpg",
     subImg:"https://www.banimode.com/552259-large_default/47944.jpg"
 },
@@ -260,13 +260,13 @@ items:[
     waist:17,
     size:"S",
     type:" شلوارک مردانه بی فور",
-    name:"B4",
+    name:"Eloj",
     img:"https://www.banimode.com/552264-large_default/47944.jpg",
     subImg:"https://www.banimode.com/552265-large_default/47944.jpg"
 },
 {
     id:20,
-    name:"Mode",
+    name:"LC",
     category:"newset",
     size:"X",
     height:74,
@@ -287,7 +287,7 @@ items:[
     aroundChest:60,
     height:70,
     type:" تیشرت زنانه",
-    name:"B4",
+    name:"Fiorlla",
     img:"https://www.banimode.com/550999-large_default/47937.jpg",
     subImg:"https://www.banimode.com/551001-large_default/47937.jpg"
 },
@@ -296,11 +296,11 @@ items:[
     price:80000,
     category:"newset",
     discount:27,
-    size:"Xl",
+    size:"XL",
     aroundChest:10,
     height:70,
     type:" تیشرت زنانه",
-    name:"B4",
+    name:"Eloj",
     img:"https://www.banimode.com/551004-large_default/47937.jpg",
     subImg:"https://www.banimode.com/551005-large_default/47937.jpg"
 },
@@ -314,13 +314,13 @@ items:[
     aroundChest:30,
     height:70,
     type:" تیشرت زنانه",
-    name:"Arnika",
+    name:"LC",
     img:"https://www.banimode.com/551007-large_default/47937.jpg",
     subImg:"https://www.banimode.com/551009-large_default/47937.jpg"
 },
 {
     id:24,
-    name:"Hegro",
+    name:"LC",
     category:"newsetMale",
     size:"X",
     aroundChest:60,
@@ -337,7 +337,7 @@ items:[
     size:"XS",
     height:74,
     type:" کت تک مردانه",
-    name:"Brands",
+    name:"Fiorlla",
     img:"https://www.banimode.com/551325-large_default/47949.jpg",
     subImg:"https://www.banimode.com/551326-large_default/47949.jpg"
 },
@@ -347,12 +347,12 @@ items:[
     price:80000,
     category:"newsetMale",
     discount:27,
-    size:"Xl",
+    size:"XL",
     roundShip:44,
     height:25,
     waist:657,
     type:" شلوارک مردانه بی فور",
-    name:"B4",
+    name:"Baleno",
     img:"https://www.banimode.com/552258-large_default/47944.jpg",
     subImg:"https://www.banimode.com/552259-large_default/47944.jpg"
 },
@@ -368,13 +368,13 @@ items:[
     height:12,
     waist:67,
     type:" شلوارک مردانه بی فور",
-    name:"B4",
+    name:"Eloj",
     img:"https://www.banimode.com/552264-large_default/47944.jpg",
     subImg:"https://www.banimode.com/552265-large_default/47944.jpg"
 },
 {
     id:28,
-    name:"Mode",
+    name:"LC",
     category:"newsetFamale",
     size:"X",
     height:74,
@@ -393,7 +393,7 @@ items:[
     aroundChest:66,
     height:51,
     type:" تیشرت زنانه",
-    name:"B4",
+    name:"Fiorlla",
     img:"https://www.banimode.com/550999-large_default/47937.jpg",
     subImg:"https://www.banimode.com/551001-large_default/47937.jpg"
 },
@@ -403,11 +403,11 @@ items:[
     price:80000,
     category:"newsetFamale",
     discount:27,
-    size:"Xl",
+    size:"XL",
     aroundChest:20,
     height:28,
     type:" تیشرت زنانه",
-    name:"B4",
+    name:"Baleno",
     img:"https://www.banimode.com/551004-large_default/47937.jpg",
     subImg:"https://www.banimode.com/551005-large_default/47937.jpg"
 },
@@ -420,14 +420,14 @@ items:[
     aroundChest:10,
     height:81,
     type:" تیشرت زنانه",
-    name:"Arnika",
+    name:"Eloj",
     img:"https://www.banimode.com/551007-large_default/47937.jpg",
     subImg:"https://www.banimode.com/551009-large_default/47937.jpg"
 },
 {
     id:32,
     category:"newsetBaby",
-    name:"baby land",
+    name:"LC",
     size:"X",
     type:" شیشه شیر",
     price:49000,
@@ -436,7 +436,7 @@ items:[
 },
 {
     id:33,
-    name:"baby land",
+    name:"Fiorlla",
     category:"newsetBaby",
     size:"XS",
     type:" شیشه شیر",
@@ -447,7 +447,7 @@ items:[
 
 {
         id:34,
-        name:"baby land",
+        name:"Baleno",
         category:"newsetBaby",
         size:"S",
         type:" شیشه شیر",
@@ -458,7 +458,7 @@ items:[
 
     {
         id:35,
-        name:"baby land",
+        name:"Eloj",
         category:"newsetBaby",
         size:"M",
         type:" شیشه شیر",
@@ -469,7 +469,7 @@ items:[
 
     {
         id:36,
-        name:"Aroma",
+        name:"LC",
         category:"maleAll",
         size:"X",
           aroundChest:62,
@@ -489,7 +489,7 @@ items:[
           aroundChest:10,
     height:28,
         type:" پیراهن آستین کوتاه",
-        name:"Brands",
+        name:"Fiorlla",
         img:"https://www.banimode.com/542470-large_default/47179.jpg",
         subImg:"https://www.banimode.com/542471-large_default/47179.jpg"
     },
@@ -499,11 +499,11 @@ items:[
     price:80000,
     category:"maleAll",
     discount:27,
-    size:"Xl",
+    size:"XL",
       aroundChest:60,
     height:21,
     type:" پیراهن آستین کوتاه",
-    name:"B4",
+    name:"Eloj",
     img:"https://www.banimode.com/511742-large_default/44954.jpg",
     subImg:"https://www.banimode.com/511743-large_default/44954.jpg"
 },
@@ -516,13 +516,13 @@ items:[
     aroundChest:60,
     height:231,
     type:" پیراهن آستین کوتاه",
-    name:"B4",
+    name:"Baleno",
     img:"https://www.banimode.com/530160-large_default/46556.jpg",
     subImg:"https://www.banimode.com/530161-large_default/46556.jpg"
 },
 {
     id:40,
-    name:"Aroma",
+    name:"LC",
     category:"maleAll",
     size:"X",
     aroundChest:60,
@@ -542,7 +542,7 @@ items:[
     aroundChest:60,
     height:21,
     type:" تیشرت مردانه",
-    name:"Brands",
+    name:"Fiorlla",
     img:"https://www.banimode.com/516476-large_default/45191.jpg",
     subImg:"https://www.banimode.com/516477-large_default/45191.jpg"
 },
@@ -551,11 +551,11 @@ items:[
     price:80000,
     category:"maleAll",
     discount:27,
-    size:"Xl",
+    size:"XL",
     aroundChest:60,
     height:21,
     type:" تیشرت مردانه",
-    name:"B4",
+    name:"Baleno",
     img:"https://www.banimode.com/549442-large_default/47656.jpg",
     subImg:"https://www.banimode.com/549443-large_default/47656.jpg"
 },
@@ -569,14 +569,14 @@ items:[
     aroundChest:60,
     height:21,
     type:" تیشرت مردانه",
-    name:"B4",
+    name:"Eloj",
     img:"https://www.banimode.com/526454-large_default/46229.jpg",
     subImg:"https://www.banimode.com/526455-large_default/46229.jpg"
 },
 
 {
     id:44,
-    name:"Brands",
+    name:"LC",
     category:"maleAll",
     size:"X",
     type:"  کت وشلوار مردانه",
@@ -598,7 +598,7 @@ items:[
     size:"XS",
     discount:17,
     type:" کت وشلوار مردانه",
-    name:"Brands",
+    name:"Fiorlla",
     img:"https://www.banimode.com/307386-large_default/29823.jpg",
     subImg:"https://www.banimode.com/307387-large_default/29823.jpg"
 },
@@ -607,10 +607,10 @@ items:[
     price:80000,
     category:"maleAll",
     discount:27,
-    size:"Xl",
+    size:"XL",
     height:74,
     type:" کت تک مردانه",
-    name:"LRC",
+    name:"Baleno",
     img:"https://www.banimode.com/493019-large_default/43402.jpg",
     subImg:"https://www.banimode.com/493020-large_default/43402.jpg"
 },
@@ -621,7 +621,7 @@ items:[
     discount:57,
     size:"S",
     type:"کت تک کردانه کروم",
-    name:"Curom",
+    name:"Eloj",
     img:"https://www.banimode.com/506980-large_default/44741.jpg",
     subImg:"https://www.banimode.com/506979-large_default/44741.jpg"
 },
@@ -636,7 +636,7 @@ items:[
 
 {
     id:48,
-    name:"Aroma",
+    name:"LC",
     category:"shirt",
     size:"X",
     aroundChest:60,
@@ -656,7 +656,7 @@ items:[
     aroundChest:60,
     height:21,
     type:" پیراهن آستین کوتاه",
-    name:"Brands",
+    name:"Fiorlla",
     img:"https://www.banimode.com/542470-large_default/47179.jpg",
     subImg:"https://www.banimode.com/542471-large_default/47179.jpg"
 },
@@ -666,11 +666,11 @@ items:[
     price:80000,
     category:"shirt",
     discount:27,
-    size:"Xl",
+    size:"XL",
     aroundChest:60,
     height:21,
     type:" پیراهن آستین کوتاه",
-    name:"B4",
+    name:"Baleno",
     img:"https://www.banimode.com/511742-large_default/44954.jpg",
     subImg:"https://www.banimode.com/511743-large_default/44954.jpg"
 },
@@ -683,13 +683,13 @@ items:[
     aroundChest:60,
     height:21,
     type:" پیراهن آستین کوتاه",
-    name:"B4",
+    name:"Eloj",
     img:"https://www.banimode.com/530160-large_default/46556.jpg",
     subImg:"https://www.banimode.com/530161-large_default/46556.jpg"
 },
 {
     id:52,
-    name:"Aroma",
+    name:"LC",
     category:"Tshirt",
     size:"X",
     type:"  تیشرت مردانه",
@@ -702,7 +702,7 @@ items:[
 },
 {
     id:53,
-    name:"Aroma",
+    name:"Fiorlla",
     category:"Tshirt",
     size:"X",
     type:"  تیشرت مردانه",
@@ -722,7 +722,7 @@ items:[
     type:" تیشرت مردانه",
     aroundChest:40,
     height:21,
-    name:"Brands",
+    name:"Baleno",
     img:"https://www.banimode.com/516476-large_default/45191.jpg",
     subImg:"https://www.banimode.com/516477-large_default/45191.jpg"
 },
@@ -733,9 +733,9 @@ items:[
     price:80000,
     category:"Tshirt",
     discount:27,
-    size:"Xl",
+    size:"XL",
     type:" تیشرت مردانه",
-    name:"B4",
+    name:"Eloj",
     img:"https://www.banimode.com/549442-large_default/47656.jpg",
     subImg:"https://www.banimode.com/549443-large_default/47656.jpg"
 },
@@ -748,13 +748,13 @@ items:[
     aroundChest:20,
     height:21,
     type:" تیشرت مردانه",
-    name:"B4",
+    name:"LC",
     img:"https://www.banimode.com/526454-large_default/46229.jpg",
     subImg:"https://www.banimode.com/526455-large_default/46229.jpg"
 },
 {
     id:57,
-    name:"Brands",
+    name:"LC",
     category:"cout",
     size:"X",
     type:"  کت وشلوار مردانه",
@@ -776,7 +776,7 @@ items:[
     roundShip:14,
     height:87,
     waist:89,
-    name:"Brands",
+    name:"Fiorlla",
     img:"https://www.banimode.com/307386-large_default/29823.jpg",
     subImg:"https://www.banimode.com/307387-large_default/29823.jpg"
 },
@@ -786,10 +786,10 @@ items:[
     price:80000,
     category:"cout",
     discount:27,
-    size:"Xl",
+    size:"XL",
     height:74,
     type:" کت تک مردانه",
-    name:"LRC",
+    name:"Baleno",
     img:"https://www.banimode.com/493019-large_default/43402.jpg",
     subImg:"https://www.banimode.com/493020-large_default/43402.jpg"
 },
@@ -801,13 +801,13 @@ items:[
     size:"S",
     height:74,
     type:"کت تک کردانه کروم",
-    name:"Curom",
+    name:"Eloj",
     img:"https://www.banimode.com/506980-large_default/44741.jpg",
     subImg:"https://www.banimode.com/506979-large_default/44741.jpg"
 },
 {
     id:61,
-    name:"Ziboo",
+    name:"LC",
     category:"famaleAll",
     size:"X",
     aroundChest:20,
@@ -824,7 +824,7 @@ items:[
     size:"XS",
     discount:17,
     type:"   مانتو جین ان ار سی",
-    name:"NRS",
+    name:"Fiorlla",
     img:"https://www.banimode.com/528598-large_default/45095.jpg",
     subImg:"https://www.banimode.com/528592-large_default/45095.jpg"
 },
@@ -834,11 +834,11 @@ items:[
     price:80000,
     category:"famaleAll",
     discount:27,
-    size:"Xl",
+    size:"XL",
     aroundChest:20,
     height:20,
     type:" مانتو زمستانی زیبو",
-    name:"Ziboo",
+    name:"Baleno",
     img:"https://www.banimode.com/554046-large_default/47265.jpg",
     subImg:"https://www.banimode.com/554041-large_default/47265.jpg"
 },
@@ -851,7 +851,7 @@ items:[
     aroundChest:20,
     height:20,
     type:"   مانتو تابستانی جوتی جینس",
-    name:"Jooti Jeans",
+    name:"Eloj",
     img:"https://www.banimode.com/524089-large_default/44363.jpg",
     subImg:"https://www.banimode.com/524083-large_default/44363.jpg"
 },
@@ -872,7 +872,7 @@ items:[
     size:"XS",
     discount:17,
     type:"   مانتو جین ان ار سی",
-    name:"JootiJeans",
+    name:"Fiorlla",
     img:"https://www.banimode.com/486981-large_default/43043.jpg",
     subImg:"https://www.banimode.com/486983-large_default/43043.jpg"
 },
@@ -881,12 +881,12 @@ items:[
     price:80000,
     category:"famaleAll",
     discount:27,
-    size:"Xl",
+    size:"XL",
     roundShip:54,
     height:65,
     waist:33,
     type:" شلوار زنانه کیکی راکی",
-    name:"Ziboo",
+    name:"Baleno",
     img:"https://www.banimode.com/547203-large_default/47524.jpg",
     subImg:"https://www.banimode.com/547204-large_default/47524.jpg"
 },
@@ -902,13 +902,13 @@ items:[
     height:78,
     waist:43,
     type:"    شلوار زنانه جین اسویت",
-    name:"Jeansweat",
+    name:"Eloj",
     img:"https://www.banimode.com/432898-large_default/39229.jpg",
     subImg:"https://www.banimode.com/432899-large_default/39229.jpg"
 },
 {
     id:69,
-    name:"Jour",
+    name:"LC",
     category:"famaleAll",
     size:"X",
     height:33,
@@ -927,7 +927,7 @@ items:[
     height:33,
     waist:76,
     type:"   دامن زنانه سرٰه",
-    name:"Serge",
+    name:"Fiorlla",
     img:"https://www.banimode.com/463929-large_default/41132.jpg",
     subImg:"https://www.banimode.com/463930-large_default/41132.jpg"
 },
@@ -936,11 +936,11 @@ items:[
     price:80000,
     category:"famaleAll",
     discount:27,
-    size:"Xl",
+    size:"XL",
      height:33,
     waist:76,
     type:" دامن زنانه  جین وست",
-    name:"jeanwest",
+    name:"Baleno",
     img:"https://www.banimode.com/514944-large_default/45430.jpg",
     subImg:"https://www.banimode.com/514945-large_default/45430.jpg"
 },
@@ -951,13 +951,13 @@ items:[
     discount:57,
     size:"S",
     type:"    شلوار زنانه  جوتی جینس",
-    name:"JootiJeans",
+    name:"Eloj",
     img:"https://www.banimode.com/442883-large_default/39831.jpg",
     subImg:"https://www.banimode.com/442881-large_default/39831.jpg"
 },
 {
     id:73,
-    name:"Ziboo",
+    name:"LC",
     category:"manto",
     size:"X",
     aroundChest:20,
@@ -975,7 +975,7 @@ items:[
     size:"XS",
     discount:17,
     type:"   مانتو جین ان ار سی",
-    name:"NRS",
+    name:"Fiorlla",
     aroundChest:20,
     height:20,
     img:"https://www.banimode.com/528598-large_default/45095.jpg",
@@ -986,9 +986,9 @@ items:[
     price:80000,
     category:"manto",
     discount:27,
-    size:"Xl",
+    size:"XL",
     type:" مانتو زمستانی زیبو",
-    name:"Ziboo",
+    name:"Baleno",
     img:"https://www.banimode.com/554046-large_default/47265.jpg",
     subImg:"https://www.banimode.com/554041-large_default/47265.jpg"
 },
@@ -1001,7 +1001,7 @@ items:[
     aroundChest:20,
     height:20,
     type:"   مانتو تابستانی جوتی جینس",
-    name:"Jooti Jeans",
+    name:"Eloj ",
     img:"https://www.banimode.com/524089-large_default/44363.jpg",
     subImg:"https://www.banimode.com/524083-large_default/44363.jpg"
 },
@@ -1027,7 +1027,7 @@ items:[
     aroundChest:20,
     height:20,
     type:"   مانتو جین ان ار سی",
-    name:"JootiJeans",
+    name:"Fiorlla",
     img:"https://www.banimode.com/486981-large_default/43043.jpg",
     subImg:"https://www.banimode.com/486983-large_default/43043.jpg"
 },
@@ -1036,12 +1036,12 @@ items:[
     price:80000,
     category:"pants",
     discount:27,
-    size:"Xl",
+    size:"XL",
     roundShip:22,
     height:54,
     waist:78,
     type:" شلوار زنانه کیکی راکی",
-    name:"Ziboo",
+    name:"Baleno",
     img:"https://www.banimode.com/547203-large_default/47524.jpg",
     subImg:"https://www.banimode.com/547204-large_default/47524.jpg"
 },
@@ -1055,13 +1055,13 @@ items:[
     height:43,
     waist:64,
     type:"    شلوار زنانه جین اسویت",
-    name:"Jeansweat",
+    name:"Eloj",
     img:"https://www.banimode.com/432898-large_default/39229.jpg",
     subImg:"https://www.banimode.com/432899-large_default/39229.jpg"
 },
 {
     id:81,
-    name:"Jour",
+    name:"LC",
     category:"skirt",
     size:"X",
     height:33,
@@ -1080,7 +1080,7 @@ items:[
     height:33,
     waist:76,
     type:"   دامن زنانه سرٰه",
-    name:"Serge",
+    name:"Fiorlla",
     img:"https://www.banimode.com/463929-large_default/41132.jpg",
     subImg:"https://www.banimode.com/463930-large_default/41132.jpg"
 },
@@ -1090,11 +1090,11 @@ items:[
     price:80000,
     category:"skirt",
     discount:27,
-    size:"Xl",
+    size:"XL",
     height:33,
     waist:76,
     type:" دامن زنانه  جین وست",
-    name:"jeanwest",
+    name:"Baleno",
     img:"https://www.banimode.com/514944-large_default/45430.jpg",
     subImg:"https://www.banimode.com/514945-large_default/45430.jpg"
 },
@@ -1108,7 +1108,7 @@ items:[
     waist:23,
     size:"S",
     type:"    شلوار زنانه  جوتی جینس",
-    name:"JootiJeans",
+    name:"Eloj",
     img:"https://www.banimode.com/442883-large_default/39831.jpg",
     subImg:"https://www.banimode.com/442881-large_default/39831.jpg"
 },
@@ -1139,7 +1139,7 @@ items:[
     price:80000,
     category:"babyAll",
     discount:27,
-    size:"Xl",
+    size:"XL",
     type:" تیشرت استین کوتاه بسرانه",
     name:"Baleno",
     img:"https://www.banimode.com/476559-large_default/41857.jpg",
@@ -1159,7 +1159,7 @@ items:[
 },
 {
     id:89,
-    name:"jeanwest",
+    name:"Eloj",
     category:"babyAll",
     size:"X",
     type:"   کاپشن بسرانه جین وست",
@@ -1183,9 +1183,9 @@ items:[
     price:80000,
     category:"babyAll",
     discount:27,
-    size:"Xl",
+    size:"XL",
     type:"  کاپشن بسرانه  جوتی جینس",
-    name:"JootiJeans",
+    name:"LC",
     img:"https://www.banimode.com/329077-large_default/31746.jpg",
     subImg:"https://www.banimode.com/329078-large_default/31746.jpg"
 },
@@ -1196,7 +1196,7 @@ items:[
     discount:57,
     size:"S",
     type:"   کاپشن  بسرانه  جین اسویت",
-    name:"jeanwest",
+    name:"Fiorlla",
     img:"https://www.banimode.com/340493-large_default/32670.jpg",
     subImg:"https://www.banimode.com/340494-large_default/32670.jpg"
 },
@@ -1231,7 +1231,7 @@ items:[
     price:80000,
     category:"baby",
     discount:27,
-    size:"Xl",
+    size:"XL",
     aroundChest:33,
     height:90,
     type:" تیشرت استین کوتاه بسرانه",
@@ -1253,7 +1253,7 @@ items:[
 },
 {
     id:97,
-    name:"jeanwest",
+    name:"Eloj",
     category:"jacket",
     size:"X",
     height:45,
@@ -1279,10 +1279,10 @@ items:[
     price:80000,
     category:"jacket",
     discount:27,
-    size:"Xl",
+    size:"XL",
     height:45,
     type:"  کاپشن بسرانه  جوتی جینس",
-    name:"JootiJeans",
+    name:"LC",
     img:"https://www.banimode.com/329077-large_default/31746.jpg",
     subImg:"https://www.banimode.com/329078-large_default/31746.jpg"
 },
@@ -1294,7 +1294,7 @@ items:[
     size:"S",
     height:45,
     type:"   کاپشن  بسرانه  جین اسویت",
-    name:"jeanwest",
+    name:"Fiorlla",
     img:"https://www.banimode.com/340493-large_default/32670.jpg",
     subImg:"https://www.banimode.com/340494-large_default/32670.jpg"
 },
@@ -1387,7 +1387,7 @@ items:[
     height:21,
     waist:77,
     type:"         تیشرت یقه گرد بالنو",
-    name:"Baleno",
+    name:"Eloj",
     img:"https://www.banimode.com/549827-large_default/47780.jpg"       ,
     subImg:"https://www.banimode.com/549828-large_default/47780.jpg"
 },
@@ -1399,7 +1399,7 @@ items:[
     discount:28,
     size:"XS",
     type:"      ست تیشرت و شلوارک ورزشی بالنو",
-    name:"Baleno",
+    name:"Fiorlla",
     img:    "https://www.banimode.com/529871-large_default/46118.jpg"        ,
     subImg:"https://www.banimode.com/529872-large_default/46118.jpg"
 },
@@ -1410,7 +1410,7 @@ items:[
     price:35000,
     category:"typesClothingSports",
     discount:68,
-    size:"Xl",
+    size:"XL",
     aroundChest:60,
     height:21,
     waist:66,
@@ -1430,7 +1430,7 @@ items:[
     aroundChest:80,
     height:71,
     type:"        سوشیرت  ورزشی فیورلا ",
-    name:"Fiorlla",
+    name:"Baleno",
     img:    "https://www.banimode.com/529470-large_default/46269.jpg"      ,
     subImg:"https://www.banimode.com/529471-large_default/46269.jpg"
 },
@@ -1443,7 +1443,7 @@ items:[
     discount:68,
     size:"XS",
     type:"        ساک ورزشی  ورزشی فیورلا ",
-    name:"Fiorlla",
+    name:"Eloj",
     img:   "https://www.banimode.com/387446-large_default/33626.jpg"      ,
     subImg:"https://www.banimode.com/387447-large_default/33626.jpg"
 },
@@ -1465,7 +1465,7 @@ items:[
     discount:28,
     size:"XL",
     type:" ست تیشرت و شلوارک راحتی پسرانه فیورلا",
-    name:"Fiorlla",
+    name:"LC",
     img:   "https://www.banimode.com/532176-large_default/46829.jpg"     ,
     subImg:"https://www.banimode.com/532177-large_default/46829.jpg"
 },
@@ -1491,14 +1491,14 @@ items:[
     height:21,
     waist:34,
     type:"یراهن دخترانه برندس بالنو",
-    name:"Baleno",
+    name:"Eloj",
     img:   "https://www.banimode.com/520903-large_default/45608.jpg"   ,
     subImg:"https://www.banimode.com/520904-large_default/45608.jpg"
 },
 
 {
     id:116,
-    name:"Mode",
+    name:"LC",
     category:"typesFamale",
     size:"X",
     height:74,
@@ -1517,7 +1517,7 @@ items:[
     aroundChest:66,
     height:51,
     type:" تیشرت زنانه",
-    name:"B4",
+    name:"Fiorlla",
     img:"https://www.banimode.com/550999-large_default/47937.jpg",
     subImg:"https://www.banimode.com/551001-large_default/47937.jpg"
 },
@@ -1527,11 +1527,11 @@ items:[
     price:80000,
     category:"typesFamale",
     discount:27,
-    size:"Xl",
+    size:"XL",
     aroundChest:20,
     height:28,
     type:" تیشرت زنانه",
-    name:"B4",
+    name:"Baleno",
     img:"https://www.banimode.com/551004-large_default/47937.jpg",
     subImg:"https://www.banimode.com/551005-large_default/47937.jpg"
 },
@@ -1544,7 +1544,7 @@ items:[
     aroundChest:10,
     height:81,
     type:" تیشرت زنانه",
-    name:"Arnika",
+    name:"Eloj",
     img:"https://www.banimode.com/551007-large_default/47937.jpg",
     subImg:"https://www.banimode.com/551009-large_default/47937.jpg"
 },
@@ -1558,7 +1558,7 @@ items:[
     size:"43",
     soleFoot:45.5,
     type:"  کتانی  مردانه جوتی جینز",
-    name:"JootiJeans",
+    name:"LC",
     img: " https://www.banimode.com/468645-large_default/41855.jpg",
     subImg:"https://www.banimode.com/468647-large_default/41855.jpg"
 },
@@ -1570,7 +1570,7 @@ items:[
     size:"46",
     soleFoot:75.5,
     type:"      صندل چرم ",
-    name:"Lord",
+    name:"Fiorlla",
     img:"https://www.banimode.com/508582-large_default/44598.jpg",
     subImg:"https://www.banimode.com/508584-large_default/44598.jpg"
 },
@@ -1604,7 +1604,7 @@ items:[
 },
 {
     id:124,
-    name:"Aroma",
+    name:"Fiorlla",
     category:"typesTshirt",
     size:"X",
     type:"  تیشرت مردانه",
@@ -1624,7 +1624,7 @@ items:[
     type:" تیشرت مردانه",
     aroundChest:40,
     height:21,
-    name:"Brands",
+    name:"Baleno",
     img:"https://www.banimode.com/516476-large_default/45191.jpg",
     subImg:"https://www.banimode.com/516477-large_default/45191.jpg"
 },
@@ -1636,7 +1636,7 @@ items:[
     discount:17,
     type:"  ست ادوتویلت و اسبری",
     noSize:true,
-    name:"LC",
+    name:"Eloj",
     img:"https://www.banimode.com/496627-large_default/42800.jpg",
     subImg:"https://www.banimode.com/496238-large_default/42800.jpg"
 },
@@ -1649,7 +1649,7 @@ items:[
     discount:17,
     type:"    پرفیوم مردانه ",
     noSize:true,
-    name:"Aroma",
+    name:"LC",
     img:"https://www.banimode.com/503664-large_default/44254.jpg",
     subImg:"https://www.banimode.com/503665-large_default/44254.jpg"
 },
@@ -1661,7 +1661,7 @@ items:[
     discount:17,
     type:"    ادوپرفیوم مردانه ",
     noSize:true,
-    name:"Aroma",
+    name:"Fiorlla",
     img:"https://www.banimode.com/359999-large_default/34403.jpg",
     subImg:"https://www.banimode.com/360001-large_default/34403.jpg"
 },
@@ -1674,7 +1674,7 @@ items:[
     discount:17,
     type:"     عروسک و بتو نوزاد ",
     noSize:true,
-    name:"Aroma",
+    name:"Baleno",
     img:  "https://www.banimode.com/340486-large_default/32717.jpg",
     subImg:"https://www.banimode.com/340487-large_default/32717.jpg"
 },
@@ -1699,7 +1699,7 @@ items:[
     discount:27,
     type:"       بازی فکری کابوچین   ",
     noSize:true,
-    name:"Aroma",
+    name:"Eloj",
     img:  "https://www.banimode.com/533252-large_default/46899.jpg",
     subImg:"https://www.banimode.com/533254-large_default/46899.jpg"
 },
@@ -1712,7 +1712,7 @@ items:[
     discount:5,
     type:"         کارت ۲۰۰ هزار تومانی   ",
     noSize:true,
-    name:"Aroma",
+    name:"LC",
     img:  "https://www.banimode.com/464895-large_default/36609.jpg",
     subImg:"https://www.banimode.com/429450-large_default/36609.jpg"
 },
@@ -1737,7 +1737,7 @@ items:[
     discount:5,
     type:"         کارت ۵۰۰ هزار تومانی   ",
     noSize:true,
-    name:"LC",
+    name:"Fiorlla",
     img:  "https://www.banimode.com/464830-large_default/36642.jpg",
     subImg:"https://www.banimode.com/429604-large_default/36642.jpg"
 },]
@@ -1834,6 +1834,42 @@ app.get("/api/searchCategory",(req,res)=>{
   
     
 })
+
+app.get("/api/filterbrand",(req,res)=>{
+    var listCategory = [...products.items.filter((item)=>item.category === req.query.categoryBrand)]
+     
+    if (req.query.filtered === "LC") {res.json(listCategory.filter((item)=>item.name === "LC"))}
+     if(req.query.filtered === "Fiorlla") {res.json(listCategory.filter((item)=>item.name === "Fiorlla"))}
+     if(req.query.filtered === "Baleno") {res.json(listCategory.filter((item)=>item.name === "Baleno"))}
+     if(req.query.filtered === "Eloj") {res.json(listCategory.filter((item)=>item.name === "Eloj"))}  
+
+
+})
+app.get("/api/filterSizing",(req,res)=>{
+    var listCategory = [...products.items.filter((item)=>item.category === req.query.categorySize)]
+    
+    if(req.query.filteredSize === ""){res.json(products.items.filter((item)=>item.category === req.query.categorySize))}
+     if(req.query.filteredSize === "X"){res.json(listCategory.filter((item)=>item.size === "X"))}
+     if(req.query.filteredSize === "XL"){res.json(listCategory.filter((item)=>item.size === "XL"))}
+     if(req.query.filteredSize === "M"){res.json(listCategory.filter((item)=>item.size === "M"))}
+     if(req.query.filteredSize === "L"){res.json(listCategory.filter((item)=>item.size === "L"))}
+     if(req.query.filteredSize === "XS"){res.json(listCategory.filter((item)=>item.size === "XS"))}
+     if(req.query.filteredSize === "S"){res.json(listCategory.filter((item)=>item.size === "S"))}
+})
+
+app.get("/api/filterSizingAll",(req,res)=>{
+    var listCategory = [...products.items.filter((item)=>item.category === req.query.categorySizeAll)]
+     
+    if(req.query.filteredSizeAll === ""&&req.query.filteredAll){res.json(listCategory.filter((item)=>item.name === req.query.filteredAll))}
+     if(req.query.filteredAll && req.query.filteredSizeAll){res.json(listCategory.filter((item)=>item.size === req.query.filteredSizeAll && item.name === req.query.filteredAll))}
+})
+
+app.get("/api/searchProduct",(req,res)=>{
+    var reg_search  = new RegExp(`${req.query.value}`,"g")
+    res.json(products.items.filter((item)=>item.type.match(reg_search)))
+   
+})
+
 
    app.listen(4000, () => {
   console.log(`Example app listening at http://localhost:${4000}`)
