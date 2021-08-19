@@ -13,8 +13,17 @@ import { useParams, useHistory, useRouteMatch } from "react-router";
 import { removeProductWish } from "../../Store/reducers/wishList.reducer/wishList.reducer";
 import { IProduct } from "./../../interface";
 import { RootState } from "../../Store/store";
-import { BiShoppingBag,BiSearch } from "react-icons/bi";
-import { handleDataLowestThunk,handleDataHighestThunk,handleDataHighestDiscountThunk ,handleDefaultSortThunk,handleSearchThunk} from "../../Store/reducers/product.reducer/product.reducer";
+import { BiShoppingBag, BiSearch } from "react-icons/bi";
+import {
+  handleDataLowestThunk,
+  handleDataHighestThunk,
+  handleDataHighestDiscountThunk,
+  handleDefaultSortThunk,
+  handleSearchThunk,
+  handleFilterBrandThunk,
+  handleFilterSizingThunk,
+  handleAllSizingThunk
+} from "../../Store/reducers/product.reducer/product.reducer";
 import { getWishListThunk } from "../../Store/reducers/wishList.reducer/wishList.reducer";
 import { getCategoryProductThunk } from "../../Store/reducers/product.reducer/product.reducer";
 import {
@@ -28,15 +37,19 @@ function CategoryProducts() {
   const { productsCategory, loading, error } = useSelector(
     (state: RootState) => state.reducer.productsItems
   );
-  const stateCategory= useSelector(
+  const stateCategory = useSelector(
     (state: RootState) => state.reducer.productsItems
   );
   const dispatch = useDispatch();
   const history = useHistory();
   const match = useRouteMatch();
-  const [direction,setDirection]= React.useState<string>("")
-  const {wishList} = useSelector((state:RootState)=>state.reducer.wishList)
-  const [valueSearch,setValueSearch] = React.useState<string>("")
+  const [direction, setDirection] = React.useState<string>("");
+  const { wishList } = useSelector(
+    (state: RootState) => state.reducer.wishList
+  );
+  const [valueSearch, setValueSearch] = React.useState<string>(""); 
+  const [filterd, setFilterd] = React.useState<string>("");
+  const [filteredSize,setFilterdSize] = React.useState<string>("")
   useEffect(() => {
     dispatch(getCategoryProductThunk(category_name));
   }, [category_name]);
@@ -52,55 +65,86 @@ function CategoryProducts() {
     dispatch(productChangeSubImg(category_name));
   };
 
-    const handleWishListAdd = (id:number)=>{
-      if(wishList.find((item:IProduct)=>item.id === id) === undefined){
-        dispatch(getWishListThunk({id:id}))
-        
-      }else{
-        dispatch(removeProductWish(id))
-      }   
-}
+  const handleWishListAdd = (id: number) => {
+    if (wishList.find((item: IProduct) => item.id === id) === undefined) {
+      dispatch(getWishListThunk({ id: id }));
+    } else {
+      dispatch(removeProductWish(id));
+    }
+  };
 
-   const handleLowestPrice =()=>{
-     setDirection("lowest");
-   }
-   const handleHighestPrice =()=>{
+  const handleLowestPrice = () => {
+    setDirection("lowest");
+  };
+  const handleHighestPrice = () => {
     setDirection("highest");
-  }
-   const handleHighestDiscountPrice =()=>{
+  };
+  const handleHighestDiscountPrice = () => {
     setDirection("highestDiscount");
-  }
-  const handleDefaultSort =()=>{
+  };
+  const handleDefaultSort = () => {
     setDirection("default");
+  };
+
+  React.useEffect(() => {
+    if (direction === "lowest") {
+      dispatch(handleDataLowestThunk(category_name));
+    }
+    if (direction === "highest") {
+      dispatch(handleDataHighestThunk(category_name));
+    }
+    if (direction === "highestDiscount") {
+      dispatch(handleDataHighestDiscountThunk(category_name));
+    }
+    if (direction === "default") {
+      dispatch(handleDefaultSortThunk(category_name));
+    }
+  }, [direction]);
+
+  const getValueSearch = (e: any) => {
+    setValueSearch(e.target.value);
+    if (e.target.value === "") {
+      dispatch(getCategoryProductThunk(category_name));
+    }
+  };
+  const handleSubmitSearchCategory = (e: any) => {
+    e.preventDefault();
+    dispatch(
+      handleSearchThunk({ value: valueSearch, category: category_name })
+    );
+  };
+  const removeFiltered = ()=>{
+    dispatch(handleDefaultSortThunk(category_name))
+  }
+ 
+  const handleChangleSize =(e:React.ChangeEvent)=>{
+        let selectItem = e.target as HTMLSelectElement;
+        setFilterdSize(selectItem.value)
   }
 
-   React.useEffect(()=>{
-        if(direction === "lowest"){
-           dispatch(handleDataLowestThunk(category_name)) 
-        }
-        if(direction === "highest"){
-          dispatch( handleDataHighestThunk(category_name))
-        }
-        if(direction === "highestDiscount"){
-          dispatch( handleDataHighestDiscountThunk(category_name))
-        }
-        if(direction === "default"){
-          dispatch( handleDefaultSortThunk(category_name))
-        }
-        
-   },[direction])
+  React.useEffect(() => {
+    dispatch(handleFilterBrandThunk({filtered:filterd,category:category_name}))
+  }, [filterd]);
 
-   const getValueSearch =(e:any)=>{
-     setValueSearch(e.target.value)
-     if(e.target.value === ""){
-       dispatch(getCategoryProductThunk(category_name))
-     }
-   }
-   const handleSubmitSearchCategory =(e:any)=>{
-      e.preventDefault()
-     dispatch(handleSearchThunk({value:valueSearch,category:category_name}))
-      
-   }
+  React.useEffect(() => {
+    console.log(filteredSize);
+    dispatch(handleFilterSizingThunk({filteredSize: filteredSize,category:category_name}))
+  }, [filteredSize]);
+
+  
+
+  React.useEffect(()=>{
+
+    if(filteredSize !== "" &&filterd !== ""){
+      dispatch(handleAllSizingThunk({filtered:filterd,filteredSize:filteredSize,category:category_name}))
+    }
+    if(filteredSize === ""){
+      dispatch(handleAllSizingThunk({filtered:filterd,filteredSize:filteredSize,category:category_name}))
+    }
+    
+  },[filterd,filteredSize])
+
+
 
   return (
     <>
@@ -109,44 +153,106 @@ function CategoryProducts() {
 
         <Row className="d-flex justify-content-between py-4">
           <Col lg={3}>
-          <form onSubmit={(e)=>handleSubmitSearchCategory(e)} className="d-none d-lg-flex search-product__sidebar" >
-             <input  onChange={(e)=>getValueSearch(e)} type="text" className="input-sidebar" placeholder="جستجو در محصولات زیر..." />
-             <button type="submit" className="btn-search">
+            <form
+              onSubmit={(e) => handleSubmitSearchCategory(e)}
+              className="d-none d-lg-flex search-product__sidebar"
+            >
+              <input
+                onChange={(e) => getValueSearch(e)}
+                type="text"
+                className="input-sidebar"
+                placeholder="جستجو در محصولات زیر..."
+              />
+              <button type="submit" className="btn-search">
                 <BiSearch fill={"#8c8c8c"} size={30} className="search-icon" />
-             </button>
-           </form>
-           <div className="d-flex sidebar-section__title align-items-center justify-content-between py-4">
-                <small className="m-0">:فیلترهای انجام شده</small>
-                <small style={{color:"#f16422"}}>حذف فیلترها</small>
-           </div>
-           <div className="sidebar__filterd py-4">
-              <p >دسته بندی</p>
-              <form>
-              <SidebarFilterProduct lable={"LC"} name={"LC"} />
-              <SidebarFilterProduct lable={"Fiorlla"} name={"Fiorlla"} />
-              <SidebarFilterProduct lable={"Baleno"} name={"Baleno"} />
-              </form>
-           </div>
-           
-            {category_name !== "theWatch" && (
-              // <SidebarFilterSize />
+              </button>
+            </form>
+            <div className="d-flex sidebar-section__title align-items-center justify-content-between py-4">
+              <small className="m-0">فیلترهای انجام شده :</small>
+              <small onClick={removeFiltered}>
+                <a href="#" style={{ color: "#f16422" }}>حذف فیلترها</a>
 
-              <select name="filter-size" className="select-filter my-2 my-lg-0">
+              </small>
+            </div>
+            <div className="sidebar__filterd py-4">
+              <p> برندها</p>
+              <form>
+                <div className="input-group d-flex align-items-center justify-content-between">
+                  <label htmlFor={"LC"}>
+                    <small>{"LC"}</small>
+                  </label>
+                  <input
+                    onChange={(e) => setFilterd(e.target.value)}
+                    type="radio"
+                    name={"brand"}
+                    id={"LC"}
+                    value={"LC"}
+            
+               
+                  />
+                </div>
+                <div className="input-group d-flex align-items-center justify-content-between">
+                  <label htmlFor={"Fiorlla"}>
+                    <small>{"Fiorlla"}</small>
+                  </label>
+                  <input
+                    onChange={(e) => setFilterd(e.target.value)}
+                    type="radio"
+                    name={"brand"}
+                    id={"Fiorlla"}
+                    value={"Fiorlla"}
+                
+        
+                  />
+                </div>
+                <div className="input-group d-flex align-items-center justify-content-between">
+                  <label htmlFor={"Baleno"}>
+                    <small>{"Baleno"}</small>
+                  </label>
+                  <input
+                    onChange={(e) => setFilterd(e.target.value)}
+                    type="radio"
+                    name={"brand"}
+                    id={"Baleno"}
+                    value={"Baleno"}
+      
+                  />
+                </div>
+                <div className="input-group d-flex align-items-center justify-content-between">
+                  <label htmlFor={"Eloj"}>
+                    <small>{"Eloj"}</small>
+                  </label>
+                  <input
+                    onChange={(e) => setFilterd(e.target.value)}
+                    type="radio"
+                    name={"brand"}
+                    id={"Eloj"}
+                    value={"Eloj"}
+                    // checked={}
+                  />
+                </div>
+              </form>
+            </div>
+            <div className="sidebar__sizing py-4">
+              <p> انداره</p>
+
+              <select name="filter-size" onChange={(e)=>handleChangleSize(e)} >
                 <option value="">همه</option>
-                {productsCategory.map((item: IProduct, index: number) => (
-                  <option key={item.id} value={item.size}>
-                    {item.size}
-                  </option>
-                ))}
+                <option value="X">X</option>
+                <option value="XL">XL</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
               </select>
-            )}
+            </div>
           </Col>
           <Col lg={8}>
             <ProductStored
-              handleSortLowest={()=>handleLowestPrice()}
-              handleHighestPrice={()=>handleHighestPrice()}
-              handleHighestDiscountPrice={()=>handleHighestDiscountPrice()}
-              handleDefaultSort={()=>handleDefaultSort()}
+              handleSortLowest={() => handleLowestPrice()}
+              handleHighestPrice={() => handleHighestPrice()}
+              handleHighestDiscountPrice={() => handleHighestDiscountPrice()}
+              handleDefaultSort={() => handleDefaultSort()}
             />
 
             {loading ? (
@@ -183,7 +289,7 @@ function CategoryProducts() {
                       }
                       handleChangeImg={() => handleChangeImg(item.id)}
                       handleChangeLiveImg={() => handleChangeLiveImg()}
-                      handleWishListAdd={()=>handleWishListAdd(item.id)}
+                      handleWishListAdd={() => handleWishListAdd(item.id)}
                     />
                   </Col>
                 ))}
