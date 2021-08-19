@@ -302,8 +302,8 @@ export default function NavbarDress() {
         <Row className="p-3">
           {
             itemsSearch.map((item:IProduct)=>(
-              <Col key={item.id} lg={3} className="d-flex flex-column mb-2">
-                 <small className="mb-2"> <small className="search-text">  {searchNav} در</small> {item.type}</small>
+              <Col key={item.id} lg={3} className="d-flex flex-column mb-2" >
+                 <small onClick={()=>history.push(`/category/${item.category}/${item.id}`)}  className="mb-2 product-search"> <small className="search-text">  {searchNav} در</small> {item.type}</small>
               </Col>
             ))
           }
