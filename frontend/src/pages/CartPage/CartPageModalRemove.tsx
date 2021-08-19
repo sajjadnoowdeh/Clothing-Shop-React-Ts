@@ -1,5 +1,6 @@
 import React from 'react'
 import { Modal,Button } from 'react-bootstrap';
+import "./CartPage.style.scss"
 interface ICartPageModaleRemove{
     show:boolean
     onHide:Function
@@ -28,8 +29,8 @@ const CartPageModalRemove:React.FC<ICartPageModaleRemove> = ({show,onHide,onClic
         </p>
       </Modal.Body>
       <Modal.Footer className="m-auto mb-5">
-        <Button className="btn__remove" onClick={()=>onClick()}>حذف</Button>
-        <Button className="btn__cancel" onClick={()=>onHide()}>انصراف</Button>
+        <button className="btn__remove" onClick={()=>onClick()}>حذف</button>
+        <button className="btn__cancel" onClick={()=>onHide()}>انصراف</button>
       </Modal.Footer>
     </Modal>
     )

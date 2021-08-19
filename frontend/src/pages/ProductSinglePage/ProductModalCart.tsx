@@ -29,12 +29,12 @@ const ProductModalCart: React.FC<IProductModalCart> = ({
           <p className="cart__modal__text mt-4">سبد خرید شما به روز شد !</p>
         </Modal.Body>
         <Modal.Footer className="d-flex justify-content-center mb-5">
-          <Button
+          <button
             className="cart__modal__btn__cancel d-flex align-items-center justify-content-center"
             onClick={() => handleClose()}
           >
             ادامه دادن خرید
-          </Button>
+          </button>
           <Link to="/cart">
             <Button className="cart__modal__btn__visibale d-flex align-items-center justify-content-center"
             >
