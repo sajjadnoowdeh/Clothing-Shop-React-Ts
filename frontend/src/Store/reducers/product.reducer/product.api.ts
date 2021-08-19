@@ -58,3 +58,41 @@ export const getProductsLowest = async(category_name:string)=>{
      
     })
   }
+
+export const handleFilterBrand = async (filtered:string,category:string) => {
+
+  return new Promise((resolve,reject)=>{
+     axios.get(`/api/filterbrand?filtered=${filtered}&categoryBrand=${category}`)
+     .then((res)=>{
+      console.log(res.data)
+      resolve(res.data)
+     })
+     .catch((e)=>reject(e))
+  })
+};
+
+
+export const handleFiltersizing = async (filteredSize:string,category:string) => {
+
+  return new Promise((resolve,reject)=>{
+     axios.get(`/api/filterSizing?filteredSize=${filteredSize}&categorySize=${category}`)
+     .then((res)=>{
+      console.log(res.data)
+      resolve(res.data)
+     })
+     .catch((e)=>reject(e))
+  })
+};
+
+export const handleFiltersizingALl = async (filtered:string,filteredSize:string,category:string) => {
+
+  return new Promise((resolve,reject)=>{
+     axios.get(`/api/filterSizingAll?filteredAll=${filtered}&filteredSizeAll=${filteredSize}&categorySizeAll=${category}`)
+     .then((res)=>{
+      console.log(res.data)
+      resolve(res.data)
+     })
+     .catch((e)=>reject(e))
+  })
+};
+

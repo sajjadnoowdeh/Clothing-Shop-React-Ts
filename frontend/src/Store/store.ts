@@ -8,8 +8,10 @@ let store = configureStore({
         reducer:persistedReducer,
     },
     middleware:[thunk,logger]
-
+  
 })
+
+
 
 export default store;
 export  const persistor = persistStore(store)
