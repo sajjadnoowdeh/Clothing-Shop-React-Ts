@@ -1,0 +1,16 @@
+
+
+.wishList-product{
+  position: relative;
+}
+
+.card__product__btn__remove{
+    position: absolute;
+    top: -6px;
+    right: 8px;
+    background-color: #6f7377;
+    border-radius: 23px;
+    color: cornsilk;
+    z-index: 3;
+    cursor: pointer;
+}
