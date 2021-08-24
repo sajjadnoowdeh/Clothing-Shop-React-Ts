@@ -3,6 +3,7 @@
     border-radius: 10px;
     border: 2px solid rgba(111,115,119,0.07);
    position: relative;
+   overflow: hidden;
    .descount{
     position: absolute;
     top: 14px;
@@ -21,14 +22,59 @@
    }
 
    
+   &:hover{
+    .product__card__help{
+      animation: animateHelp 0.4s forwards ease; 
 
+    }
+    .product___heart{
+      animation: animateHelp 0.4s forwards ease; 
+    }
+    .product__card__help__sub{
+      animation: animateSubHelp 0.4s forwards ease; 
+
+    }
+ }
+ 
   
   }
+  .img-down{
+    // position: relative;
+    position: absolute;
+    top: 85%;
+    right: 30%;
+    .product__card__help{
+      z-index: 50;
+      opacity: 0;
+      margin: 0 0.5rem;
+      width: 50px;
+      img{
+         border-radius: 8px;
+         border: 1px solid #00bf6f;
+         width:100%;
+         cursor: pointer;
+       }
+      
+     }
+     .product__card__help__sub{
+        z-index: 50;
+        opacity: 0;
+        margin: 0 0.5rem;
+        width: 50px;
+        img{
+          border-radius: 8px;
+          border: 1px solid #00bf6f;
+          width:100%;
+          cursor: pointer;
+        }
+
+     }
+  }
+
 
   .section-product{
     position: relative;
     .product___heart{
-
       cursor: pointer;
      svg{
        display: none ;
@@ -73,4 +119,26 @@
      border: 1px solid rgba(143, 143, 143, 0.171);
      padding: 2px 11px;
      color: rgba(0, 0, 0, 0.445);
+  }
+
+
+  @keyframes  animateHelp {
+    0%{
+      opacity: 0;
+      transform: translateX(179px);
+    }
+    100%{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes  animateSubHelp {
+    0%{
+      opacity: 0;
+      transform: translateX(-194px);
+    }
+    100%{
+      opacity: 1;
+      transform: translateX(0);
+    }
   }

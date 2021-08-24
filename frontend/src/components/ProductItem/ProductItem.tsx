@@ -3,11 +3,14 @@ import { BiHeart} from "react-icons/bi";
 import { useSelector } from 'react-redux';
 import { RootState } from '../../Store/store';
 import { IProduct } from '../../interface';
+import { products } from '../../Data/Data';
 import "./ProductItem.style.scss";
 interface IProductItem{
     item:IProduct
-    handleChangeImg:Function
-    handleChangeLiveImg:Function
+    handleChangeImg?:Function
+    handleChangeLiveImg?:Function
+    handleChangeClickImg?:Function
+    handleChangeClickSubImg?:Function
     onClick?:Function | undefined
     onClickHistory?:Function
     handleWishListAdd?:Function | undefined
@@ -15,18 +18,35 @@ interface IProductItem{
     wishID?:number
  
 }
-const ProductItem:React.FC<IProductItem> = ({item,handleChangeLiveImg,handleChangeImg,onClick,onClickHistory,handleWishListAdd,isWish,wishID}) => {
+const ProductItem:React.FC<IProductItem> = ({item,handleChangeLiveImg,handleChangeImg,onClick,onClickHistory,handleWishListAdd,isWish,handleChangeClickImg,handleChangeClickSubImg}) => {
 
    const {wishList} = useSelector((state:RootState)=>state.reducer.wishList)
   
     return (
       <>
       <div className="section-product">
-              <div className="d-flex flex-column" onMouseLeave={()=>handleChangeLiveImg()} onMouseEnter={()=> handleChangeImg()} onClick={()=>(onClick)&&onClick()}>
-                <div className="product___card" onClick={()=>(onClickHistory)&&onClickHistory()}>
-                <img src={item.img} alt={item.name} className={`${item.name} img-product`} />
-                {item.discount ? <small className="descount d-flex justify-content-center align-items-center"> %{item.discount}</small> : null}
-                <div className="product___card-bg"></div>
+               <div className="d-flex flex-column" onMouseLeave={()=>(handleChangeLiveImg) && handleChangeLiveImg()} onMouseEnter={()=>(handleChangeImg)&& handleChangeImg()} onClick={()=>(onClick)&&onClick()}>
+                    <div className="product___card" >
+                    <img src={item.img} onClick={()=>(onClickHistory)&&onClickHistory()} alt={item.name} className={`${item.name} img-product`} />
+                    {item.discount ? <small className="descount d-flex justify-content-center align-items-center"> %{item.discount}</small> : null}  
+                    <div className="product___card-bg"></div>
+                      {
+                        (item.category !== "amazing" && item.category !== "suggest")?
+                       <div className="d-flex img-down">
+                     
+                        <div className="product__card__help">
+                          <img src={products[item.id -1].img} onClick={()=>(handleChangeClickSubImg)&&handleChangeClickSubImg()} alt={item.type}/>
+                        </div>
+                        <div className="product__card__help__sub">
+                          <img src={products[item.id -1].subImg} alt={item.type}  onClick={()=>(handleChangeClickImg)&&handleChangeClickImg()}/>
+                        </div>
+                       </div>
+                        : 
+                        null
+                      
+                      }
+                        
+                   
                 </div>
 
             

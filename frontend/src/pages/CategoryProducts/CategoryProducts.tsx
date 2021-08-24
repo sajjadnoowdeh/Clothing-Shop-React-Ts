@@ -23,15 +23,16 @@ import {
   handleFilterBrandThunk,
   handleFilterSizingThunk,
   handleAllSizingThunk
+  
 } from "../../Store/reducers/product.reducer/product.reducer";
 import { getWishListThunk } from "../../Store/reducers/wishList.reducer/wishList.reducer";
 import { getCategoryProductThunk } from "../../Store/reducers/product.reducer/product.reducer";
 import {
-  productChangeImg,
-  productChangeSubImg,
+  productChangeClickImg,
+  productChangeClickSubImg
 } from "../../Store/reducers/product.reducer/product.reducer";
 import "./CategoryProducts.style.scss";
-import axios from "axios";
+
 function CategoryProducts() {
   let { category_name } = useParams<{ category_name: string }>();
   const { productsCategory, loading, error } = useSelector(
@@ -57,13 +58,7 @@ function CategoryProducts() {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleChangeImg = (id: number): void => {
-    dispatch(productChangeImg(id));
-  };
 
-  const handleChangeLiveImg = (): void => {
-    dispatch(productChangeSubImg(category_name));
-  };
 
   const handleWishListAdd = (id: number) => {
     if (wishList.find((item: IProduct) => item.id === id) === undefined) {
@@ -124,6 +119,8 @@ function CategoryProducts() {
 
   React.useEffect(() => {
     dispatch(handleFilterBrandThunk({filtered:filterd,category:category_name}))
+
+
   }, [filterd]);
 
   React.useEffect(() => {
@@ -138,13 +135,20 @@ function CategoryProducts() {
     if(filteredSize !== "" &&filterd !== ""){
       dispatch(handleAllSizingThunk({filtered:filterd,filteredSize:filteredSize,category:category_name}))
     }
-    if(filteredSize === ""){
-      dispatch(handleAllSizingThunk({filtered:filterd,filteredSize:filteredSize,category:category_name}))
-    }
+    // if(filteredSize === ""){
+    //   dispatch(handleAllSizingThunk({filtered:filterd,filteredSize:filteredSize,category:category_name}))
+    // }
     
   },[filterd,filteredSize])
 
-
+ 
+const handleChangeClickImg =(id:number)=>{
+   dispatch(productChangeClickImg(id));
+}
+ 
+const handleChangeClickSubImg =(id:number)=>{
+  dispatch(productChangeClickSubImg({id:id,category:category_name}));
+}
 
   return (
     <>
@@ -176,7 +180,7 @@ function CategoryProducts() {
             </div>
             <div className="sidebar__filterd py-4">
               <p> برندها</p>
-              <form>
+              <form id="form-radio__brand">
                 <div className="input-group d-flex align-items-center justify-content-between">
                   <label htmlFor={"LC"}>
                     <small>{"LC"}</small>
@@ -187,7 +191,7 @@ function CategoryProducts() {
                     name={"brand"}
                     id={"LC"}
                     value={"LC"}
-            
+
                
                   />
                 </div>
@@ -287,9 +291,9 @@ function CategoryProducts() {
                       onClickHistory={() =>
                         history.push(`${match.url}/${item.id}`)
                       }
-                      handleChangeImg={() => handleChangeImg(item.id)}
-                      handleChangeLiveImg={() => handleChangeLiveImg()}
                       handleWishListAdd={() => handleWishListAdd(item.id)}
+                      handleChangeClickImg={()=> handleChangeClickImg(item.id)}
+                      handleChangeClickSubImg={()=>handleChangeClickSubImg(item.id)}
                     />
                   </Col>
                 ))}
