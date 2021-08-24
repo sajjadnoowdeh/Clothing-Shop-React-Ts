@@ -55,35 +55,42 @@
 #username{
     width: 100%;
     padding: 13px;
-    border-radius: 8px;
     transition: 0.2s all;
-    border: 1px solid #6f7377;
+    border: 0;
+    border-bottom: 1px solid #0000004a;
+    border-radius: 0;
     
     width: 34rem;
 }
 #password{
     width: 100%;
     padding: 13px;
-    border-radius: 8px;
     transition: 0.2s all;
-    border: 1px solid #6f7377;
+    border: 0;
+    border-bottom: 1px solid #0000004a;
+    border-radius: 0;
         width: 34rem;
 }
 .border-input{
-    border: 1px solid #6f7377;
+    border-bottom: 1px solid #6f7377;
+    transition: all 0.6s ease;
+
 }
 .border-success{
-    border: 1px solid #37c508 !important;
+    transition: all 0.6s ease;
+    border-bottom: 1px solid #37c508 !important;
 }
 .border-error{
-    border: 1px solid #ff0b0b !important;
+    transition: all 0.6s ease;
+    border-bottom: 1px solid #ff0b0b !important;
 }
 #email{
     width: 100%;
     padding: 13px;
-    border-radius: 8px;
     transition: 0.2s all;
-    border: 1px solid #6f7377;
+    border: 0;
+    border-bottom: 1px solid #0000004a;
+    border-radius: 0;
         width: 34rem;
 }
 .input__group__pass,.input__group__username,.input__group__email{
@@ -110,4 +117,11 @@
     color: #969797;
     bottom: 65px;
     right: 15px;
+}
+
+.icon-user,.icon-email,.icon-pass{
+    position: absolute;
+    left: 0;
+    color: #969797;
+    top: 37%
 }

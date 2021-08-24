@@ -57,30 +57,47 @@
     width: 34rem;
 }
 #password{
+    border: 0;
+    border-bottom: 1px solid #0000004a;
+    border-radius: 0;
     width: 100%;
     padding: 13px;
-    border-radius: 8px;
     transition: 0.2s all;
-    border: 1px solid #6f7377;
         width: 34rem;
+        &::placeholder{
+            color: #969797;
+            bottom: 91px;
+            right: 15px;
+        }
 }
 #email{
+    border: 0;
+    border-bottom: 1px solid #0000004a;
+    border-radius: 0;
     width: 100%;
     padding: 13px;
-    border-radius: 8px;
     transition: 0.2s all;
-    border: 1px solid #6f7377;
         width: 34rem;
+        
+        &::placeholder{
+            color: #969797;
+            bottom: 91px;
+            right: 15px;
+        }
 }
 .border-input{
-    border: 1px solid #6f7377;
+    transition: all 0.6s ease;
+    border-bottom: 1px solid #6f7377;
 }
 .border-success{
-    border: 1px solid #37c508 !important;
+    transition: all 0.6s ease;
+    border-bottom: 1px solid #37c508 !important;
 }
 .border-error{
-    border: 1px solid #ff0b0b !important;
+    transition: all 0.6s ease;
+    border-bottom: 1px solid #ff0b0b !important;
 }
+
 .input__group__pass,.input__group__username,.input__group__email{
     position: relative;
 }
@@ -107,4 +124,11 @@
 }
 .stop{
     cursor: no-drop !important;
+}
+
+.icon-email,.icon-pass{
+    position: absolute;
+    left: 0;
+    color: #969797;
+    top: 37%
 }
