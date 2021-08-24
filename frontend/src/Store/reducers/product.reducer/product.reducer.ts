@@ -170,11 +170,11 @@ const productReducer = createSlice({
   name: "productReducer",
   initialState: init,
   reducers: {
-    productChangeImg: (state, action: PayloadAction<number>) => {
-      //  state.productsCategory = state.productsCategory.map((item:IProduct,index:number)=> item.id === action.payload ? {...item,img:item.subImg} : item)
+    productChangeClickImg: (state, action: PayloadAction<number>) => {
+       state.productsCategory = state.productsCategory.map((item:IProduct,index:number)=> item.id === action.payload ? {...item,img:item.subImg} : item)
     },
-    productChangeSubImg: (state, action: PayloadAction<string>) => {
-      // state.productsCategory = state.productsCategory.filter((item:IProduct)=>item.category ===action.payload)
+    productChangeClickSubImg: (state, action: PayloadAction<{id:number,category:string}>) => {
+      state.productsCategory = state.productsData.filter((item)=>item.category === action.payload.category).map((item:IProduct,index:number)=> item.id === action.payload.id ? {...item,img:item.img} : item)
     },
     //  sort category products
     sortByLowest: (state, action: PayloadAction<any>) => {
@@ -347,8 +347,8 @@ const productReducer = createSlice({
   },
 });
 export const {
-  productChangeImg,
-  productChangeSubImg,
+  productChangeClickImg,
+  productChangeClickSubImg,
   addToCart,
   updateCart,
   updateCountCard,

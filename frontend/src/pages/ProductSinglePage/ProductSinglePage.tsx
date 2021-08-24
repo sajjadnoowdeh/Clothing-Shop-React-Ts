@@ -9,6 +9,7 @@ import { FaRuler } from "react-icons/fa";
 import { BiHeart} from "react-icons/bi";
 import {ProductSingleTabs} from "../../components";
 import { useDispatch ,useSelector} from "react-redux";
+import { getWishListThunk,removeProductWish } from "../../Store/reducers/wishList.reducer/wishList.reducer";
 import { changeImgProduct ,changeSubImgProduct} from "../../Store/reducers/produtSingle.reducer/productSingle.reducer";
 import { RootState } from "../../Store/store";
 import { getProductSingleThunk } from "../../Store/reducers/produtSingle.reducer/productSingle.reducer";
@@ -30,6 +31,8 @@ const ProductSinglePage = () => {
 // add To cart
   const cart = useSelector((state:RootState)=>state.reducer.productsItems.cart)
   const {product,loading,error} = useSelector((state:RootState)=>state.reducer.productItem);
+  const {wishList} = useSelector((state:RootState)=>state.reducer.wishList)
+
   const dispatch = useDispatch()
  
 
@@ -69,14 +72,13 @@ const ProductSinglePage = () => {
         (productImg) &&  dispatch(changeSubImgProduct(productImg.subImg))
       }
   }
-
-  // const handleSelectSize = (e:React.ChangeEvent)=>{
-  //   let inputEl = e.target as HTMLInputElement;
-  //   console.log(inputEl.value === "");
-  
-  //   (product)&&  setProduct({...product,size:inputEl.value})
-  // }
-
+  const handleWishListAdd = (id: number) => {
+    if (wishList.find((item: IProduct) => item.id === id) === undefined) {
+      dispatch(getWishListThunk({ id: id }));
+    } else {
+      dispatch(removeProductWish(id));
+    }
+  };
 
   
   
@@ -119,9 +121,17 @@ const ProductSinglePage = () => {
         </Col>
         <Col lg={6} className="pt-4 px-3">
           <div>
-            <div className="d-flex justify-content-between">
+            <div className="d-flex justify-content-between align-items-center">
             <h4>{product?.name}</h4>
-            <BiHeart color="black" size={40}/>
+            <div className="product___heart" style={{cursor:"pointer"}}  onClick={()=>handleWishListAdd(product.id)} >
+                  {
+                    wishList.find((itemWish:IProduct)=>itemWish.id === product.id)
+                    ?
+                    <BiHeart className="mt-1" fill={"#00bf6f"}  size={39}/>
+                    :
+                    <BiHeart className="mt-1"  size={39} />
+                  }
+                </div>
             </div>
             <p className="my-3">{product?.type}</p>
             <span className="d-flex align-items-center my-4">
