@@ -1776,9 +1776,9 @@ app.get('/api/register',(req,res)=>{
 app.get('/api/login',(req,res)=>{
      var user = users.find((item)=>item.email === req.query.email);
      if(user){
-        res.json(user);
+        res.status(200).json(user);
      }else{
-         res.status(401).send({message:"!!شما ثبت نام  نکرده اید"})
+         res.status(401).send({message:"!!  شما ثبت نام  نکرده اید یا اطلاعات صحیح نیست "})
      }
     
 })
@@ -1789,7 +1789,7 @@ app.get("/api/wishItems",(req,res)=>{
 
           res.json(listFind) 
       }else{
-        res.status(401).send({message:"product not found!"})
+        res.status(404).send({message:"product not found!"})
       }
 })
 
