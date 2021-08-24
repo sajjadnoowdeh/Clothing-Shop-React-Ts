@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 
 // Import Swiper styles
 import "swiper/swiper.min.css";
@@ -19,13 +20,6 @@ const Carousel = () => {
     <>
       <Swiper
         navigation={true}
-        // breakpoints={{
-  
-        //   "768": {
-        //     "navigation":true
-        //   },
-          
-        // }}
         pagination={{
           type: "progressbar",
         }}
@@ -34,24 +28,35 @@ const Carousel = () => {
 
       >
         <SwiperSlide>
-          <img
-            src="https://www.banimode.com/img/cms/000502/1627102742.jpg"
-            alt="pic1"
-          />
+          <Link to="/category/maleAll">
+            <img
+              src="https://www.banimode.com/img/cms/000502/1627102742.jpg"
+              alt="pic1"
+              
+            />
+          </Link>
+         
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src="https://www.banimode.com/img/cms/000502/1627110388.jpg"
-            alt="pic2 "
-          />
+          <Link to="/category/famaleAll">
+            <img
+              src="https://www.banimode.com/img/cms/000502/1627110388.jpg"
+              alt="pic2 "
+            />
+          </Link>
+        
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src="https://www.banimode.com/img/cms/000502/1627110460.jpg"
-            alt="pic3"
-          />
+          <Link to="/category/typesBages">
+            <img
+              src="https://www.banimode.com/img/cms/000502/1627110460.jpg"
+              alt="pic3"
+            />
+          </Link>
+         
         </SwiperSlide>
         <SwiperSlide>
+          <Link to="/category/typesClothingMale"></Link>
           <img
             src="https://www.banimode.com/img/cms/000503/1627188349.jpg"
             alt="pic4"
