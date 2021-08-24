@@ -3,6 +3,7 @@ import { Row,Col,Container } from 'react-bootstrap'
 import { useDispatch,useSelector } from 'react-redux'
 import { ProductItem } from '../../components'
 import { RootState } from '../../Store/store'
+import { BsXCircle } from "react-icons/bs";
 import { useHistory } from 'react-router'
 import { IProduct } from '../../interface'
 const WishListPage = () => {
