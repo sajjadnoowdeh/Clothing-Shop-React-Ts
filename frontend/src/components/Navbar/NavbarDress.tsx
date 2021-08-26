@@ -254,12 +254,12 @@ export default function NavbarDress() {
 
           <Link to="/register">
             <div className="login d-flex align-items-center ms-2">
-              <div className="text-decoration-none">
+              <div  className="text-decoration-none text-white">
                 {" "}
                 ورود
               </div>
               <span className="px-1">/</span>
-              <div className="text-decoration-none" >
+              <div  className="text-decoration-none text-white" >
                 ثبت نام
               </div>
             </div>
