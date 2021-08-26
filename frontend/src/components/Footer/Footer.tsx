@@ -12,7 +12,7 @@ const Footer = () => {
             <ul className="d-flex flex-column">
              <li> <Link to="/category/maleAll">لباس مردانه</Link></li>
              <li> <Link to="/category/famaleAll"> لباس زنانه</Link></li>
-          <li>    <Link to="/category/babyAll"> لباس بچگانه</Link></li>
+             <li>    <Link to="/category/babyAll"> لباس بچگانه</Link></li>
             </ul>
           </div>
           <div className="section-footer">
@@ -20,7 +20,7 @@ const Footer = () => {
             <ul>
               <li>
                 {" "}
-                <li> برسش های متداول</li>
+                <p> برسش های متداول</p>
               </li>
               <li>
                 {" "}
@@ -34,13 +34,13 @@ const Footer = () => {
             <ul>
               <li>
                 {" "}
-                <li>درباره ما</li>
+                <p>درباره ما</p>
               </li>
             </ul>
           </div>
           <div className="section-footer">
             <ul>
-              <p>میزبان صدای گرمتان هستیم</p>
+              <li>میزبان صدای گرمتان هستیم</li>
               <li>7 روز هفته - 24 ساعته</li>
               <li>ایمیل:sajjad.noowdeh91@gmail.com</li>
             </ul>

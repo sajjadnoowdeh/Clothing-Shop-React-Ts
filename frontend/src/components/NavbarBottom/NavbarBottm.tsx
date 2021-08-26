@@ -17,7 +17,7 @@ const NavbarBottom = () => {
         <NavLink className="d-flex flex-column align-items-center" exact activeClassName="selected" to="/" >
         <BiHomeAlt  className="mb-1" size={28}/>
        <small>خانه</small>
-  </NavLink>
+     </NavLink>
      
       </div>
       <div className="d-flex flex-column align-items-center justify-content-center">
@@ -55,3 +55,4 @@ const NavbarBottom = () => {
 };
 
 export default NavbarBottom;
+

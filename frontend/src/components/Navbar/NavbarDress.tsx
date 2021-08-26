@@ -149,7 +149,7 @@ export default function NavbarDress() {
                 </div>
               ) : (
                 cart.map((item) => (
-                  <>
+             
                     <div key={item.id} className="cart__item">
                       <Row>
                         <Col sm={4}>
@@ -205,7 +205,7 @@ export default function NavbarDress() {
                         </Col>
                       </Row>
                     </div>
-                  </>
+             
                 ))
               )}
 
@@ -254,14 +254,14 @@ export default function NavbarDress() {
 
           <Link to="/register">
             <div className="login d-flex align-items-center ms-2">
-              <a className="text-decoration-none" href="#">
+              <div className="text-decoration-none">
                 {" "}
                 ورود
-              </a>
+              </div>
               <span className="px-1">/</span>
-              <a className="text-decoration-none" href="#">
+              <div className="text-decoration-none" >
                 ثبت نام
-              </a>
+              </div>
             </div>
         </Link>
         }
