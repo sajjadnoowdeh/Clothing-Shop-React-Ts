@@ -1748,7 +1748,7 @@ app.get('/', (req, res) => {
 })
 
 
-  app.get('/api/products',(req, res) => {
+app.get('/api/products',(req, res) => {
     var category = req.query.category;
     res.json(products.items.filter((item)=>item.category === category));
 })

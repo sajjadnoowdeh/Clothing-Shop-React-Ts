@@ -19,9 +19,7 @@ interface IProductItem{
  
 }
 const ProductItem:React.FC<IProductItem> = ({item,handleChangeLiveImg,handleChangeImg,onClick,onClickHistory,handleWishListAdd,isWish,handleChangeClickImg,handleChangeClickSubImg}) => {
-
    const {wishList} = useSelector((state:RootState)=>state.reducer.wishList)
-  
     return (
       <>
       <div className="section-product">
@@ -45,12 +43,7 @@ const ProductItem:React.FC<IProductItem> = ({item,handleChangeLiveImg,handleChan
                         null
                       
                       }
-                        
-                   
                 </div>
-
-            
-
               <div className="d-flex justify-content-between py-3">
                 <strong>{item.name}</strong>
                 {item.discount ?     <small className="text-decoration-line-through text-muted"> {item.price}{" "}تومان</small> :
@@ -80,12 +73,7 @@ const ProductItem:React.FC<IProductItem> = ({item,handleChangeLiveImg,handleChan
                   }
                 </div>
               }
-           
-       
       </div>
-        
-    
-
    </>
     )
 }
